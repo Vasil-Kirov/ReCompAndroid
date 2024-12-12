@@ -1,0 +1,20 @@
+build
+
+#import compile as c
+#import io
+#import init
+
+puts :: fn #foreign(str: *u8);
+
+compile :: fn() -> c.CompileInfo {
+    out := c.CompileInfo {
+        files = []string { "../src/main.rcp", "../src/android.rcp", "../src/pthread.rcp", "../src/backtrace.rcp" },
+        opt = 0,
+        flags = @u32 (c.CompileFlag.NoLink | c.CompileFlag.CrossAndroid | c.CompileFlag.NoStdLib),
+        target_triple="arm64v8a-unknown-linux-androideabi30",
+        arch = c.Arch.Arm64,
+    };
+
+    return out;
+}
+

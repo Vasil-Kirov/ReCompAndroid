@@ -1,0 +1,18 @@
+pthread
+
+struct attr_t {
+    flags: u32,
+    stack_base: *,
+    stack_size: uint,
+    guard_size: uint,
+    sched_policy: i32,
+    sched_priority: i32,
+    reserved: [16]u8,
+}
+
+create :: fn #link="pthread_create"(thread: *int, attributes: ?*attr_t, start: fn(ptr: *) -> ?*, arg: ?*) -> i32;
+attr_init :: fn #link="pthread_attr_init"(attributes: *attr_t) -> i32;
+attr_setdetachstate :: fn #link="pthread_attr_setdetachstate"(attributes: *attr_t, state: i32) -> i32;
+
+DETACHED :: @i32 0x1;
+

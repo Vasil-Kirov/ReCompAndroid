@@ -1,0 +1,106 @@
+android
+
+
+struct Rect
+{
+    left: i32,
+    top: i32,
+    right: i32,
+    bottom: i32,
+};
+
+struct NativeWindow {};
+
+struct NativeWindow_Buffer {
+    width: i32,
+    height: i32,
+    stride: i32,
+    format: i32,
+    bits: *void,
+    reserved: [6]u32,
+};
+
+NativeWindow_lock :: fn #link="ANativeWindow_lock"(
+window: *NativeWindow,
+outBuffer: *NativeWindow_Buffer,
+inOutDirtyBounds: ?*Rect
+) -> i32;
+
+NativeWindow_unlockAndPost :: fn #link="ANativeWindow_unlockAndPost"(
+  window: *NativeWindow
+) -> i32;
+
+struct NativeActivityCallbacks
+{
+    onStart: fn(activity:* NativeActivity),
+    
+    onResume: fn(activity:* NativeActivity),
+    
+    onSaveInstanceState: fn(activity:* NativeActivity, outSize: *uint) -> *,
+    
+    onPause: fn(activity:* NativeActivity),
+    
+    onStop: fn(activity:* NativeActivity),
+    
+    onDestroy: fn(activity:* NativeActivity),
+    
+    onWindowFocusChanged: fn(activity:* NativeActivity, hasFocus: i32),
+    
+    onNativeWindowCreated: fn(activity:* NativeActivity, window: *NativeWindow),
+    
+    onNativeWindowResized: fn(activity:* NativeActivity, window: *NativeWindow),
+    
+    onNativeWindowRedrawNeeded: fn(activity:* NativeActivity, window: *NativeWindow),
+    
+    onNativeWindowDestroyed: fn(activity:* NativeActivity, window: *NativeWindow),
+    
+    onInputQueueCreated: fn(activity:* NativeActivity, queue: *),
+    
+    onInputQueueDestroyed: fn(activity:* NativeActivity, queue: *),
+    
+    onContentRectChanged: fn(activity:* NativeActivity, rect: *Rect),
+    
+    onConfigurationChanged: fn(activity:* NativeActivity),
+    
+    onLowMemory: fn(activity:* NativeActivity),
+};
+
+struct AssetManager{};
+struct JavaVM{};
+struct JNIEnv{};
+struct jobject {};
+
+struct NativeActivity {
+
+    callbacks: *NativeActivityCallbacks,
+    vm: *JavaVM,
+    env: *JNIEnv,
+    activity: *jobject,
+    internalDataPath: *u8,
+    externalDataPath: *u8,
+    sdkVersion: i32,
+    instance: *,
+    assetManager: *AssetManager,
+    obbPath: *u8,
+} 
+
+enum LogPriority: i32 {
+    UNKNOWN,
+    DEFAULT,
+    VERBOSE,
+    DEBUG,
+    INFO,
+    WARN,
+    ERROR,
+    FATAL,
+    SILENT,
+};
+
+log_write :: fn #link="__android_log_write"(
+  prio: LogPriority,
+  tag: *u8,
+  text: *u8
+) -> i32;
+
+log_print :: fn #foreign #link="__android_log_print"(prio: LogPriority, tag: *u8, fmt: *u8, args: ...) -> i32;
+

@@ -1,0 +1,68 @@
+backtrace
+
+struct Context {};
+struct Word {};
+struct State {
+    current: **,
+    end: **,
+};
+
+
+struct DLInfo {
+  //** Pathname of the shared object that contains the given address. */
+  dli_fname: *u8,
+  //** Address at which the shared object is loaded. */
+  dli_fbase: *,
+  //** Name of the nearest symbol with an address lower than the given address. */
+  dli_sname: *u8,
+  //** Exact address of the symbol named in `dli_sname`. */
+  dli_saddr: *,
+};
+
+_Unwind_GetIP :: fn #foreign(context: *Context) -> *Word;
+_Unwind_Backtrace :: fn #foreign(callback: fn(ctx: *Context, arg: *) -> u32, arg: *) -> u32;
+
+dladdr :: fn #foreign(addr: *, info: *DLInfo) -> i32;
+
+unwind_callback :: fn(context: *Context, arg: *) -> u32
+{
+    //BacktraceState* state = static_cast<BacktraceState*>(arg);
+    pc := _Unwind_GetIP(context);
+    if (pc) {
+        state := @*State arg;
+        if (state.current == state.end) {
+            return 5; // END OF STACK
+        } else {
+            *state.current = @*void pc;
+            state.current = state.current + 1;
+        }
+    }
+    return 0;
+}
+
+capture :: fn (buffer: **, max: uint) -> int {
+    state := State { buffer, buffer + max };
+    _Unwind_Backtrace(unwind_callback, &state);
+    return @int (state.current - buffer);
+}
+
+dump :: fn(out: *u8, buffer: **, count: int) {
+    out := out;
+    at := 0;
+    for i := 0; i < count; i += 1 {
+        info := DLInfo {};
+        if dladdr(buffer[i], &info) {
+            if info.dli_sname {
+                out[at] = @u8 '\t';
+                at += 1;
+                for j := 0; info.dli_sname[j] != 0; j += 1 {
+                    out[at] = info.dli_sname[j];
+                    at += 1;
+                }
+                out[at] = @u8 '\n';
+                at += 1;
+            }
+        }
+    }
+}
+

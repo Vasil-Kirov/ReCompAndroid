@@ -1,0 +1,4143 @@
+--------- beginning of main
+uid=10584(com.vasko.pong) expire 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 55 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 82 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 94 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 197 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 80 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 59 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 57 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 53 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 62 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 68 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 49 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 139 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 60 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 35 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 47 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 41 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 39 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 44 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 48 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 52 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+HandleHBM enter, HBM status 0
+HandleHBM exit ret=-1 enable:0 HBM status 0
+oldLux=81 [SA:81 LA:81] newLux=81 (oriLux: 81)
+print_something_xyz
+uid=10584(com.vasko.pong) identical 50 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 31 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 31 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 35 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 25 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 26 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 25 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 32 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 27 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 34 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 26 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 29 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 23 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 23 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 43 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 29 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 26 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+HandleHBM enter, HBM status 0
+HandleHBM exit ret=-1 enable:0 HBM status 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 31 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 32 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 27 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 23 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 32 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 28 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 30 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 25 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 25 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 27 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+getWifiLinkLayerStats_1_3_Internal(l.976) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 25 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 40 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+Received android.intent.action.BATTERY_CHANGED
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+ACTION_BATTERY_CHANGED
+print_something_xyz
+onReceive: android.intent.action.BATTERY_CHANGED
+print_something_xyz
+handleBatteryChanged oldPlugType 2 mPlugType 2 oldBatteryLevel 58 mBatteryLevel 58 temperature 293
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+onBatteryChanged plug=true mBatteryPlugged=2
+received broadcast android.intent.action.BATTERY_CHANGED
+print_something_xyz
+onBatteryChanged, mBatteryLevel = 58, status = 2, level = 58, plug = 2, scale = 100
+onReceive: Intent = Intent { act=android.intent.action.BATTERY_CHANGED flg=0x60000010 (has extras) } action = android.intent.action.BATTERY_CHANGED
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 30 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 29 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 36 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+updateUidState uid = 10098, uidState = 4
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+updateUidState uid = 10098, uidState = 6
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+oneway function results will be dropped but finished with status OK and parcel size 4
+print_something_xyz
+print_something_xyz
+oneway function results will be dropped but finished with status OK and parcel size 4
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 27 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 55 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 40 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 44 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 37 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 42 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 61 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 61 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 58 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 53 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 51 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 74 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 64 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 41 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 56 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 47 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 36 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 55 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 48 lines
+print_something_xyz
+weakRegister(__internal.external_ids#__internal.youtube_phenotype.app.revanced.android.youtube, 0, [Ljava.lang.String;@81d4038, [I@1559811, null)
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 36 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 27 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 29 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+HandleHBM enter, HBM status 0
+HandleHBM exit ret=-1 enable:0 HBM status 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 28 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 32 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 43 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 36 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 29 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 37 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 35 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 33 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 31 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 27 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 35 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 25 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 23 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 31 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 26 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 33 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 31 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 39 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 26 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 30 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 29 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 25 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 27 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 28 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 26 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 23 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 26 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 23 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+[recvMdThermalInfo] ret=26, strLen=127,  3, 36, -50, 197, 32767, 1
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 29 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+getWifiLinkLayerStats_1_3_Internal(l.976) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+[StatusBar#0](this:0xb4000074492d9258,id:28217,api:1,p:12123,c:660) queueBuffer: fps=0.19 dur=5226.65 max=5226.65 min=5226.65
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+[HWCDisplay] [Display_0 (type:1)] fps:0.383187,dur:5219.38,max:5030.42,min:188.97  
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+setInputWindows displayId=0 Window{864f8e1 mode=0 rootTaskId=1 u0 NavigationBar0} Window{e1243 mode=0 rootTaskId=1 u0 StatusBar} Window{a9df021 mode=0 rootTaskId=11730 u0 Splash Screen com.vasko.pong} Window{9ca8825 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{e63c6d8 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+[DPY] receive refesh frquest from driver: type[4]  
+[HWC] fire a callback of refresh to SF  
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+[FramebufferSurface](this:0xb4000074ce1deed0,id:-1,api:1,p:660,c:660) queueBuffer: fps=0.19 dur=5220.98 max=5220.98 min=5220.98
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 28 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+(REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 22 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+getWifiLinkLayerStats_1_3_Internal(l.976) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 18 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 17 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+getWifiLinkLayerStats_1_3_Internal(l.976) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+[StatusBar#0](this:0xb4000074492d9258,id:28217,api:1,p:12123,c:660) queueBuffer: fps=0.17 dur=6028.91 max=6028.91 min=6028.91
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+[HWCDisplay] [Display_0 (type:1)] fps:0.497235,dur:6033.37,max:5842.61,min:30.92  
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+setInputWindows displayId=0 Window{864f8e1 mode=0 rootTaskId=1 u0 NavigationBar0} Window{e1243 mode=0 rootTaskId=1 u0 StatusBar} Window{a9df021 mode=0 rootTaskId=11730 u0 Splash Screen com.vasko.pong} Window{9ca8825 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{e63c6d8 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+[DPY] receive refesh frquest from driver: type[4]  
+[HWC] fire a callback of refresh to SF  
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+[FramebufferSurface](this:0xb4000074ce1deed0,id:-1,api:1,p:660,c:660) queueBuffer: fps=0.17 dur=6017.15 max=6017.15 min=6017.15
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 15 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 12 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.8 ret_temps size 0
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+(1):monitor_time_update_thread round:131026 ########
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 28 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.7 ret_temps size 0
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+getWifiLinkLayerStats_1_3_Internal(l.976) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+[StatusBar#0](this:0xb4000074492d9258,id:28217,api:1,p:12123,c:660) queueBuffer: fps=0.33 dur=3019.11 max=3019.11 min=3019.11
+print_something_xyz
+[HWCDisplay] [Display_0 (type:1)] fps:0.994528,dur:3016.51,max:2842.16,min:14.88  
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+setInputWindows displayId=0 Window{864f8e1 mode=0 rootTaskId=1 u0 NavigationBar0} Window{e1243 mode=0 rootTaskId=1 u0 StatusBar} Window{a9df021 mode=0 rootTaskId=11730 u0 Splash Screen com.vasko.pong} Window{9ca8825 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{e63c6d8 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+[DPY] receive refesh frquest from driver: type[4]  
+[HWC] fire a callback of refresh to SF  
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+[FramebufferSurface](this:0xb4000074ce1deed0,id:-1,api:1,p:660,c:660) queueBuffer: fps=0.33 dur=3048.57 max=3048.57 min=3048.57
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 10 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 21 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 16 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.7 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+[recvMdThermalInfo] ret=26, strLen=127,  3, 36, -50, 197, 32767, 1
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 19 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 11 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+AEEIOCTL_GET/SET_SF_STATE IOCTL,cmd= 1074294797, lParam=0. 
+AEEIOCTL_RT_MON_Kick IOCTL,cmd= 2147774474, lParam=300. 
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.7 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 7 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.7 ret_temps size 0
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 14 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 5 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+getWifiLinkLayerStats_1_3_Internal(l.976) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 20 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 9 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 6 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 3 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 1 line
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 13 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 8 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 2 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 24 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz
+uid=10584(com.vasko.pong) identical 4 lines
+print_something_xyz
+DRECurveCalculation: BLKNUM = 16 8
+print_something_xyz

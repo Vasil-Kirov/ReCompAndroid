@@ -1,0 +1,265 @@
+; ModuleID = 'pthread'
+source_filename = "pthread.rcp"
+target datalayout = "e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128"
+target triple = "arm64v8a-unknown-linux-androideabi34"
+
+%slice.136 = type { i64, ptr }
+
+@__main_LogTag = external global ptr
+@__main_GLOBAL = external global i64
+@__pthread_DETACHED = global i32 0
+@__init_INVALID_TYPE = external global i64
+@__init_type_table = external global %slice.136
+@__os_stdin = external global i64
+@__os_stdout = external global i64
+@__os_stderr = external global i64
+@__os_SYS_read = external global i64
+@__os_SYS_write = external global i64
+@__os_SYS_open = external global i64
+@__os_SYS_mmap = external global i64
+@__os_SYS_munmap = external global i64
+@__os_SYS_exit = external global i64
+@__os_PROT_READ = external global i64
+@__os_PROT_WRITE = external global i64
+@__os_PROT_EXEC = external global i64
+@__os_PROT_NONE = external global i64
+@__os_MAP_SHARED = external global i64
+@__os_MAP_PRIVATE = external global i64
+@__os_MAP_ANONYMOUS = external global i64
+@__os_MAP_ANON = external global i64
+@__os_MAP_NORESERVE = external global i64
+@__str_CONTINUE_BIT = external global i8
+
+define void @__pthread___GlobalInitializerFunction_0() {
+block_0:
+  store i32 1, ptr @__pthread_DETACHED, align 4
+  ret void
+}
+
+declare ptr @__main_thread_start(ptr)
+
+declare void @__main_warn(ptr, ptr)
+
+declare void @__main_fatal(ptr, ptr)
+
+declare void @ANativeActivity_onCreate(ptr, ptr, i64)
+
+declare i32 @__main_main()
+
+declare i32 @__android_log_write(i32, ptr, ptr)
+
+declare i32 @__android_log_print(i32, ptr, ptr, ...)
+
+declare i32 @pthread_create(ptr, ptr, ptr, ptr)
+
+declare i32 @pthread_attr_init(ptr)
+
+declare i32 @pthread_attr_setdetachstate(ptr, i32)
+
+declare void @__init_global_initializers()
+
+declare i64 @__init_get_struct_alignment(i64)
+
+declare i64 @__init_get_type_alignment(i64)
+
+declare i64 @__init_get_basic_type_size(ptr)
+
+declare i64 @__init_get_struct_size(i64)
+
+declare i64 @__init_get_type_size(i64)
+
+declare i64 @__init_get_struct_member_offset(ptr, i64)
+
+declare i32 @__main_main.1()
+
+declare i32 @main()
+
+declare void @__os_assert(i1, ptr)
+
+declare i64 @_system_call(i64, ...)
+
+declare void @__os_print(ptr, i32)
+
+declare void @__os_abort()
+
+declare ptr @__os_alloc(i64)
+
+declare void @__os_free(ptr)
+
+declare i32 @__os_read_stdin_line(ptr, i32)
+
+declare void @__io_push_string(ptr, ptr)
+
+declare void @__io_format_uint(ptr, i64)
+
+declare void @__io_format_int(ptr, i64)
+
+declare void @__io_print_typetype(ptr, ptr)
+
+declare void @__io_print_type(ptr, ptr)
+
+declare void @__io_builder_to_string(ptr, ptr)
+
+declare void @__io_print_type_with_formatter(ptr, i32, ptr)
+
+declare void @__io___internal_print(ptr, ptr, ptr)
+
+declare void @__io_vsprint(ptr, ptr, ptr)
+
+declare void @__io_sprint(ptr, ptr, ptr)
+
+declare void @__io_print(ptr, ptr)
+
+declare void @__io_println(ptr, ptr)
+
+declare void @__io_readln(ptr, ptr, i32)
+
+declare i32 @__io_get_next(ptr)
+
+declare void @"__io_format_float:type_*[]u32_f32_i32_:void"(i64, ptr, float, i32)
+
+declare void @"__io_format_float:type_*[]u32_f64_i32_:void"(i64, ptr, double, i32)
+
+declare ptr @__mem_generic_alloc(i64, ptr)
+
+declare void @__mem_generic_free(ptr, ptr)
+
+declare void @__mem_create_generic_allocator(ptr)
+
+declare ptr @__mem_arena_alloc(i64, ptr)
+
+declare void @__mem_no_free(ptr, ptr)
+
+declare void @__mem_create_scratch(ptr, i64)
+
+declare void @__mem_destroy_scratch(ptr)
+
+declare ptr @memcpy(ptr, ptr, i64)
+
+declare ptr @memset(ptr, i32, i64)
+
+declare void @"__mem_make_slice:type_int_*__mem_Allocator_:[]u8"(ptr, i64, i64, ptr)
+
+declare i64 @__str_to_int(ptr)
+
+declare void @__str_create(ptr, ptr)
+
+declare void @__str_append(ptr, ptr)
+
+declare void @__str_append_u32(ptr, i32)
+
+declare void @__str_append_u8(ptr, i8)
+
+declare void @__str_from_builder(ptr, ptr, ptr)
+
+declare void @__str_substr(ptr, ptr, i64, i64)
+
+declare i64 @__str_get_codepoint_size(ptr)
+
+declare ptr @__str_advance(ptr)
+
+declare ptr @__str__it_advance(ptr, i64, i64)
+
+declare i32 @__str_deref(ptr)
+
+declare i32 @__str_index(ptr, i64)
+
+declare void @"__array_add:*[]u32_u32_:void"(ptr, i32)
+
+declare void @"__array_create:type_*__mem_Allocator_:[]u8"(ptr, i64, ptr)
+
+declare void @"__array_add:*[]u8_u8_:void"(ptr, i8)
+
+declare void @"__array_create:type_*__mem_Allocator_:[]u32"(ptr, i64, ptr)
+
+declare void @"__array_free:*[]u32_:void"(ptr)
+
+declare void @"__array_free:*[]u8_:void"(ptr)
+
+declare ptr @memcpy.2(ptr, ptr, i64)
+
+declare ptr @memset.3(ptr, i32, i64)
+
+declare void @_fltused()
+
+!llvm.dbg.cu = !{!0}
+!llvm.module.flags = !{!76, !77}
+
+!0 = distinct !DICompileUnit(language: DW_LANG_C99, file: !1, producer: "RCP Compiler", isOptimized: false, runtimeVersion: 0, emissionKind: FullDebug, enums: !2, splitDebugInlining: false)
+!1 = !DIFile(filename: "pthread.rcp", directory: "E:\\Non_C_Projects\\RCPProjects\\Android\\src")
+!2 = !{!3, !15, !36, !45, !50, !54, !65, !3, !15, !36, !45, !50, !54}
+!3 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "__init_TypeKind", scope: !1, file: !1, size: 64, align: 64, elements: !4)
+!4 = !{!5, !6, !7, !8, !9, !10, !11, !12, !13, !14}
+!5 = !DIEnumerator(name: "Invalid", value: 0, isUnsigned: true)
+!6 = !DIEnumerator(name: "Basic", value: 1, isUnsigned: true)
+!7 = !DIEnumerator(name: "Function", value: 2, isUnsigned: true)
+!8 = !DIEnumerator(name: "Struct", value: 3, isUnsigned: true)
+!9 = !DIEnumerator(name: "Pointer", value: 4, isUnsigned: true)
+!10 = !DIEnumerator(name: "Array", value: 5, isUnsigned: true)
+!11 = !DIEnumerator(name: "Slice", value: 6, isUnsigned: true)
+!12 = !DIEnumerator(name: "Vector", value: 7, isUnsigned: true)
+!13 = !DIEnumerator(name: "Enum", value: 8, isUnsigned: true)
+!14 = !DIEnumerator(name: "Generic", value: 9, isUnsigned: true)
+!15 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "__init_BasicKind", scope: !1, file: !1, size: 64, align: 64, elements: !16)
+!16 = !{!17, !18, !19, !20, !21, !22, !23, !24, !25, !26, !27, !28, !29, !30, !31, !32, !33, !34, !35}
+!17 = !DIEnumerator(name: "Bool", value: 0, isUnsigned: true)
+!18 = !DIEnumerator(name: "String", value: 1, isUnsigned: true)
+!19 = !DIEnumerator(name: "U8", value: 2, isUnsigned: true)
+!20 = !DIEnumerator(name: "U16", value: 3, isUnsigned: true)
+!21 = !DIEnumerator(name: "U32", value: 4, isUnsigned: true)
+!22 = !DIEnumerator(name: "U64", value: 5, isUnsigned: true)
+!23 = !DIEnumerator(name: "I8", value: 6, isUnsigned: true)
+!24 = !DIEnumerator(name: "I16", value: 7, isUnsigned: true)
+!25 = !DIEnumerator(name: "I32", value: 8, isUnsigned: true)
+!26 = !DIEnumerator(name: "I64", value: 9, isUnsigned: true)
+!27 = !DIEnumerator(name: "F32", value: 10, isUnsigned: true)
+!28 = !DIEnumerator(name: "F64", value: 11, isUnsigned: true)
+!29 = !DIEnumerator(name: "untypedInteger", value: 12, isUnsigned: true)
+!30 = !DIEnumerator(name: "untypedFloat", value: 13, isUnsigned: true)
+!31 = !DIEnumerator(name: "Int", value: 14, isUnsigned: true)
+!32 = !DIEnumerator(name: "Uint", value: 15, isUnsigned: true)
+!33 = !DIEnumerator(name: "Type", value: 16, isUnsigned: true)
+!34 = !DIEnumerator(name: "Auto", value: 17, isUnsigned: true)
+!35 = !DIEnumerator(name: "Module", value: 18, isUnsigned: true)
+!36 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "__init_BasicFlag", scope: !1, file: !1, size: 32, align: 32, elements: !37)
+!37 = !{!38, !39, !40, !41, !42, !43, !44}
+!38 = !DIEnumerator(name: "Boolean", value: 1, isUnsigned: true)
+!39 = !DIEnumerator(name: "Integer", value: 2, isUnsigned: true)
+!40 = !DIEnumerator(name: "Float", value: 4, isUnsigned: true)
+!41 = !DIEnumerator(name: "String", value: 8, isUnsigned: true)
+!42 = !DIEnumerator(name: "Untyped", value: 32, isUnsigned: true)
+!43 = !DIEnumerator(name: "Unsigned", value: 64, isUnsigned: true)
+!44 = !DIEnumerator(name: "TypeID", value: 128, isUnsigned: true)
+!45 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "__init_StructFlag", scope: !1, file: !1, size: 32, align: 32, elements: !46)
+!46 = !{!47, !48, !49}
+!47 = !DIEnumerator(name: "Packed", value: 1, isUnsigned: true)
+!48 = !DIEnumerator(name: "Generic", value: 2, isUnsigned: true)
+!49 = !DIEnumerator(name: "Union", value: 4, isUnsigned: true)
+!50 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "__init_VectorKind", scope: !1, file: !1, size: 64, align: 64, elements: !51)
+!51 = !{!52, !53}
+!52 = !DIEnumerator(name: "Float", value: 0, isUnsigned: true)
+!53 = !DIEnumerator(name: "Int", value: 1, isUnsigned: true)
+!54 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "__compile_CompileFlag", scope: !1, file: !1, size: 32, align: 32, elements: !55)
+!55 = !{!56, !57, !58, !59, !60, !61, !62, !63, !64}
+!56 = !DIEnumerator(name: "Debug", value: 1, isUnsigned: true)
+!57 = !DIEnumerator(name: "SanAddress", value: 2, isUnsigned: true)
+!58 = !DIEnumerator(name: "SanMemory", value: 4, isUnsigned: true)
+!59 = !DIEnumerator(name: "SanThread", value: 8, isUnsigned: true)
+!60 = !DIEnumerator(name: "SanUndefined", value: 16, isUnsigned: true)
+!61 = !DIEnumerator(name: "NoStdLib", value: 32, isUnsigned: true)
+!62 = !DIEnumerator(name: "SharedLib", value: 64, isUnsigned: true)
+!63 = !DIEnumerator(name: "CrossAndroid", value: 128, isUnsigned: true)
+!64 = !DIEnumerator(name: "NoLink", value: 256, isUnsigned: true)
+!65 = !DICompositeType(tag: DW_TAG_enumeration_type, name: "__android_LogPriority", scope: !1, file: !1, size: 32, align: 32, elements: !66)
+!66 = !{!67, !68, !69, !70, !71, !72, !73, !74, !75}
+!67 = !DIEnumerator(name: "UNKNOWN", value: 0, isUnsigned: true)
+!68 = !DIEnumerator(name: "DEFAULT", value: 1, isUnsigned: true)
+!69 = !DIEnumerator(name: "VERBOSE", value: 2, isUnsigned: true)
+!70 = !DIEnumerator(name: "DEBUG", value: 3, isUnsigned: true)
+!71 = !DIEnumerator(name: "INFO", value: 4, isUnsigned: true)
+!72 = !DIEnumerator(name: "WARN", value: 5, isUnsigned: true)
+!73 = !DIEnumerator(name: "ERROR", value: 6, isUnsigned: true)
+!74 = !DIEnumerator(name: "FATAL", value: 7, isUnsigned: true)
+!75 = !DIEnumerator(name: "SILENT", value: 8, isUnsigned: true)
+!76 = !{i32 2, !"CodeView", i32 1}
+!77 = !{i32 2, !"Debug Info Version", i32 3}

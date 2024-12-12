@@ -1,0 +1,133 @@
+main
+
+#import android as a
+#import init
+#import pthread
+#import backtrace as bt
+#import io
+#import os
+
+signal :: fn #foreign(signum: i32, handler: fn(num: i32));
+__errno :: fn #foreign() -> *i32;
+
+thread_start :: fn(ptr: *) -> ?* {
+    init.entry();
+    return null;
+}
+
+LogTag :: c"vpong";
+
+info :: fn(fmt: string, args: ...) {
+    str := io.vsprint(fmt, args);
+    a.log_write(a.LogPriority.INFO, LogTag, str.data); 
+}
+
+warn :: fn(fmt: string, args: ...) {
+    str := io.vsprint(fmt, args);
+    a.log_write(a.LogPriority.WARN, LogTag, str.data); 
+}
+
+fatal :: fn(fmt: string, args: ...) {
+    str := io.vsprint(fmt, args);
+    a.log_write(a.LogPriority.FATAL, LogTag, str.data); 
+}
+
+exit :: fn #foreign(code: i32);
+
+handle_segfault :: fn(sig: i32) {
+    stack := [128]* {};
+    out := [512]u8 {};
+    size := bt.capture(&stack[0], 128);
+    bt.dump(&out[0], &stack[0], size);
+    a.log_write(a.LogPriority.ERROR, c"vpong", c"Stack Trace"); 
+    a.log_print(a.LogPriority.ERROR, c"vpong", c"%s", &out[0]);
+    exit(1);
+}
+
+opt_window: ?*a.NativeWindow;
+
+on_window_create :: fn(activity: *a.NativeActivity, window: *a.NativeWindow) {
+    opt_window = window;
+}
+
+ANativeActivity_onCreate :: fn #foreign(activity: *a.NativeActivity, saved_state: *, saved_state_size: int) {
+    // SIGSEGV
+    signal(11, handle_segfault);
+
+    activity := activity;
+    activity.callbacks.onNativeWindowCreated = on_window_create;
+
+    // CANNOT USE GLOBAL VARIABLES HERE THEY ARE NOT INITTED
+    attributes: pthread.attr_t;
+
+    pthread.attr_init(&attributes);
+    pthread.attr_setdetachstate(&attributes, 0x1); // PTHREAD_DETACHED DO NOT USE GLOBAL HERE
+    
+
+    thread: int;
+    res := pthread.create(&thread, null, thread_start, null);
+    if(res != 0) {
+        a.log_write(a.LogPriority.FATAL, c"vpong", c"pthread_create() failed"); 
+    }
+
+    return;
+}
+
+get_time_in_nanos :: fn() -> int {
+    ts := os.timespec {};
+    os.syscall(os.SYS_clock_gettime, os.CLOCK_MONOTONIC, &ts);
+    return ts.tv_sec * 1_000_000_000 + ts.tv_nsec;
+}
+
+sinf :: fn #foreign(x: f32) -> f32;
+
+PI :: @f32 3.14159265358979323846264338327950288;
+
+redraw_window :: fn(time_ms: int) {
+    if opt_window == null {
+        warn("Still no window");
+        return;
+    }
+
+    t := (sinf(@f32 time_ms * PI * 0.5)+1)/2;//(@f32(time_ms % 5000)) / 5000;
+
+    window := ?opt_window;
+    buff := a.NativeWindow_Buffer {};
+    if a.NativeWindow_lock(window, &buff, null) != 0 {
+
+        warn("Failed to lock window buffer");
+        return;
+    }
+
+    pixels := @*u8 buff.bits;
+    for y := @i32 0; y < buff.height; y += 1 {
+        row := pixels + y * buff.stride * 4;
+        for x := @i32 0; x < buff.width; x += 1 {
+            pixel := row + (x * 4);
+            pixel[0] = @u8(t * 255.0);
+            pixel[1] = 128;//@u8(t * 255.0);
+            pixel[2] = 255;//@u8(t * 255.0);
+            pixel[3] = 0xff;
+        }
+    }
+
+    a.NativeWindow_unlockAndPost(window);
+}
+
+main :: fn() -> i32 { 
+
+    start_ms := get_time_in_nanos() / 1_000_000;
+    for true {
+        redraw_window(start_ms);
+
+        end_ms := get_time_in_nanos() / 1_000_000;
+        for end_ms - start_ms < 16 {
+            end_ms = get_time_in_nanos() / 1_000_000;
+        }
+
+        start_ms = end_ms;
+    }
+
+    return 0;
+}
+
