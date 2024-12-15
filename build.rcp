@@ -3,12 +3,25 @@ build
 #import compile as c
 #import io
 #import init
+#import mem
+#import str
+#import os
+#import array as arr
 
 puts :: fn #foreign(str: *u8);
+files := []string { "main", "android", "pthread", "backtrace" };
 
 compile :: fn() -> c.CompileInfo {
+    ga := mem.create_generic_allocator();
+    rcp_files := arr.create(string, &ga);
+    for f in files {
+        file := io.sprint("../src/%.rcp", f);
+        arr.add(&rcp_files, file);
+        io.println("FILE: %", file);
+    }
+
     out := c.CompileInfo {
-        files = []string { "../src/main.rcp", "../src/android.rcp", "../src/pthread.rcp", "../src/backtrace.rcp" },
+        files = rcp_files,
         opt = 0,
         flags = @u32 (c.CompileFlag.NoLink | c.CompileFlag.CrossAndroid | c.CompileFlag.NoStdLib),
         target_triple="arm64v8a-unknown-linux-androideabi30",
@@ -16,5 +29,101 @@ compile :: fn() -> c.CompileInfo {
     };
 
     return out;
+}
+
+system :: fn #foreign(cmd: *u8) -> i32;
+
+error :: fn(fmt: string, args: ...) {
+    out := io.vsprint(fmt, args);
+    io.println("%", out);
+    os.abort();
+}
+
+after_link :: fn() {
+    ga := mem.create_generic_allocator();
+    cd := ".";
+    arch1 := "v8a";
+    arch2 := "arm64-linux-android";
+    arch3 := "arm64-v8a";
+    arch4 := "arm64";
+    android_v := 30;
+    app_name := "pong";
+    apk := io.sprint("%/%.apk", cd, app_name);
+    sdk := "E:/AndroidSDK";
+    ndk := io.sprint("%/ndk", sdk);
+    jdk := "E:/jdk-21.0.2";
+    build_tools := io.sprint("%/build-tools/%.0.3", sdk, android_v);
+    toolchain := io.sprint("%/toolchains/llvm/prebuilt/windows-x86_64", ndk);
+    jar := io.sprint("%/platforms/android-%/android.jar", sdk, android_v);
+    lib_files := "-lm -lGLESv2 -lEGL -landroid -llog array.obj init.obj io.obj math.obj mem.obj os.obj str.obj nostdlib.obj";
+    b := str.create(&ga);
+    for f in files {
+        obj := io.sprint(" %.obj", f);
+        str.append(&b, obj);
+    }
+    objs := str.from_builder(&b, &ga);
+
+    java_home_cmd := io.sprint("set JAVA_HOME=%", jdk);
+    if system(java_home_cmd.data) != 0 {
+        error("java home cmd failed: { % }", java_home_cmd);
+    }
+
+    aapt := io.sprint("%/aapt.exe", build_tools);
+    zipalign := io.sprint("%/zipalign.exe", build_tools);
+    apksigner := io.sprint("%/apksigner.bat", build_tools);
+    lib_name := "main";
+    target_triple := io.sprint("%v8a-unknown-linux-androideabi%", arch4, android_v);
+
+    clang_cmd := io.sprint(
+    "%/bin/clang.exe --target=% --sysroot=%/sysroot -shared -uANativeActivity_onCreate -o %/lib/%/lib%.so % %",
+    toolchain, target_triple, toolchain, cd, arch3, lib_name, lib_files, objs);
+
+    if system(clang_cmd.data) != 0 {
+        error("clang cmd failed: { % }", clang_cmd);
+    }
+
+    aapt_cmd1 := io.sprint(
+    "% package --debug-mode -v -f -F % -M %/AndroidManifest.xml -A android-assets -S android-resources -I %",
+    aapt, apk, cd, jar);
+    if system(aapt_cmd1.data) != 0 {
+        error("aapt cmd failed: { % }", aapt_cmd1);
+    }
+
+    aapt_cmd2 := io.sprint("% add % lib/%/lib%.so", aapt, apk, arch3, lib_name);
+    if system(aapt_cmd2.data) != 0 {
+        error("aapt cmd failed: { % }", aapt_cmd2);
+    }
+
+    tmp_apk := io.sprint("%/temp.apk", cd);
+    zip_cmd := io.sprint("% -v -f 4 % %", zipalign, apk, tmp_apk);
+    if system(zip_cmd.data) != 0 {
+        error("zipalign failed: { % }", zip_cmd);
+    }
+
+    del_cmd := io.sprint("del %", "pong.apk");
+    if system(del_cmd.data) != 0 {
+        error("del failed: { % }", del_cmd);
+    }
+
+    ren_cmd := io.sprint("ren % %", "temp.apk", "pong.apk");
+    if system(ren_cmd.data) != 0 {
+        error("ren failed: { % }", ren_cmd);
+    }
+
+    key := "debug.keystore";
+    apksigner_cmd1 := io.sprint(
+    "% sign --ks % --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android -v %",
+    apksigner, key, apk);
+    apksigner_cmd2 := io.sprint( "% verify -v %", apksigner, apk);
+
+    if system(apksigner_cmd1.data) != 0 {
+        error("apksigner failed: { % }", apksigner_cmd1);
+    }
+
+    if system(apksigner_cmd2.data) != 0 {
+        error("apksigner failed: { % }", apksigner_cmd2);
+    }
+
+    io.println("Done");
 }
 
