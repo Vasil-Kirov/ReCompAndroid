@@ -1,31 +1,44 @@
-build
+module build
 
+#import str
 #import compile as c
 #import io
-#import init
 #import mem
 #import str
 #import os
 #import array as arr
 
+asset_dir :: "..\\assets";
+
 puts :: fn #foreign(str: *u8);
-files := []string { "main", "android", "pthread", "backtrace" };
+//files := []string { "main.rcp", "android.rcp", "jninativeinterface.rcp", "pthread.rcp", "backtrace.rcp" };
+files := []string {
+    "main", "android", "pthread", "backtrace", "binary_stream",
+    "log", "vmath", "font", "draw",
+    "ui/gui", "ui/commands", "ui/flexbox", "ui/window", "ui/button",
+
+};
+
+modules :: []string {
+    "main", "android", "pthread", "backtrace", "bstream",
+    "log", "vmath", "font", "draw",
+    "gui",
+};
 
 compile :: fn() -> c.CompileInfo {
-    ga := mem.create_generic_allocator();
-    rcp_files := arr.create(string, &ga);
+
+    files_with_ext := arr.create(string, &mem.temp_alloc);
     for f in files {
-        file := io.sprint("../src/%.rcp", f);
-        arr.add(&rcp_files, file);
-        io.println("FILE: %", file);
+        arr.add(&files_with_ext, io.sprint("%.rcp", f));
     }
 
     out := c.CompileInfo {
-        files = rcp_files,
+        source_dirs = []string { "../src" },
+        files = files_with_ext,
         opt = 0,
-        flags = @u32 (c.CompileFlag.NoLink | c.CompileFlag.CrossAndroid | c.CompileFlag.NoStdLib),
+        flags = (.NoLink | .CrossAndroid | .NoStdLib),
         target_triple="arm64v8a-unknown-linux-androideabi30",
-        arch = c.Arch.Arm64,
+        arch = .Arm64,
     };
 
     return out;
@@ -37,6 +50,31 @@ error :: fn(fmt: string, args: ...) {
     out := io.vsprint(fmt, args);
     io.println("%", out);
     os.abort();
+}
+
+run_cmd :: fn(fmt: string, args: ...) {
+    cmd := io.vsprint(fmt, args);
+    ret := system(cmd.data);
+    if ret != 0 {
+        error("% failed with error code %", cmd, ret);
+    }
+}
+
+compile_java_file :: fn(build_tools: string, cd: string, class_name: string, android_jar: string) -> string {
+    io.println("Compiling: %...", class_name);
+    javac := io.sprint("javac -source 11 -target 11 -d %0 -classpath %2 %0/../src/java/%1.java", cd, class_name, android_jar);
+    d8 := io.sprint("java -cp %/lib/d8.jar com.android.tools.r8.D8 %/com/vasko/pong/%.class --lib %", build_tools, cd, class_name, android_jar);
+
+    if system(javac.data) != 0 {
+        error("javac % failed", class_name);
+    }
+    
+    if system(d8.data) != 0 {
+        error("d8 % failed", class_name);
+    }
+
+    io.println("Compilation Finished!");
+    return "classes.dex";
 }
 
 after_link :: fn() {
@@ -55,11 +93,12 @@ after_link :: fn() {
     build_tools := io.sprint("%/build-tools/%.0.3", sdk, android_v);
     toolchain := io.sprint("%/toolchains/llvm/prebuilt/windows-x86_64", ndk);
     jar := io.sprint("%/platforms/android-%/android.jar", sdk, android_v);
-    lib_files := "-lm -lGLESv2 -lEGL -landroid -llog array.obj init.obj io.obj math.obj mem.obj os.obj str.obj nostdlib.obj";
-    b := str.create(&ga);
-    for f in files {
+    lib_files := "-lm -lGLESv2 -lEGL -landroid -llog array.obj base.obj compile.obj io.obj libc.obj math.obj mem.obj os.obj str.obj nostdlib.obj internal.obj intrin.obj";
+
+    b := str.create_builder(&ga);
+    for f in modules {
         obj := io.sprint(" %.obj", f);
-        str.append(&b, obj);
+        str.builder_append(&b, obj);
     }
     objs := str.from_builder(&b, &ga);
 
@@ -74,55 +113,29 @@ after_link :: fn() {
     lib_name := "main";
     target_triple := io.sprint("%v8a-unknown-linux-androideabi%", arch4, android_v);
 
-    clang_cmd := io.sprint(
-    "%/bin/clang.exe --target=% --sysroot=%/sysroot -shared -uANativeActivity_onCreate -o %/lib/%/lib%.so % %",
-    toolchain, target_triple, toolchain, cd, arch3, lib_name, lib_files, objs);
+    run_cmd("%/bin/clang.exe --target=% --sysroot=%/sysroot -shared -uANativeActivity_onCreate -o %/lib/%/lib%.so % %",
+        toolchain, target_triple, toolchain, cd, arch3, lib_name, lib_files, objs);
 
-    if system(clang_cmd.data) != 0 {
-        error("clang cmd failed: { % }", clang_cmd);
-    }
+    classes := compile_java_file(build_tools, cd, "MainActivity", jar);
 
-    aapt_cmd1 := io.sprint(
-    "% package --debug-mode -v -f -F % -M %/AndroidManifest.xml -A android-assets -S android-resources -I %",
-    aapt, apk, cd, jar);
-    if system(aapt_cmd1.data) != 0 {
-        error("aapt cmd failed: { % }", aapt_cmd1);
-    }
+    run_cmd("copy % %\\android-assets", asset_dir, cd);
 
-    aapt_cmd2 := io.sprint("% add % lib/%/lib%.so", aapt, apk, arch3, lib_name);
-    if system(aapt_cmd2.data) != 0 {
-        error("aapt cmd failed: { % }", aapt_cmd2);
-    }
+    run_cmd("% package --debug-mode -v -f -F % -M %/../AndroidManifest.xml -A android-assets -S android-resources -I %",
+        aapt, apk, cd, jar);
+
+    run_cmd("% add % lib/%/lib%.so", aapt, apk, arch3, lib_name);
+    run_cmd("% add % %", aapt, apk, classes);
 
     tmp_apk := io.sprint("%/temp.apk", cd);
-    zip_cmd := io.sprint("% -v -f 4 % %", zipalign, apk, tmp_apk);
-    if system(zip_cmd.data) != 0 {
-        error("zipalign failed: { % }", zip_cmd);
-    }
 
-    del_cmd := io.sprint("del %", "pong.apk");
-    if system(del_cmd.data) != 0 {
-        error("del failed: { % }", del_cmd);
-    }
-
-    ren_cmd := io.sprint("ren % %", "temp.apk", "pong.apk");
-    if system(ren_cmd.data) != 0 {
-        error("ren failed: { % }", ren_cmd);
-    }
+    run_cmd("% -v -f 4 % %", zipalign, apk, tmp_apk);
+    run_cmd("del %", "pong.apk");
+    run_cmd("ren % %", "temp.apk", "pong.apk");
 
     key := "debug.keystore";
-    apksigner_cmd1 := io.sprint(
-    "% sign --ks % --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android -v %",
-    apksigner, key, apk);
-    apksigner_cmd2 := io.sprint( "% verify -v %", apksigner, apk);
-
-    if system(apksigner_cmd1.data) != 0 {
-        error("apksigner failed: { % }", apksigner_cmd1);
-    }
-
-    if system(apksigner_cmd2.data) != 0 {
-        error("apksigner failed: { % }", apksigner_cmd2);
-    }
+    run_cmd("% sign --ks % --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android -v %",
+        apksigner, key, apk);
+    run_cmd("% verify -v %", apksigner, apk);
 
     io.println("Done");
 }

@@ -1,0 +1,23 @@
+module log
+
+#import android as a
+#import io
+
+exit :: fn #foreign(code: i32);
+tag :: c"vpong";
+
+info :: fn(fmt: string, args: ...) {
+    str := io.vsprint(fmt, args);
+    a.log_write(.INFO, tag, str.data); 
+}
+
+warn :: fn(fmt: string, args: ...) {
+    str := io.vsprint(fmt, args);
+    a.log_write(.WARN, tag, str.data); 
+}
+
+fatal :: fn(fmt: string, args: ...) {
+    str := io.vsprint(fmt, args);
+    a.log_write(.FATAL, tag, str.data); 
+}
+

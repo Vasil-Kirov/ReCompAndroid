@@ -1,4 +1,4 @@
-backtrace
+module backtrace
 
 struct Context {};
 struct Word {};
@@ -50,7 +50,7 @@ dump :: fn(out: *u8, buffer: **, count: int) {
     out := out;
     at := 0;
     for i := 0; i < count; i += 1 {
-        info := DLInfo {};
+        info: DLInfo;
         if dladdr(buffer[i], &info) {
             if info.dli_sname {
                 out[at] = @u8 '\t';

@@ -1,0 +1,73 @@
+module gui
+
+#import vmath as *
+#import log
+
+struct Button {
+	using Widget,
+	text: string,
+	hovered: bool,
+	on_click: ?*fn(this: *Button),
+	user_data: ?*,
+}
+
+button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
+    if this.invisible return 0;
+
+	button := @*Button this;
+	match event.type {
+		EventType.GetSize_X: {
+			return @int button.size.x;
+		}
+		EventType.GetSize_Y: {
+			return @int button.size.y;
+		}
+		EventType.Resize: {
+			button.size = event.data.resize.size;
+			return 0;
+		}
+		EventType.Draw: {
+			pos := get_absolute_position (event.data.draw.offset, this.pos);
+			pos.y -= button.size.y;
+
+            margin :: v2 { 1., 1. };
+            shadow := darken(theme.primary);
+            border := pos - v2_scale(margin, 0.5);
+            border_size := button.size + margin;
+            
+            button_color := theme.primary;
+			if button.hovered button_color = highlight(button_color);
+
+            push_cmd(gui, cmd_drawbox(gui, .{border, border_size}, shadow));
+            push_cmd(gui, cmd_drawbox(gui, .{pos, button.size},    button_color));
+		}
+		EventType.MouseMove: {
+			mouse := event.data.mouse_move.mouse;
+			if is_point_in_rect(mouse, button.pos, button.size) {
+				button.hovered = true;
+			}
+			else {
+				button.hovered = false;
+			}
+		}
+		EventType.MouseClicked: {
+			if button.hovered && button.on_click {
+				button.on_click(button);
+			}
+		}
+	};
+
+	return default_event_handler(gui, this, event);
+}
+
+create_button :: fn(gui: *GuiState, text: string) -> *Button {
+	button := make_widget(gui, Button);
+	button.text = text;
+	button.size.x = 45;
+	button.size.y = 30;
+	button.handle_event = button_event_handler;
+	button.hovered = false;
+	
+	return button;
+}
+

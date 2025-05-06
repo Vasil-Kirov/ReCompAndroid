@@ -1,0 +1,136 @@
+module font;
+
+#import android as A
+#import log
+#import bstream as *
+#import draw as d
+
+struct Font {
+    texture: ?*d.Texture,
+    inited: bool,
+}
+
+FONT_SIZE :: 64;
+
+draw_text :: fn(r: *d.Renderer, font: *Font, text: string) {
+    if font.texture == null return;
+    pixels := (?font.texture).pixels;
+
+    atx := 100;
+    aty := 100;
+    for c in text {
+        if c >= 'a' && c <= 'z' c -= 32;
+        idx := cast(int, c - ' ');
+        yidx := (idx / 8);
+        xidx := (idx % 8);
+
+
+        d.copy_rect(r, r.backbuffer, font.texture,
+        .{atx, aty, FONT_SIZE, FONT_SIZE}, .{xidx*FONT_SIZE, yidx*FONT_SIZE, FONT_SIZE, FONT_SIZE});
+        atx += FONT_SIZE;
+    }
+}
+
+init_font :: fn(r: *d.Renderer, manager: *A.AssetManager) -> Font {
+    log.info("Loading font...");
+    asset := A.AssetManager_open(manager, c"Font.bmp", .BUFFER);
+    buf_ := A.Asset_getBuffer(asset);
+    if buf_ == null {
+        log.fatal("Failed to read Font.bmp");
+        log.exit(1);
+    }
+    buf := cast(*u8, ?buf_);
+    size := A.Asset_getLength64(asset);
+
+    reader := make_reader(buf, size);
+
+    header := bmp_read_header(&reader);
+
+    pixels := buf + header.pixel_offset;
+    pitch := ( (header.bpp * header.width + 31) / 32 ) * 4;
+
+    font_texture_ := d.allocate_texture(r, cast(int, header.width), cast(int, header.height));
+    if font_texture_ == null {
+        log.fatal("Failed to allocate font texture");
+        log.exit(1);
+    }
+
+    font_tex := ?font_texture_;
+
+    original_at := cast(*u8, pixels) + pitch * (header.height-1);
+    new_at := font_tex.pixels;
+
+    // BGR(A) to ARGB
+    for y in header.height {
+        for x in header.width {
+            if header.bpp == 24 {
+                pixel := original_at + (x * 3);
+                new_at[x] = cast(u32, *(pixel+0)) << 0  |
+                            cast(u32, *(pixel+1)) << 8  |
+                            cast(u32, *(pixel+2)) << 16 |
+                            0xFF << 24;
+
+            } else if header.bpp == 32 {
+                pixel := original_at + (x * 4);
+                new_at[x] = cast(u32, *(pixel+0)) << 0  |
+                            cast(u32, *(pixel+1)) << 8  |
+                            cast(u32, *(pixel+2)) << 16 |
+                            cast(u32, *(pixel+3)) << 24;
+            } else {
+                #assert false;
+            }
+        }
+        original_at -= pitch;
+        new_at += font_tex.width;
+    }
+
+    A.Asset_close(asset);
+
+    return .{
+        font_tex,
+        true
+    };
+}
+
+struct BMP_Header {
+    pixel_offset: u32,
+    width: u32,
+    height: u32,
+    bpp: u16,
+}
+
+bmp_read_header :: fn(r: *Reader) -> BMP_Header {
+    log.info("reader: % % %", r.start, r.at, r.end);
+    log.info("BMP: header");
+    id1 := readu8(r);
+    id2 := readu8(r);
+    log.info("BMP: id: % %", id1, id2);
+    #assert id1 == 'B';
+    #assert id2 == 'M';
+
+    skip_bytes(r, 8);
+
+    pixel_offset := readu32(r);
+    log.info("BMP: pixel_offset: %", pixel_offset);
+    
+    bmi_size := readu32(r);
+    #assert bmi_size == 40;
+    pixel_width := readu32(r);
+    pixel_height := readu32(r);
+    color_planes := readu16(r);
+    log.info("BMP: width: %, height: %", pixel_width, pixel_height);
+    #assert color_planes == 1;
+    bpp := readu16(r);
+    compression_method := readu32(r);
+    #assert compression_method == 0;
+
+
+    return .{
+        pixel_offset,
+        pixel_width,
+        pixel_height,
+        bpp,
+    };
+
+}
+

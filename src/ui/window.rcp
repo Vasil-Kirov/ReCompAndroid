@@ -1,0 +1,71 @@
+module gui
+
+#import vmath as *
+#import log
+
+struct Window {
+	using Widget,
+    titlebar_height: f32,
+}
+
+window_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
+    if this.invisible return 0;
+
+	window := @*Window this;
+	match event.type {
+		EventType.GetSize_X: {
+			return @int window.size.x;
+		}
+		EventType.GetSize_Y: {
+			return @int window.size.y;
+		}
+		EventType.Resize: {
+			window.size = event.data.resize.size;
+			#assert window.children.count <= 1;
+
+			// Child fills the window
+			child_event := event;
+            child_event.data.resize.size.y -= window.titlebar_height;
+			for child in window.children child.handle_event(gui, child, event);
+
+            return 0;
+		}
+		EventType.Draw: {
+            titlebar_size := v2 { window.size.x, clamp(10, 0, window.size.y) };
+            window.titlebar_height = titlebar_size.y;
+
+			pos := get_absolute_position (event.data.draw.offset, this.pos);
+			pos.y -= window.size.y + window.titlebar_height;
+
+            // body
+            push_cmd(gui, cmd_drawbox(gui, .{pos, window.size}, theme.bg_dark));
+
+            // title bar
+            push_cmd(gui, cmd_drawbox(gui, .{pos, titlebar_size}, theme.primary));
+		}
+	};
+
+	return default_event_handler(gui, this, event);
+}
+
+create_window :: fn(gui: *GuiState, pos: v2, size: v2) -> *Window {
+	MAX_WINDOW_CHILDREN :: 1;
+
+	window := make_widget(gui, Window);
+	window.pos = pos;
+	window.size = size;
+	window.children = alloc_children(gui, MAX_WINDOW_CHILDREN);
+	window.child_capacity = MAX_WINDOW_CHILDREN;
+	window.handle_event = window_event_handler;
+
+	return window;
+}
+
+window_do_resize :: fn(gui: *GuiState, this: *Window) {
+	event: Event;
+	event.type = EventType.Resize;
+	event.data.resize.size = this.size;
+	this.handle_event(gui, &this.base, event);
+}
+
+

@@ -1,81 +1,66 @@
-android
+module android;
+
+#import "jninativeinterface.rcp"
 
 
-struct Rect
-{
+/*
+
+                BASIC
+
+*/
+
+struct Rect {
     left: i32,
     top: i32,
     right: i32,
     bottom: i32,
-};
+}
 
-struct NativeWindow {};
-
-struct NativeWindow_Buffer {
-    width: i32,
-    height: i32,
-    stride: i32,
-    format: i32,
-    bits: *void,
-    reserved: [6]u32,
-};
-
-NativeWindow_lock :: fn #link="ANativeWindow_lock"(
-window: *NativeWindow,
-outBuffer: *NativeWindow_Buffer,
-inOutDirtyBounds: ?*Rect
-) -> i32;
-
-NativeWindow_unlockAndPost :: fn #link="ANativeWindow_unlockAndPost"(
-  window: *NativeWindow
-) -> i32;
 
 struct NativeActivityCallbacks
 {
-    onStart: fn(activity:* NativeActivity),
+    onStart: *fn(activity:* NativeActivity),
     
-    onResume: fn(activity:* NativeActivity),
+    onResume: *fn(activity:* NativeActivity),
     
-    onSaveInstanceState: fn(activity:* NativeActivity, outSize: *uint) -> *,
+    onSaveInstanceState: *fn(activity:* NativeActivity, outSize: *uint) -> *,
     
-    onPause: fn(activity:* NativeActivity),
+    onPause: *fn(activity:* NativeActivity),
     
-    onStop: fn(activity:* NativeActivity),
+    onStop: *fn(activity:* NativeActivity),
     
-    onDestroy: fn(activity:* NativeActivity),
+    onDestroy: *fn(activity:* NativeActivity),
     
-    onWindowFocusChanged: fn(activity:* NativeActivity, hasFocus: i32),
+    onWindowFocusChanged: *fn(activity:* NativeActivity, hasFocus: i32),
     
-    onNativeWindowCreated: fn(activity:* NativeActivity, window: *NativeWindow),
+    onNativeWindowCreated: *fn(activity:* NativeActivity, window: *NativeWindow),
     
-    onNativeWindowResized: fn(activity:* NativeActivity, window: *NativeWindow),
+    onNativeWindowResized: *fn(activity:* NativeActivity, window: *NativeWindow),
     
-    onNativeWindowRedrawNeeded: fn(activity:* NativeActivity, window: *NativeWindow),
+    onNativeWindowRedrawNeeded: *fn(activity:* NativeActivity, window: *NativeWindow),
     
-    onNativeWindowDestroyed: fn(activity:* NativeActivity, window: *NativeWindow),
+    onNativeWindowDestroyed: *fn(activity:* NativeActivity, window: *NativeWindow),
     
-    onInputQueueCreated: fn(activity:* NativeActivity, queue: *),
+    onInputQueueCreated: *fn(activity:* NativeActivity, queue: *InputQueue),
     
-    onInputQueueDestroyed: fn(activity:* NativeActivity, queue: *),
+    onInputQueueDestroyed: *fn(activity:* NativeActivity, queue: *InputQueue),
     
-    onContentRectChanged: fn(activity:* NativeActivity, rect: *Rect),
+    onContentRectChanged: *fn(activity:* NativeActivity, rect: *Rect),
     
-    onConfigurationChanged: fn(activity:* NativeActivity),
+    onConfigurationChanged: *fn(activity:* NativeActivity),
     
-    onLowMemory: fn(activity:* NativeActivity),
+    onLowMemory: *fn(activity:* NativeActivity),
 };
 
-struct AssetManager{};
-struct JavaVM{};
-struct JNIEnv{};
 struct jobject {};
+JavaVM :: *JNIInvokeInterface;
+JNIEnv :: *JNINativeInterface;
 
 struct NativeActivity {
-
     callbacks: *NativeActivityCallbacks,
     vm: *JavaVM,
     env: *JNIEnv,
-    activity: *jobject,
+    clazz: *jobject,
     internalDataPath: *u8,
     externalDataPath: *u8,
     sdkVersion: i32,
@@ -84,6 +69,11 @@ struct NativeActivity {
     obbPath: *u8,
 } 
 
+/*
+
+                LOGGING
+
+*/
 enum LogPriority: i32 {
     UNKNOWN,
     DEFAULT,
@@ -103,4 +93,176 @@ log_write :: fn #link="__android_log_write"(
 ) -> i32;
 
 log_print :: fn #foreign #link="__android_log_print"(prio: LogPriority, tag: *u8, fmt: *u8, args: ...) -> i32;
+
+/*
+
+                INPUT
+
+*/
+
+struct InputQueue {}
+struct InputEvent {}
+
+enum InputEventType : i32 {
+    /* Indicates that the input event is a key event. */
+    KEY = 1,
+    /* Indicates that the input event is a motion event. */
+    MOTION = 2
+};
+
+enum MotionEventAction : i32 {
+    /* Bit mask of the parts of the action code that are the action itself.
+     */
+    MASK = 0xff,
+    /* Bits in the action code that represent a pointer index, used with
+     * AMOTION_EVENT_ACTION_POINTER_DOWN and AMOTION_EVENT_ACTION_POINTER_UP.  Shifting
+     * down by AMOTION_EVENT_ACTION_POINTER_INDEX_SHIFT provides the actual pointer
+     * index where the data for the pointer going up or down can be found.
+     */
+    POINTER_INDEX_MASK  = 0xff00,
+    /* A pressed gesture has started, the motion contains the initial starting location.
+     */
+    DOWN = 0,
+    /* A pressed gesture has finished, the motion contains the final release location
+     * as well as any intermediate points since the last down or move event.
+     */
+    UP = 1,
+    /* A change has happened during a press gesture (between AMOTION_EVENT_ACTION_DOWN and
+     * AMOTION_EVENT_ACTION_UP).  The motion contains the most recent point, as well as
+     * any intermediate points since the last down or move event.
+     */
+    MOVE = 2,
+    /* The current gesture has been aborted.
+     * You will not receive any more points in it.  You should treat this as
+     * an up event, but not perform any action that you normally would.
+     */
+    CANCEL = 3,
+    /* A movement has happened outside of the normal bounds of the UI element.
+     * This does not provide a full gesture, but only the initial location of the movement/touch.
+     */
+    OUTSIDE = 4,
+    /* A non-primary pointer has gone down.
+     * The bits in AMOTION_EVENT_ACTION_POINTER_INDEX_MASK indicate which pointer changed.
+     */
+    POINTER_DOWN = 5,
+    /* A non-primary pointer has gone up.
+     * The bits in AMOTION_EVENT_ACTION_POINTER_INDEX_MASK indicate which pointer changed.
+     */
+    POINTER_UP = 6,
+    /* A change happened but the pointer is not down (unlike AMOTION_EVENT_ACTION_MOVE).
+     * The motion contains the most recent point, as well as any intermediate points since
+     * the last hover move event.
+     */
+    HOVER_MOVE = 7,
+    /* The motion event contains relative vertical and/or horizontal scroll offsets.
+     * Use getAxisValue to retrieve the information from AMOTION_EVENT_AXIS_VSCROLL
+     * and AMOTION_EVENT_AXIS_HSCROLL.
+     * The pointer may or may not be down when this event is dispatched.
+     * This action is always delivered to the winder under the pointer, which
+     * may not be the window currently touched.
+     */
+    SCROLL = 8,
+    /* The pointer is not down but has entered the boundaries of a window or view.
+     */
+    HOVER_ENTER = 9,
+    /* The pointer is not down but has exited the boundaries of a window or view.
+     */
+    HOVER_EXIT = 10,
+};
+
+InputQueue_getEvent :: fn(queue: *InputQueue, outEvent: **InputEvent) -> i32 #link="AInputQueue_getEvent";
+InputQueue_finishEvent :: fn(queue: *InputQueue, event: *InputEvent, handled: i32) #link="AInputQueue_finishEvent";
+InputEvent_getType :: fn(event: *InputEvent) -> InputEventType #link="AInputEvent_getType";
+MotionEvent_getAction :: fn(motion_event: *InputEvent) -> MotionEventAction #link="AMotionEvent_getAction";
+MotionEvent_getX :: fn(motion_event: *InputEvent, pointer_idx: int) -> f32 #link="AMotionEvent_getX";
+MotionEvent_getY :: fn(motion_event: *InputEvent, pointer_idx: int) -> f32 #link="AMotionEvent_getY";
+
+
+/*
+
+                ASSETS
+
+*/
+
+struct AssetManager{};
+struct Asset{};
+
+enum AssetMode: i32 {
+  UNKNOWN = 0,
+  RANDOM = 1,
+  STREAMING = 2,
+  BUFFER = 3
+}
+
+AssetManager_open :: fn (mgr: *AssetManager, filename: *u8, mode: AssetMode) -> *Asset #link="AAssetManager_open";
+Asset_close :: fn(asset: *Asset) #link="AAsset_close";
+Asset_getBuffer :: fn(asset: *Asset) -> ?* #link="AAsset_getBuffer";
+Asset_getLength64 :: fn(asset: *Asset) -> uint #link="AAsset_getLength64";
+
+
+
+/*
+
+                NATIVE WINDOW
+
+*/
+
+struct NativeWindow {}
+
+struct NativeWindow_Buffer {
+    width: i32,
+    height: i32,
+    stride: i32,
+    format: i32,
+    bits: ?*void,
+    reserved: [6]u32,
+}
+
+enum HardwareBuffer_Format: i32 {
+  R8G8B8A8_UNORM = 1,
+  R8G8B8X8_UNORM = 2,
+  R8G8B8_UNORM = 3,
+  R5G6B5_UNORM = 4,
+  R16G16B16A16_FLOAT = 0x16,
+  R10G10B10A2_UNORM = 0x2b,
+  BLOB = 0x21,
+  D16_UNORM = 0x30,
+  D24_UNORM = 0x31,
+  D24_UNORM_S8_UINT = 0x32,
+  D32_FLOAT = 0x33,
+  D32_FLOAT_S8_UINT = 0x34,
+  S8_UINT = 0x35,
+  Y8Cb8Cr8_420 = 0x23,
+  YCbCr_P010 = 0x36,
+  YCbCr_P210 = 0x3c,
+  R8_UNORM = 0x38,
+  R16_UINT = 0x39,
+  R16G16_UINT = 0x3a,
+  R10G10B10A10_UNORM = 0x3b
+}
+
+NativeWindow_lock :: fn #link="ANativeWindow_lock"(
+    window: *NativeWindow,
+    outBuffer: *NativeWindow_Buffer,
+    inOutDirtyBounds: ?*Rect
+) -> i32;
+
+NativeWindow_unlockAndPost :: fn #link="ANativeWindow_unlockAndPost"(
+    window: *NativeWindow
+) -> i32;
+
+NativeWindow_getWidth :: fn(
+  window: *NativeWindow
+) -> i32 #link="ANativeWindow_getWidth";
+
+NativeWindow_getHeight :: fn(
+  window: *NativeWindow
+) -> i32 #link="ANativeWindow_getHeight";
+
+NativeWindow_setBuffersGeometry :: fn(
+  window: *NativeWindow,
+  width: i32,
+  height: i32,
+  format: HardwareBuffer_Format
+) -> i32 #link="ANativeWindow_setBuffersGeometry";
 

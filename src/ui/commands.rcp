@@ -1,0 +1,40 @@
+module gui;
+
+#import mem
+#import log
+
+enum CommandType {
+    DrawBox
+}
+
+struct CommandDrawBox {
+    using Command,
+    color: v4,
+    box: Box,
+}
+
+struct Command {
+    type: CommandType,
+}
+
+push_cmd :: fn(gui: *GuiState, cmd: *Command) {
+    gui.commands[gui.command_idx] = cmd;
+    gui.command_idx += 1;
+}
+
+cmd_alloc :: fn(gui: *GuiState, T: type) -> *T {
+    ptr := mem.make_type(T, &gui.alloc);
+    if ptr == null {
+        log.fatal("Failed to allocate memory for command");
+        log.exit(1);
+    }
+    return ?ptr;
+}
+
+cmd_drawbox :: fn(gui: *GuiState, box: Box, color: v4) -> *Command {
+    command := cast(*CommandDrawBox, cmd_alloc(gui, CommandDrawBox));
+    command.box = box;
+    command.color = color;
+    return cast(*Command, command);
+}
+

@@ -1,0 +1,231 @@
+module gui
+
+#import log
+#import vmath as *
+#import mem as *
+
+PADDING :: 0.1;
+
+ORTHO_WIDTH		:: 640.0;
+ORTHO_HEIGHT	:: 360.0;
+AR :: 640.0 / 360.0;
+
+struct Box {
+    xy: v2,
+    size: v2,
+}
+
+struct Theme {
+    //element_color: v4,
+    //text_color: v4,
+    //border_color: v4,
+
+    primary        : v4,
+    secondary      : v4,
+    bg_light       : v4,
+    bg_dark        : v4,    
+    surface        : v4,
+    text_primary   : v4,
+    text_secondary : v4,
+    success        : v4,
+    warning        : v4,
+    error          : v4,
+
+    darken: f32,
+    highlight: f32,
+
+}
+
+normalize_rgba :: fn (rgba: v4) -> v4 {
+    return rgba / v4 {255.0, 255.0, 255.0, 255.0};
+}
+
+default_theme :: fn() -> Theme {
+    //purple :: v4 { 0.435, 0.114, 0.361, 1.0 };
+    //element_color := v4 { 0.15, 0.29, 0.45, 1.0 };
+    return Theme {
+       // border_color = v4 { 0.75, 0.75, 0.75, 1.0 },
+        darken = 0.8,
+        highlight = 1.2,
+
+        primary        = v4 { 0.243, 0.290, 0.537, 1.0 },  // #3E4A89
+        secondary      = v4 { 0.639, 0.812, 0.945, 1.0 },  // #A3CEF1
+        bg_light       = v4 { 0.976, 0.980, 0.988, 1.0 },  // #F9FAFC
+        bg_dark        = v4 { 0.118, 0.118, 0.180, 1.0 },  // #1E1E2E
+        surface        = v4 { 0.898, 0.913, 0.941, 1.0 },  // #E5E9F0
+        text_primary   = v4 { 0.067, 0.094, 0.153, 1.0 },  // #111827
+        text_secondary = v4 { 0.420, 0.447, 0.502, 1.0 },  // #6B7280
+        success        = v4 { 0.063, 0.725, 0.506, 1.0 },  // #10B981
+        warning        = v4 { 0.961, 0.620, 0.043, 1.0 },  // #F59E0B
+        error          = v4 { 0.937, 0.267, 0.267, 1.0 },  // #EF4444
+    };
+}
+
+theme := #run default_theme();
+
+struct GuiState {
+    commands: [1024]*Command,
+    command_idx: int,
+	alloc: Allocator,
+}
+
+enum EventType {
+	Draw,
+	Update,
+	Resize,
+	GetSize_X,
+	GetSize_Y,
+	MouseMove,
+	MouseClicked,
+}
+
+struct Event {
+	type: EventType,
+	data: union {
+		resize: struct {
+			size: v2,
+		},
+		draw: struct {
+			offset: v2,
+		},
+		mouse_move: struct {
+			mouse: v2,
+		},
+		mouse_clicked: struct {
+			button: int,
+		}
+	},
+}
+
+struct Widget {
+	pos: v2,
+	size: v2,
+	children: []*Widget,
+	child_capacity: int,
+	handle_event: *fn(gui: *GuiState, this: *Widget, event: Event) -> int,
+
+    invisible: bool,
+}
+
+scale_color :: fn(c: v4, scalar: f32) -> v4 #inline {
+    res := v4_scale(c, scalar);
+    res.w = c.w;
+    return res;
+}
+
+darken :: fn(color: v4) -> v4 #inline {
+    return scale_color(color, theme.darken);
+}
+
+highlight :: fn(color: v4) -> v4 #inline {
+    return scale_color(color, theme.highlight);
+}
+
+init_gui :: fn() -> GuiState {
+	arena := create_scratch(mb(1));
+
+	gui := GuiState {
+		alloc = arena,
+	};
+	return gui;
+}
+
+get_absolute_position :: fn(offset: v2, relative: v2) -> v2 {
+	return v2 {
+		x = offset.x + relative.x,
+		y = offset.y - relative.y,
+	};
+}
+
+default_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
+    if this.invisible return 0;
+
+	event := event;
+	if event.type == .GetSize_X return @int this.size.x;
+	if event.type == .GetSize_Y return @int this.size.y;
+	if event.type == .Resize {
+		this := this;
+		this.size = event.data.resize.size;
+	}
+	if event.type == .Draw {
+		offset_event: Event;
+		offset_event.type = .Draw;
+		offset_event.data.draw.offset = get_absolute_position(event.data.draw.offset, this.pos);
+		for it in this.children {
+			it.handle_event(gui, it, offset_event);
+		}
+		return 0;
+	}
+	if event.type == .MouseMove {
+		mouse := event.data.mouse_move.mouse;
+		event.data.mouse_move.mouse = mouse - this.pos;
+	}
+	for it in this.children {
+		it.handle_event(gui, it, event);
+	}
+	return 0;
+}
+
+make_widget :: fn(gui: *GuiState, t: type) -> *t {
+	gui := gui;
+
+	opt_result := make_type(t, &gui.alloc);
+	#assert opt_result;
+	result := ?opt_result;
+	set(result, 0, size_of Widget);
+	result.handle_event = default_event_handler;
+	return result;
+}
+
+alloc_children :: fn(gui: *GuiState, size: int) -> []*Widget {
+	gui := gui;
+
+	result := make_slice(*Widget, size, &gui.alloc);
+	result.count = 0;
+	return result;
+}
+
+add_child :: fn(parent: *Widget, child: *Widget) {
+	parent := parent;
+
+	#assert parent.child_capacity > parent.children.count;
+
+	parent.children[parent.children.count] = child;
+	parent.children.count += 1;
+}
+
+mouse_move :: fn(gui: *GuiState, top: *Widget, mouse: v2) {
+	event: Event;
+	event.type = EventType.MouseMove;
+	event.data.mouse_move.mouse = mouse;
+	top.handle_event(gui, top, event);
+}
+
+mouse_clicked :: fn(gui: *GuiState, top: *Widget) {
+	event: Event;
+	event.type = EventType.MouseClicked;
+	event.data.mouse_clicked.button = 0;
+	top.handle_event(gui, top, event);
+}
+
+draw_hierarchy :: fn(gui: *GuiState, top: *Widget) {
+	event: Event;
+	event.type = EventType.Draw;
+	event.data.draw.offset = v2 {};
+	event.data.draw.offset.y = ORTHO_HEIGHT;
+
+	top.handle_event(gui, top, event);
+}
+
+v2_to_ui :: fn(native: v2, screen_size: v2) -> v2 {
+    x := lerp(0, ORTHO_WIDTH, screen_size.x / native.x);
+    y := lerp(0, ORTHO_HEIGHT, screen_size.y / native.y);
+    return .{x, y};
+}
+
+v2_from_ui :: fn(ui: v2, screen_size: v2) -> v2 {
+    x := lerp(0, screen_size.x, ui.x / ORTHO_WIDTH);
+    y := lerp(0, screen_size.y, ui.y / ORTHO_HEIGHT);
+    return .{x, y};
+}
+

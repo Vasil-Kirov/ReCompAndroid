@@ -1,0 +1,41 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: yhGDLlK4yyVCUcRzkU7IKKPxygc=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA1-Digest: SZ1UBemGoKcItB4CfLPtEstry0s=
+
+Name: assets/Font.bmp
+SHA1-Digest: EJHovIMlN9obCuPOO/WoVdLE894=
+
+Name: classes.dex
+SHA1-Digest: +qnDE0pQfXKzfti/sFkFKZWmh9I=
+
+Name: lib/arm64-v8a/libmain.so
+SHA1-Digest: 50HyyYevTYey9QQllUo5sYH2Hfo=
+
+Name: res/mipmap-hdpi-v4/icon.png
+SHA1-Digest: sgTqR35QqUZ0WvApX05h/deE/7s=
+
+Name: res/mipmap-ldpi-v4/icon.png
+SHA1-Digest: o9vgjVBTOjxjex0YxvtVQJ4ssz0=
+
+Name: res/mipmap-mdpi-v4/icon.png
+SHA1-Digest: UuFR78pQbtEnX/BoV2XY/iJ4LLU=
+
+Name: res/mipmap-tvdpi-v4/icon.png
+SHA1-Digest: KfLpF1qhhs0esuYM80KlKs033RA=
+
+Name: res/mipmap-xhdpi-v4/icon.png
+SHA1-Digest: bCRtAIcHtFxquu1EjmCzdEwmUc8=
+
+Name: res/mipmap-xxhdpi-v4/icon.png
+SHA1-Digest: Sk/fWuFUZ+eHbbJBTRMg6GPrJRM=
+
+Name: res/mipmap-xxxhdpi-v4/icon.png
+SHA1-Digest: 8Gpin2IFvFZosOm9KGg5gTCkUp0=
+
+Name: resources.arsc
+SHA1-Digest: kW3KsIYEMcTCXNU9Yk9DOhij4Bg=
+

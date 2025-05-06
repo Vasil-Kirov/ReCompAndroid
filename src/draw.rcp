@@ -1,0 +1,108 @@
+module draw;
+
+#import mem
+#import log
+
+struct Rect {
+    x: int,
+    y: int,
+    width: int,
+    height: int,
+}
+
+struct Renderer {
+    alloc: *mem.Allocator,
+    backbuffer: ?*Texture,
+}
+
+struct Texture {
+    pixels: *u32,
+    width: int,
+    height: int,
+}
+
+tex_to_v2 :: fn(t: *Texture) -> v2 {
+    return .{cast(f32, t.width), cast(f32, t.height)};
+}
+
+v2_to_rect :: fn(xy: v2, size: v2) -> Rect {
+    return .{
+        x = cast(int, xy.x),
+        y = cast(int, xy.y),
+        width  = cast(int, size.x),
+        height = cast(int, size.y),
+    };
+}
+
+make_renderer :: fn(allocator: *mem.Allocator) -> Renderer {
+    return .{
+        allocator,
+        null,
+    };
+}
+
+allocate_texture :: fn(r: *Renderer, width: int, height: int) -> ?*Texture {
+    ptr := r.alloc.alloc(width * height * 4, r.alloc);
+    if ptr == null return null;
+    tex_ := mem.make_type(Texture, r.alloc);
+    if tex_ == null {
+        r.alloc.free(?ptr, r.alloc);
+        return null;
+    }
+
+    tex := ?tex_;
+
+    tex.pixels = ?ptr;
+    tex.width = width;
+    tex.height = height;
+    return tex;
+}
+
+free_texture :: fn(r: *Renderer, t: *Texture) {
+    r.alloc.free(t.pixels, r.alloc);
+    r.alloc.free(t, r.alloc);
+}
+
+v4_to_color :: fn(c: v4) -> u32 {
+    r := cast(u32, c.x * 255.0);
+    g := cast(u32, c.y * 255.0);
+    b := cast(u32, c.z * 255.0);
+    a := cast(u32, c.w * 255.0);
+    return a << 24 | r << 16 | g << 8 | b;
+}
+
+copy_rect :: fn(r: *Renderer, dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect) {
+    if dst_ == null return;
+    if src_ == null return;
+    dst := ?dst_;
+    src := ?src_;
+
+    #assert dst_rect.width  == src_rect.width  && "Resizing is not supported";
+    #assert dst_rect.height == src_rect.height && "Resizing is not supported";
+
+    dst_at := dst.pixels + dst_rect.x + (dst_rect.y * dst.width);
+    src_at := src.pixels + src_rect.x + (src_rect.y * src.width);
+    // @TODO: Clipping
+
+    for y in dst_rect.height {
+        for x in dst_rect.width {
+            dst_at[x] = src_at[x];
+        }
+        dst_at += dst.width;
+        src_at += src.width;
+    }
+}
+
+draw_color :: fn(r: *Renderer, dst_: ?*Texture, rect: Rect, color: u32) {
+    if dst_ == null return;
+    dst := ?dst_;
+
+    dst_at := dst.pixels + rect.x + (rect.y * dst.width);
+    for y in rect.height {
+        for x in rect.width {
+            dst_at[x] = color;
+        }
+        dst_at += dst.width;
+    }
+}
+

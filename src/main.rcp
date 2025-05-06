@@ -1,74 +1,166 @@
-main
+module main
 
+#import gui as *
+#import font as *
+#import log
 #import android as a
-#import init
+#import base
 #import pthread
 #import backtrace as bt
 #import io
 #import os
+#import "libc.rcp" as c
+#import draw
+#import mem
 
-signal :: fn #foreign(signum: i32, handler: fn(num: i32));
-__errno :: fn #foreign() -> *i32;
-
-thread_start :: fn(ptr: *) -> ?* {
-    init.entry();
-    return null;
+struct Engine {
+    frame: int,
+    queue: ?*
 }
 
-LogTag :: c"vpong";
+renderer_allocator: mem.Allocator;
+renderer: draw.Renderer;
 
-info :: fn(fmt: string, args: ...) {
-    str := io.vsprint(fmt, args);
-    a.log_write(a.LogPriority.INFO, LogTag, str.data); 
-}
-
-warn :: fn(fmt: string, args: ...) {
-    str := io.vsprint(fmt, args);
-    a.log_write(a.LogPriority.WARN, LogTag, str.data); 
-}
-
-fatal :: fn(fmt: string, args: ...) {
-    str := io.vsprint(fmt, args);
-    a.log_write(a.LogPriority.FATAL, LogTag, str.data); 
-}
+usleep :: fn(usec: uint) -> i32 #foreign;
+signal :: fn(signum: i32, handler: fn(num: i32)) #foreign;
+__errno :: fn() -> *i32 #foreign;
 
 exit :: fn #foreign(code: i32);
 
 handle_segfault :: fn(sig: i32) {
+    // @NOTE: not using log.fatal here since it needs to allocate memory
     stack := [128]* {};
     out := [512]u8 {};
     size := bt.capture(&stack[0], 128);
     bt.dump(&out[0], &stack[0], size);
-    a.log_write(a.LogPriority.ERROR, c"vpong", c"Stack Trace"); 
-    a.log_print(a.LogPriority.ERROR, c"vpong", c"%s", &out[0]);
+    if sig == 11 {
+        a.log_write(.ERROR, log.tag, c"Segmentation Fault (core dumped)"); 
+
+    } else if sig == 5 {
+        a.log_write(.ERROR, log.tag, c"Trap"); 
+
+    } else {
+        a.log_write(.ERROR, log.tag, c"Unknown Signal"); 
+    }
+    a.log_write(.ERROR, log.tag, c"Stack Trace"); 
+    a.log_print(.ERROR, log.tag, c"%s", &out[0]);
     exit(1);
+}
+
+get_engine :: fn(activity: *a.NativeActivity) -> *Engine {
+    return cast(*Engine, activity.instance);
 }
 
 opt_window: ?*a.NativeWindow;
 
 on_window_create :: fn(activity: *a.NativeActivity, window: *a.NativeWindow) {
+    width := a.NativeWindow_getWidth(window);
+    height := a.NativeWindow_getHeight(window);
+    res := a.NativeWindow_setBuffersGeometry(window, width, height, .R8G8B8A8_UNORM);
+    log.info("create set got: %", res);
+
     opt_window = window;
+    renderer.backbuffer = mem.make_type(draw.Texture, renderer.alloc);
+    if renderer.backbuffer {
+        (?renderer.backbuffer).width = width;
+        (?renderer.backbuffer).height = height;
+    }
+}
+
+on_window_resized :: fn(activity:* a.NativeActivity, window: *a.NativeWindow) {
+    if renderer.backbuffer {
+        renderer.alloc.free(?renderer.backbuffer, renderer.alloc);
+    }
+    
+    width := a.NativeWindow_getWidth(window);
+    height := a.NativeWindow_getHeight(window);
+    res := a.NativeWindow_setBuffersGeometry(window, width, height, .R8G8B8A8_UNORM);
+    log.info("resize set got: %", res);
+
+    opt_window = window;
+    renderer.backbuffer = mem.make_type(draw.Texture, renderer.alloc);
+    if renderer.backbuffer {
+        (?renderer.backbuffer).width = width;
+        (?renderer.backbuffer).height = height;
+    }
+}
+
+on_input_queue_created :: fn(activity: *a.NativeActivity, queue: *a.InputQueue) {
+    engine := get_engine(activity);
+    engine.queue = queue;
+}
+
+on_input_queue_destroyed :: fn(activity: *a.NativeActivity, queue: *a.InputQueue) {
+    engine := get_engine(activity);
+    engine.queue = null;
+}
+
+call_hello :: fn(activity: *a.NativeActivity) {
+    env: *a.JNIEnv;
+    res: i32; 
+    res = (*activity.vm).GetEnv(activity.vm, &env, a.JNI_VERSION_1_6);
+    if res != a.JNI_OK {
+        log.fatal("Failed to get JNI enviorment: %", res);
+        log.exit(1);
+    }
+
+    mainClass := (*env).GetObjectClass(env, activity.clazz);
+    if mainClass == null {
+        log.fatal("Failed to get main class??");
+        log.exit(1);
+    }
+
+    printMethod := (*env).GetMethodID(env, ?mainClass, c"printMessage", c"()V");
+    if printMethod == null {
+        log.fatal("Failed to get printMethod??");
+        log.exit(1);
+    }
+
+    (*env).CallVoidMethod(env, activity.clazz, ?printMethod);
 }
 
 ANativeActivity_onCreate :: fn #foreign(activity: *a.NativeActivity, saved_state: *, saved_state_size: int) {
+    a.log_write(.INFO, c"vpong", c"onCreate() start");
     // SIGSEGV
     signal(11, handle_segfault);
+    // SIGTRAP
+    signal(5, handle_segfault);
 
-    activity := activity;
-    activity.callbacks.onNativeWindowCreated = on_window_create;
+    call_hello(activity);
 
-    // CANNOT USE GLOBAL VARIABLES HERE THEY ARE NOT INITTED
     attributes: pthread.attr_t;
 
+    PTHREAD_DETACHED :: cast(i32, 0x1);
     pthread.attr_init(&attributes);
-    pthread.attr_setdetachstate(&attributes, 0x1); // PTHREAD_DETACHED DO NOT USE GLOBAL HERE
+    pthread.attr_setdetachstate(&attributes, PTHREAD_DETACHED);
     
+    // @NOTE: not using log.fatal here since it needs to allocate memory
+    mem_ := c.malloc(size_of Engine);
+    if !mem_ {
+        a.log_write(.FATAL, c"vpong", c"malloc() failed");
+        exit(1);
+    }
+
+    renderer_allocator = c.make_malloc_allocator(true);
+    renderer = draw.make_renderer(&renderer_allocator);
+
+    engine := cast(*Engine, ?mem_);
+    *engine = .{};
+    activity.instance = engine;
+
+    activity.callbacks.onNativeWindowCreated = on_window_create;
+    activity.callbacks.onInputQueueCreated = on_input_queue_created;
+    activity.callbacks.onInputQueueDestroyed = on_input_queue_destroyed;
+    activity.callbacks.onNativeWindowResized = on_window_resized;
 
     thread: int;
-    res := pthread.create(&thread, null, thread_start, null);
-    if(res != 0) {
-        a.log_write(a.LogPriority.FATAL, c"vpong", c"pthread_create() failed"); 
+    res := pthread.create(&thread, null, main, activity);
+    if res != 0 {
+        a.log_write(.FATAL, c"vpong", c"pthread_create() failed"); 
+        exit(1);
     }
+
+    a.log_write(.INFO, c"vpong", c"_onCreate() completed successfully");
 
     return;
 }
@@ -79,13 +171,39 @@ get_time_in_nanos :: fn() -> int {
     return ts.tv_sec * 1_000_000_000 + ts.tv_nsec;
 }
 
-sinf :: fn #foreign(x: f32) -> f32;
+sinf :: fn(x: f32) -> f32 #foreign;
 
 PI :: @f32 3.14159265358979323846264338327950288;
 
-redraw_window :: fn(time_ms: int) {
+handle_ui_events :: fn(UI: *GuiState) {
+    if renderer.backbuffer == null {
+        UI.command_idx = 0;
+        return;
+    }
+
+    backbuffer := ?renderer.backbuffer;
+
+    screen_size := draw.tex_to_v2(backbuffer);
+    for i in UI.command_idx {
+        command := UI.commands[i];
+        match command.type {
+            .DrawBox: {
+                drawbox := cast(*CommandDrawBox, command);
+                box := drawbox.box;
+                xy := v2_from_ui(box.xy, screen_size);
+                size := v2_from_ui(box.size, screen_size);
+                color := draw.v4_to_color(drawbox.color);
+                draw.draw_color(&renderer, backbuffer, draw.v2_to_rect(xy, size), color);
+            }
+        };
+    }
+
+    UI.command_idx = 0;
+}
+
+redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
     if opt_window == null {
-        warn("Still no window");
+        log.warn("Still no window");
         return;
     }
 
@@ -94,40 +212,162 @@ redraw_window :: fn(time_ms: int) {
     window := ?opt_window;
     buff := a.NativeWindow_Buffer {};
     if a.NativeWindow_lock(window, &buff, null) != 0 {
-
-        warn("Failed to lock window buffer");
+        log.warn("Failed to lock window buffer");
         return;
     }
 
-    pixels := @*u8 buff.bits;
-    for y := @i32 0; y < buff.height; y += 1 {
-        row := pixels + y * buff.stride * 4;
-        for x := @i32 0; x < buff.width; x += 1 {
-            pixel := row + (x * 4);
-            pixel[0] = @u8(t * 255.0);
-            pixel[1] = 128;//@u8(t * 255.0);
-            pixel[2] = 255;//@u8(t * 255.0);
-            pixel[3] = 0xff;
+    if buff.bits == null return;
+    if renderer.backbuffer == null return;
+    backbuffer := ?renderer.backbuffer;
+    backbuffer.width = buff.stride;
+    backbuffer.pixels = cast(*u32, ?buff.bits);
+
+    handle_ui_events(UI);
+
+    draw_text(&renderer, font, "hello world!");
+
+    at := backbuffer.pixels;
+    for y in backbuffer.height {
+        for x in backbuffer.width {
+            pixel := at[x];
+            a := (pixel >> 24) & 0xFF;
+            r := (pixel >> 16) & 0xFF;
+            g := (pixel >> 8)  & 0xFF;
+            b := (pixel >> 0)  & 0xFF;
+            at[x] = a << 24 | b << 16 | g << 8 | r;
+
         }
+        at += backbuffer.width;
     }
 
     a.NativeWindow_unlockAndPost(window);
 }
 
-main :: fn() -> i32 { 
+release_is_from_move: bool;
+main :: fn(state_: *) -> ?* { 
+    activity := cast(*a.NativeActivity, state_);
+
+    engine := get_engine(activity);
+
+    UI := init_gui();
+    window := create_window(&UI, .{20,20}, .{400, 200});
+    flexbox := create_flexbox(&UI, .Vertical, .Start, 1);
+    hello_btn := create_button(&UI, "Hello");
+    hello_btn.on_click = fn(this: *Button) {
+        log.info("Hello");
+    };
+    hello_btn2 := create_button(&UI, "Hello");
+    hello_btn3 := create_button(&UI, "Hello");
+    add_child(&window.base, &flexbox.base);
+    add_child(&flexbox.base, &hello_btn.base);
+    add_child(&flexbox.base, &hello_btn2.base);
+    add_child(&flexbox.base, &hello_btn3.base);
+    window_do_resize(&UI, window);
+
+    env: *a.JNIEnv;
+    vm := activity.vm;
+
+    /*
+    log.info("Attaching current thread...");
+    if (*vm).AttachCurrentThread(vm, &env, null) != 0 {
+        log.fatal("Failed to attach current thread!");
+        log.exit(1);
+    }
+
+
+    log.info("Trying to find class...");
+    class_ := find_class_with_class_loader(env, c"com/vasko/pong/TerminalPrinter", activity.clazz);
+    //(*env).FindClass(env, c"com/vasko/pong/TerminalPrinter");
+    if class_ == null {
+        log.fatal("Failed to find TerminalPrinter");
+        log.exit(1);
+    }
+    log.info("Found it!");
+    class := ?class_;
+
+    log.info("Trying to find method...");
+    method_ := (*env).GetStaticMethodID(env, class, c"printMessage", c"()V"); 
+    if method_ == null {
+        log.fatal("Failed to find printMessage");
+        log.exit(1);
+    }
+    method := ?method_;
+
+    log.info("Calling method...");
+    (*env).CallStaticVoidMethod(env, class, method);
+    */
+
+
+
+
+
+    font: Font;
 
     start_ms := get_time_in_nanos() / 1_000_000;
-    for true {
-        redraw_window(start_ms);
+    for {
+
+        if opt_window != null && font.inited == false {
+            font = init_font(&renderer, activity.assetManager);
+        }
+
+        if engine.queue {
+            q := ?engine.queue;
+            event: *a.InputEvent;
+            for a.InputQueue_getEvent(q, &event) >= 0 {
+                if renderer.backbuffer == null {
+                    a.InputQueue_finishEvent(q, event, 1);
+                    continue;
+                }
+                
+                if a.InputEvent_getType(event) == .MOTION {
+                    action := a.MotionEvent_getAction(event);
+                    x := a.MotionEvent_getX(event, 0);
+                    y := a.MotionEvent_getY(event, 0);
+                    backbuffer := ?renderer.backbuffer;
+                    screen_size := v2 {cast(f32, backbuffer.width), cast(f32, backbuffer.height)};
+                    ui_xy := v2_to_ui(.{x, y}, screen_size);
+
+                    match action {
+                        .MOVE: {
+                            release_is_from_move = true;
+                            
+                            mouse_move(&UI, &window.base, ui_xy);
+                        }
+                        .UP: {
+                            mouse_move(&UI, &window.base, ui_xy);
+                            if release_is_from_move {
+                                release_is_from_move = false; 
+                                yield;
+                            }
+
+                            mouse_clicked(&UI, &window.base);
+
+                        }
+                        .DOWN: {
+                            release_is_from_move = false;
+                        }
+                    };
+                }
+
+                a.InputQueue_finishEvent(q, event, 1);
+            }
+        } else {
+            log.warn("No queue: %", engine.queue);
+        }
+        draw_hierarchy(&UI, &window.base);
+        redraw_window(start_ms, &font, &UI);
 
         end_ms := get_time_in_nanos() / 1_000_000;
-        for end_ms - start_ms < 16 {
+        passed := end_ms - start_ms;
+        if passed < 16 {
+            usleep(cast(uint, (16 - passed) * 1000));
             end_ms = get_time_in_nanos() / 1_000_000;
         }
 
         start_ms = end_ms;
+        mem.reset_temp();
     }
 
-    return 0;
+    return null;
 }
 

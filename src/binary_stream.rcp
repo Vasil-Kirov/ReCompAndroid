@@ -1,0 +1,47 @@
+module bstream;
+
+
+struct Reader {
+    start: *u8,
+    at: *u8,
+    end: *u8,
+}
+
+make_reader :: fn(buf: *, size: uint) -> Reader {
+    return .{
+        start = buf,
+        at = buf,
+        end = cast(*u8, buf) + size,
+    };
+}
+
+is_reader_finished :: fn(r: *Reader) -> bool {
+    return r.end <= r.at;
+}
+
+skip_bytes :: fn(r: *Reader, bytes: int) {
+    r.at += bytes;
+}
+
+readu8 :: fn(r: *Reader) -> u8 {
+    if r.end <= r.at return 0;
+    res := *r.at;
+    r.at += 1;
+    return res;
+}
+
+readu16 :: fn(r: *Reader) -> u16 {
+    if r.end <= r.at+1 return 0;
+    res := *cast(*u16, r.at);
+    r.at += 2;
+    return res;
+}
+
+readu32 :: fn(r: *Reader) -> u32 {
+    if r.end <= r.at+3 return 0;
+    res := *cast(*u32, r.at);
+    r.at += 4;
+    return res;
+}
+
+

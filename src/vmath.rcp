@@ -1,0 +1,84 @@
+module vmath
+
+struct v3 {
+    x: f32,
+    y: f32,
+    z: f32,
+}
+
+struct m4 {
+	row1: [4]f32,
+	row2: [4]f32,
+	row3: [4]f32,
+	row4: [4]f32,
+}
+
+sin :: fn #link="sinf"(t: f32) -> f32;
+cos :: fn #link="cosf"(t: f32) -> f32;
+sqrt :: fn #link="sqrtf"(t: f32) -> f32;
+
+PI   :: 3.14159265358979323846;
+PI_2 :: 1.57079632679489661923;
+
+abs :: fn(v: $T) -> T #inline {
+    if v < 0 return -v;
+    return v;
+}
+
+v2_len :: fn(a: v2) -> f32 #inline {
+    return sqrt(a.x * a.x + a.y * a.y);
+}
+
+v2_dot :: fn(a: v2, b: v2) -> f32 #inline {
+    return a.x * b.x + a.y * b.y;
+}
+
+v2_angle :: fn(angle: f32) -> v2 #inline {
+    return v2 { cos(angle), sin(angle) };
+}
+
+v2_scale :: fn(v: v2, t: f32) -> v2 #inline {
+    scale := v2 { t, t };
+    return v * scale;
+}
+
+v3_add :: fn(l: v3, r: v3) -> v3 #inline {
+    return .{l.x+r.x, l.y+r.y, l.z+r.z};
+}
+
+v4_scale :: fn(v: v4, t: f32) -> v4 #inline {
+    scale := v4 { t, t, t, t };
+    return v * scale;
+}
+
+map :: fn (t: f32, from1: f32, to1: f32, from2: f32, to2: f32) -> f32 #inline {
+ return from2 + ((to2 - from2) / (to1 - from1)) * (t - from1);
+}
+
+lerp :: fn (a: f32, b: f32, t: f32) -> f32 #inline {
+	return a + (b - a) * t;
+}
+
+clamp :: fn (x: f32, min: f32, max: f32) -> f32 #inline {
+    return if x > max max else if x < min min else x;
+}
+
+ortho :: fn(left: f32, right: f32, bottom: f32, top: f32) -> m4 {
+	far :: 1.0;
+	near :: 0.0;
+	return m4 {
+		[4]f32 { 2/(right-left), 0,              0,             - ( (right + left)/(right - left) ) },
+		[4]f32 { 0,              2/(top-bottom), 0,             - ( (top + bottom)/(top - bottom) ) },
+		[4]f32 { 0,              0,              -2/(far-near), - ( (far + near)/(far - near) ) },
+		[4]f32 { 0,              0,              0, 1 },
+	};
+}
+
+is_point_in_rect :: fn(pos: v2, bottom_left: v2, size: v2) -> bool {
+	top_right := bottom_left + size;
+	if pos.x < bottom_left.x || pos.y < bottom_left.y return false;
+	if pos.x > top_right.x || pos.y > top_right.y return false;
+	return true;
+}
+
+
