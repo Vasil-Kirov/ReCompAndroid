@@ -126,7 +126,7 @@ ANativeActivity_onCreate :: fn #foreign(activity: *a.NativeActivity, saved_state
     // SIGTRAP
     signal(5, handle_segfault);
 
-    call_hello(activity);
+    //call_hello(activity);
 
     attributes: pthread.attr_t;
 
@@ -201,13 +201,11 @@ handle_ui_events :: fn(UI: *GuiState) {
     UI.command_idx = 0;
 }
 
-redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
+redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState, fps: int) {
     if opt_window == null {
         log.warn("Still no window");
         return;
     }
-
-    t := (sinf(@f32 time_ms * PI * 0.5)+1)/2;//(@f32(time_ms % 5000)) / 5000;
 
     window := ?opt_window;
     buff := a.NativeWindow_Buffer {};
@@ -216,15 +214,18 @@ redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
         return;
     }
 
-    if buff.bits == null return;
-    if renderer.backbuffer == null return;
+    if buff.bits == null || renderer.backbuffer == null {
+		a.NativeWindow_unlockAndPost(window);
+		return;
+	}
     backbuffer := ?renderer.backbuffer;
     backbuffer.width = buff.stride;
     backbuffer.pixels = cast(*u32, ?buff.bits);
 
     handle_ui_events(UI);
 
-    draw_text(&renderer, font, "hello world!");
+	txt := io.sprint("FPS: %", fps);
+    draw_text(&renderer, font, txt);
 
     at := backbuffer.pixels;
     for y in backbuffer.height {
@@ -267,7 +268,6 @@ main :: fn(state_: *) -> ?* {
     env: *a.JNIEnv;
     vm := activity.vm;
 
-    /*
     log.info("Attaching current thread...");
     if (*vm).AttachCurrentThread(vm, &env, null) != 0 {
         log.fatal("Failed to attach current thread!");
@@ -276,31 +276,27 @@ main :: fn(state_: *) -> ?* {
 
 
     log.info("Trying to find class...");
-    class_ := find_class_with_class_loader(env, c"com/vasko/pong/TerminalPrinter", activity.clazz);
-    //(*env).FindClass(env, c"com/vasko/pong/TerminalPrinter");
+    //class_ := find_class_with_class_loader(env, c"com/vasko/pong/TerminalPrinter", activity.clazz);
+    class_ := (*env).GetObjectClass(env, activity.clazz);
     if class_ == null {
-        log.fatal("Failed to find TerminalPrinter");
+        log.fatal("Failed to find object class");
         log.exit(1);
     }
     log.info("Found it!");
     class := ?class_;
 
     log.info("Trying to find method...");
-    method_ := (*env).GetStaticMethodID(env, class, c"printMessage", c"()V"); 
-    if method_ == null {
-        log.fatal("Failed to find printMessage");
-        log.exit(1);
+    method_ := (*env).GetMethodID(env, class, c"printMessage", c"()V"); 
+    if method_ != null {
+		method := ?method_;
+    	log.info("Calling method...");
+    	(*env).CallVoidMethod(env, activity.clazz, method);
     }
-    method := ?method_;
-
-    log.info("Calling method...");
-    (*env).CallStaticVoidMethod(env, class, method);
-    */
 
 
 
 
-
+	fps := 0.0;
     font: Font;
 
     start_ms := get_time_in_nanos() / 1_000_000;
@@ -355,7 +351,7 @@ main :: fn(state_: *) -> ?* {
             log.warn("No queue: %", engine.queue);
         }
         draw_hierarchy(&UI, &window.base);
-        redraw_window(start_ms, &font, &UI);
+        redraw_window(start_ms, &font, &UI, cast(int, fps));
 
         end_ms := get_time_in_nanos() / 1_000_000;
         passed := end_ms - start_ms;
@@ -363,6 +359,9 @@ main :: fn(state_: *) -> ?* {
             usleep(cast(uint, (16 - passed) * 1000));
             end_ms = get_time_in_nanos() / 1_000_000;
         }
+
+		passed = end_ms - start_ms;
+		fps = 1.0/(cast(f32, passed)/1000.0);
 
         start_ms = end_ms;
         mem.reset_temp();

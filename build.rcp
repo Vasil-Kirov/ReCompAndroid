@@ -8,7 +8,14 @@ module build
 #import os
 #import array as arr
 
-asset_dir :: "..\\assets";
+#if Windows
+{
+	asset_dir :: "..\\assets";
+}
+#else
+{
+	asset_dir :: "../assets";
+}
 
 puts :: fn #foreign(str: *u8);
 //files := []string { "main.rcp", "android.rcp", "jninativeinterface.rcp", "pthread.rcp", "backtrace.rcp" };
@@ -62,16 +69,8 @@ run_cmd :: fn(fmt: string, args: ...) {
 
 compile_java_file :: fn(build_tools: string, cd: string, class_name: string, android_jar: string) -> string {
     io.println("Compiling: %...", class_name);
-    javac := io.sprint("javac -source 11 -target 11 -d %0 -classpath %2 %0/../src/java/%1.java", cd, class_name, android_jar);
-    d8 := io.sprint("java -cp %/lib/d8.jar com.android.tools.r8.D8 %/com/vasko/pong/%.class --lib %", build_tools, cd, class_name, android_jar);
-
-    if system(javac.data) != 0 {
-        error("javac % failed", class_name);
-    }
-    
-    if system(d8.data) != 0 {
-        error("d8 % failed", class_name);
-    }
+    run_cmd("javac -source 11 -target 11 -d %0 -classpath %2 %0/../src/java/%1.java", cd, class_name, android_jar);
+    run_cmd("java -cp %/lib/d8.jar com.android.tools.r8.D8 %/com/vasko/pong/%.class --lib %", build_tools, cd, class_name, android_jar);
 
     io.println("Compilation Finished!");
     return "classes.dex";
@@ -84,16 +83,37 @@ after_link :: fn() {
     arch2 := "arm64-linux-android";
     arch3 := "arm64-v8a";
     arch4 := "arm64";
-    android_v := 30;
+	arch5 := "aarch64";
     app_name := "pong";
-    apk := io.sprint("%/%.apk", cd, app_name);
-    sdk := "E:/AndroidSDK";
-    ndk := io.sprint("%/ndk", sdk);
-    jdk := "E:/jdk-21.0.2";
-    build_tools := io.sprint("%/build-tools/%.0.3", sdk, android_v);
-    toolchain := io.sprint("%/toolchains/llvm/prebuilt/windows-x86_64", ndk);
-    jar := io.sprint("%/platforms/android-%/android.jar", sdk, android_v);
     lib_files := "-lm -lGLESv2 -lEGL -landroid -llog array.obj base.obj compile.obj io.obj libc.obj math.obj mem.obj os.obj str.obj nostdlib.obj internal.obj intrin.obj";
+    apk := io.sprint("%/%.apk", cd, app_name);
+
+	android_v: int;
+	sdk: string;
+	ndk: string;
+	jdk: string;
+	build_tools: string;
+	toolchain: string;
+	jar: string;
+
+#if Windows
+{
+    android_v = 30;
+    sdk = "E:/AndroidSDK";
+    ndk = io.sprint("%/ndk", sdk);
+    jdk = "E:/jdk-21.0.2";
+    build_tools = io.sprint("%/build-tools/%.0.3", sdk, android_v);
+    toolchain = io.sprint("%/toolchains/llvm/prebuilt/windows-x86_64", ndk);
+}
+#else
+{
+    android_v = 35;
+	sdk = "/home/vasko/Android/Sdk";
+	ndk = "/home/vasko/ndk";
+    build_tools = io.sprint("%/build-tools/%.0.1", sdk, android_v);
+    toolchain = io.sprint("%/toolchains/llvm/prebuilt/linux-x86_64", ndk);
+}
+    jar = io.sprint("%/platforms/android-%/android.jar", sdk, android_v);
 
     b := str.create_builder(&ga);
     for f in modules {
@@ -102,23 +122,41 @@ after_link :: fn() {
     }
     objs := str.from_builder(&b, &ga);
 
+#if Windows
+{
     java_home_cmd := io.sprint("set JAVA_HOME=%", jdk);
     if system(java_home_cmd.data) != 0 {
         error("java home cmd failed: { % }", java_home_cmd);
     }
+}
 
-    aapt := io.sprint("%/aapt.exe", build_tools);
-    zipalign := io.sprint("%/zipalign.exe", build_tools);
-    apksigner := io.sprint("%/apksigner.bat", build_tools);
+    aapt := io.sprint("%/aapt", build_tools);
+    zipalign := io.sprint("%/zipalign", build_tools);
+    apksigner := io.sprint("%/apksigner", build_tools);
     lib_name := "main";
     target_triple := io.sprint("%v8a-unknown-linux-androideabi%", arch4, android_v);
 
-    run_cmd("%/bin/clang.exe --target=% --sysroot=%/sysroot -shared -uANativeActivity_onCreate -o %/lib/%/lib%.so % %",
+#if Windows
+{
+    run_cmd("%/bin/clang --target=% --sysroot=%/sysroot -shared -uANativeActivity_onCreate -o %/lib/%/lib%.so % %",
         toolchain, target_triple, toolchain, cd, arch3, lib_name, lib_files, objs);
+}
+#else
+{
+	run_cmd("%/bin/%-linux-android%-clang --sysroot=%/sysroot -shared -uANativeActivity_onCreate -o %/lib/%/lib%.so % %",
+		toolchain, arch5, android_v, toolchain, cd, arch3, lib_name, lib_files, objs);
+}
 
     classes := compile_java_file(build_tools, cd, "MainActivity", jar);
 
+#if Windows
+{
     run_cmd("copy % %\\android-assets", asset_dir, cd);
+}
+#else
+{
+    run_cmd("cp -r % %/android-assets", asset_dir, cd);
+}
 
     run_cmd("% package --debug-mode -v -f -F % -M %/../AndroidManifest.xml -A android-assets -S android-resources -I %",
         aapt, apk, cd, jar);
@@ -129,8 +167,16 @@ after_link :: fn() {
     tmp_apk := io.sprint("%/temp.apk", cd);
 
     run_cmd("% -v -f 4 % %", zipalign, apk, tmp_apk);
+#if Windows
+{
     run_cmd("del %", "pong.apk");
     run_cmd("ren % %", "temp.apk", "pong.apk");
+}
+#else
+{
+    run_cmd("rm %", "pong.apk");
+    run_cmd("mv % %", "temp.apk", "pong.apk");
+}
 
     key := "debug.keystore";
     run_cmd("% sign --ks % --ks-key-alias androiddebugkey --ks-pass pass:android --key-pass pass:android -v %",
