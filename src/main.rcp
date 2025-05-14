@@ -183,6 +183,7 @@ handle_ui_events :: fn(UI: *GuiState) {
 
     backbuffer := ?renderer.backbuffer;
 
+
     screen_size := draw.tex_to_v2(backbuffer);
     for i in UI.command_idx {
         command := UI.commands[i];
@@ -191,8 +192,10 @@ handle_ui_events :: fn(UI: *GuiState) {
                 drawbox := cast(*CommandDrawBox, command);
                 box := drawbox.box;
                 xy := v2_from_ui(box.xy, screen_size);
-                size := v2_from_ui(box.size, screen_size);
+                size := size_from_ui(box.size, screen_size);
                 color := draw.v4_to_color(drawbox.color);
+				xy.y -= size.y;
+
                 draw.draw_color(&renderer, backbuffer, draw.v2_to_rect(xy, size), color);
             }
         };
@@ -201,7 +204,7 @@ handle_ui_events :: fn(UI: *GuiState) {
     UI.command_idx = 0;
 }
 
-redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState, fps: int) {
+redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState, fps: int, draw_swipe: v2) {
     if opt_window == null {
         log.warn("Still no window");
         return;
@@ -224,8 +227,10 @@ redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState, fps: int) {
 
     handle_ui_events(UI);
 
-	txt := io.sprint("FPS: %", fps);
-    draw_text(&renderer, font, txt);
+	if draw_swipe.x != 0 || draw_swipe.y != 0 {
+		txt := io.sprint("X: %\nY: %", draw_swipe.x, draw_swipe.y);
+		draw_text(&renderer, font, txt);
+	}
 
     at := backbuffer.pixels;
     for y in backbuffer.height {
@@ -251,8 +256,8 @@ main :: fn(state_: *) -> ?* {
     engine := get_engine(activity);
 
     UI := init_gui();
-    window := create_window(&UI, .{20,20}, .{400, 200});
-    flexbox := create_flexbox(&UI, .Vertical, .Start, 1);
+    window := create_window(&UI, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
+    flexbox := create_flexbox(&UI, .Vertical, .End, 1);
     hello_btn := create_button(&UI, "Hello");
     hello_btn.on_click = fn(this: *Button) {
         log.info("Hello");
@@ -264,6 +269,8 @@ main :: fn(state_: *) -> ?* {
     add_child(&flexbox.base, &hello_btn2.base);
     add_child(&flexbox.base, &hello_btn3.base);
     window_do_resize(&UI, window);
+
+	print_gui(&window.base, 0);
 
     env: *a.JNIEnv;
     vm := activity.vm;
@@ -294,8 +301,6 @@ main :: fn(state_: *) -> ?* {
     }
 
 
-
-
 	fps := 0.0;
     font: Font;
 
@@ -305,6 +310,8 @@ main :: fn(state_: *) -> ?* {
         if opt_window != null && font.inited == false {
             font = init_font(&renderer, activity.assetManager);
         }
+
+		draw_swipe := v2 {};
 
         if engine.queue {
             q := ?engine.queue;
@@ -326,6 +333,7 @@ main :: fn(state_: *) -> ?* {
                     match action {
                         .MOVE: {
                             release_is_from_move = true;
+							draw_swipe = ui_xy;
                             
                             mouse_move(&UI, &window.base, ui_xy);
                         }
@@ -351,7 +359,7 @@ main :: fn(state_: *) -> ?* {
             log.warn("No queue: %", engine.queue);
         }
         draw_hierarchy(&UI, &window.base);
-        redraw_window(start_ms, &font, &UI, cast(int, fps));
+        redraw_window(start_ms, &font, &UI, cast(int, fps), draw_swipe);
 
         end_ms := get_time_in_nanos() / 1_000_000;
         passed := end_ms - start_ms;

@@ -18,7 +18,13 @@ draw_text :: fn(r: *d.Renderer, font: *Font, text: string) {
 
     atx := 100;
     aty := 100;
+	startx := atx;
     for c in text {
+		if c == '\n' {
+			atx = startx;
+			aty += FONT_SIZE;
+			continue;
+		}
         if c >= 'a' && c <= 'z' c -= 32;
         idx := cast(int, c - ' ');
         yidx := (idx / 8);

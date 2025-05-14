@@ -21,12 +21,14 @@ window_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 		}
 		EventType.Resize: {
 			window.size = event.data.resize.size;
+            titlebar_size := v2 { window.size.x, clamp(10, 0, window.size.y) };
+			window.titlebar_height = titlebar_size.y;
 			#assert window.children.count <= 1;
 
 			// Child fills the window
 			child_event := event;
             child_event.data.resize.size.y -= window.titlebar_height;
-			for child in window.children child.handle_event(gui, child, event);
+			for child in window.children child.handle_event(gui, child, child_event);
 
             return 0;
 		}
@@ -35,13 +37,14 @@ window_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
             window.titlebar_height = titlebar_size.y;
 
 			pos := get_absolute_position (event.data.draw.offset, this.pos);
-			pos.y -= window.size.y + window.titlebar_height;
+			pos.y -= window.size.y;
+			titlebar_pos := pos + .{0, window.size.y-window.titlebar_height};
 
             // body
-            push_cmd(gui, cmd_drawbox(gui, .{pos, window.size}, theme.bg_dark));
+            push_cmd(gui, cmd_drawbox(gui, .{pos, window.size - .{0, titlebar_size.y}}, theme.bg_dark));
 
             // title bar
-            push_cmd(gui, cmd_drawbox(gui, .{pos, titlebar_size}, theme.primary));
+            push_cmd(gui, cmd_drawbox(gui, .{titlebar_pos, titlebar_size}, theme.primary));
 		}
 	};
 

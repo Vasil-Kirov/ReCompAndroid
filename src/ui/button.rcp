@@ -29,6 +29,7 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 		EventType.Draw: {
 			pos := get_absolute_position (event.data.draw.offset, this.pos);
 			pos.y -= button.size.y;
+			log.info("pos: %, abs: %", this.pos, pos);
 
             margin :: v2 { 1., 1. };
             shadow := darken(theme.primary);
@@ -63,8 +64,8 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 create_button :: fn(gui: *GuiState, text: string) -> *Button {
 	button := make_widget(gui, Button);
 	button.text = text;
-	button.size.x = 45;
-	button.size.y = 30;
+	button.size.x = 120;
+	button.size.y = 20;
 	button.handle_event = button_event_handler;
 	button.hovered = false;
 	

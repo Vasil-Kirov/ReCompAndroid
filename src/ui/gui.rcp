@@ -217,15 +217,34 @@ draw_hierarchy :: fn(gui: *GuiState, top: *Widget) {
 	top.handle_event(gui, top, event);
 }
 
+size_from_ui :: fn(size: v2, native_screen: v2) ->  v2 {
+    x := lerp(0, native_screen.x, size.x / ORTHO_WIDTH);
+    y := lerp(0, native_screen.y, size.y / ORTHO_HEIGHT);
+	return .{x, y};
+}
+
 v2_to_ui :: fn(native: v2, screen_size: v2) -> v2 {
-    x := lerp(0, ORTHO_WIDTH, screen_size.x / native.x);
-    y := lerp(0, ORTHO_HEIGHT, screen_size.y / native.y);
-    return .{x, y};
+    x := lerp(0, ORTHO_WIDTH,  native.x / screen_size.x);
+    y := lerp(0, ORTHO_HEIGHT, native.y / screen_size.y);
+    return .{x, ORTHO_HEIGHT - y};
 }
 
 v2_from_ui :: fn(ui: v2, screen_size: v2) -> v2 {
     x := lerp(0, screen_size.x, ui.x / ORTHO_WIDTH);
     y := lerp(0, screen_size.y, ui.y / ORTHO_HEIGHT);
-    return .{x, y};
+    return .{x, screen_size.y-y};
 }
+
+print_gui :: fn(base: *Widget, level: int) {
+	tabs: [64]u8;
+	for i in level {
+		tabs[i] = '\t';
+	}
+
+	log.info("%s Widget -> xy: %, size %", &tabs[0], base.pos, base.size);
+	for child in base.children {
+		print_gui(child, level+1);
+	}
+}
+
 
