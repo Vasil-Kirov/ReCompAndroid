@@ -28,8 +28,7 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 		}
 		EventType.Draw: {
 			pos := get_absolute_position (event.data.draw.offset, this.pos);
-			pos.y -= button.size.y;
-			log.info("pos: %, abs: %", this.pos, pos);
+			//pos.y -= button.size.y;
 
             margin :: v2 { 1., 1. };
             shadow := darken(theme.primary);
@@ -41,6 +40,7 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
             push_cmd(gui, cmd_drawbox(gui, .{border, border_size}, shadow));
             push_cmd(gui, cmd_drawbox(gui, .{pos, button.size},    button_color));
+            push_cmd(gui, cmd_drawtext(gui, button.text, pos, 0.5));
 		}
 		EventType.MouseMove: {
 			mouse := event.data.mouse_move.mouse;

@@ -10,12 +10,14 @@
     
     <uses-permission android:name="android.permission.SET_DEBUG_APP"/>
     
-    <!-- Tactile feedback vibration -->
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    
-    <!-- General networking -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<!-- Tactile feedback vibration -->
+	<!-- <uses-permission android:name="android.permission.VIBRATE"/> -->
+
+	<!-- General networking -->
+	<!-- <uses-permission android:name="android.permission.INTERNET"/> -->
+	<!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
+
+	<uses-permission android:name="android.permission.BLUETOOTH" />
     
     <application
     android:label="Pong"

@@ -4,13 +4,21 @@ module gui;
 #import log
 
 enum CommandType {
-    DrawBox
+    DrawBox,
+    DrawText,
 }
 
 struct CommandDrawBox {
     using Command,
     color: v4,
     box: Box,
+}
+
+struct CommandDrawText {
+    using Command,
+    text: string,
+    at: v2,
+    scale: f32,
 }
 
 struct Command {
@@ -32,9 +40,20 @@ cmd_alloc :: fn(gui: *GuiState, T: type) -> *T {
 }
 
 cmd_drawbox :: fn(gui: *GuiState, box: Box, color: v4) -> *Command {
-    command := cast(*CommandDrawBox, cmd_alloc(gui, CommandDrawBox));
+    command := cmd_alloc(gui, CommandDrawBox);
+    command.type = .DrawBox;
     command.box = box;
     command.color = color;
     return cast(*Command, command);
+}
+
+cmd_drawtext :: fn(gui: *GuiState, text: string, at: v2, scale: f32) -> *Command {
+    command := cmd_alloc(gui, CommandDrawText);
+    command.type = .DrawText;
+    command.text = text;
+    command.at = at;
+    command.scale = scale;
+    return cast(*Command, command);
+
 }
 

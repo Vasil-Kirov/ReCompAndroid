@@ -15,6 +15,14 @@ public class MainActivity extends NativeActivity
 	{
 		Log.println(Log.INFO, "vpong", "Hellooooo from java");
 	}
+
+	public int getBluetoothStatus()
+	{
+		BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+		if (mBluetoothAdapter == null) return 0; // not bluetooth support
+		if (!mBluetoothAdapter.isEnabled()) return 1; // not enabled
+		return 2; // enabled
+	}
 }
 
 // <meta-data android:name="android.app.lib_name" android:value="main" />

@@ -19,7 +19,6 @@ struct Engine {
 }
 
 renderer_allocator: mem.Allocator;
-renderer: draw.Renderer;
 
 usleep :: fn(usec: uint) -> i32 #foreign;
 signal :: fn(signum: i32, handler: fn(num: i32)) #foreign;
@@ -57,32 +56,30 @@ on_window_create :: fn(activity: *a.NativeActivity, window: *a.NativeWindow) {
     width := a.NativeWindow_getWidth(window);
     height := a.NativeWindow_getHeight(window);
     res := a.NativeWindow_setBuffersGeometry(window, width, height, .R8G8B8A8_UNORM);
-    log.info("create set got: %", res);
 
     opt_window = window;
-    renderer.backbuffer = mem.make_type(draw.Texture, renderer.alloc);
-    if renderer.backbuffer {
-        (?renderer.backbuffer).width = width;
-        (?renderer.backbuffer).height = height;
+
+    if draw.renderer.backbuffer != null {
+        draw.free_texture(?draw.renderer.backbuffer);
     }
+    draw.renderer.backbuffer = draw.allocate_texture(width, height);
 }
 
 on_window_resized :: fn(activity:* a.NativeActivity, window: *a.NativeWindow) {
-    if renderer.backbuffer {
-        renderer.alloc.free(?renderer.backbuffer, renderer.alloc);
-    }
-    
     width := a.NativeWindow_getWidth(window);
     height := a.NativeWindow_getHeight(window);
     res := a.NativeWindow_setBuffersGeometry(window, width, height, .R8G8B8A8_UNORM);
-    log.info("resize set got: %", res);
 
     opt_window = window;
-    renderer.backbuffer = mem.make_type(draw.Texture, renderer.alloc);
-    if renderer.backbuffer {
-        (?renderer.backbuffer).width = width;
-        (?renderer.backbuffer).height = height;
+    if draw.renderer.backbuffer != null {
+        draw.free_texture(?draw.renderer.backbuffer);
     }
+    draw.renderer.backbuffer = draw.allocate_texture(width, height);
+}
+
+on_window_destroyed :: fn(activity: *a.NativeActivity, window: *a.NativeWindow) {
+    #assert window == opt_window;
+    opt_window = null;
 }
 
 on_input_queue_created :: fn(activity: *a.NativeActivity, queue: *a.InputQueue) {
@@ -142,7 +139,7 @@ ANativeActivity_onCreate :: fn #foreign(activity: *a.NativeActivity, saved_state
     }
 
     renderer_allocator = c.make_malloc_allocator(true);
-    renderer = draw.make_renderer(&renderer_allocator);
+    draw.renderer = draw.make_renderer(&renderer_allocator);
 
     engine := cast(*Engine, ?mem_);
     *engine = .{};
@@ -152,6 +149,7 @@ ANativeActivity_onCreate :: fn #foreign(activity: *a.NativeActivity, saved_state
     activity.callbacks.onInputQueueCreated = on_input_queue_created;
     activity.callbacks.onInputQueueDestroyed = on_input_queue_destroyed;
     activity.callbacks.onNativeWindowResized = on_window_resized;
+    activity.callbacks.onNativeWindowDestroyed = on_window_destroyed;
 
     thread: int;
     res := pthread.create(&thread, null, main, activity);
@@ -175,13 +173,13 @@ sinf :: fn(x: f32) -> f32 #foreign;
 
 PI :: @f32 3.14159265358979323846264338327950288;
 
-handle_ui_events :: fn(UI: *GuiState) {
-    if renderer.backbuffer == null {
+handle_ui_events :: fn(UI: *GuiState, font: *Font) {
+    if draw.renderer.backbuffer == null {
         UI.command_idx = 0;
         return;
     }
 
-    backbuffer := ?renderer.backbuffer;
+    backbuffer := ?draw.renderer.backbuffer;
 
 
     screen_size := draw.tex_to_v2(backbuffer);
@@ -194,9 +192,16 @@ handle_ui_events :: fn(UI: *GuiState) {
                 xy := v2_from_ui(box.xy, screen_size);
                 size := size_from_ui(box.size, screen_size);
                 color := draw.v4_to_color(drawbox.color);
-				xy.y -= size.y;
 
-                draw.draw_color(&renderer, backbuffer, draw.v2_to_rect(xy, size), color);
+				//xy.y -= size.y;
+
+                draw.draw_color(backbuffer, draw.v2_to_rect(xy, size), color);
+            }
+            .DrawText: {
+                draw := cast(*CommandDrawText, command);
+                xy := v2_from_ui(draw.at, screen_size);
+                xyi := iv2 { cast(i32, xy.x), cast(i32, xy.y) };
+                draw_text(font, draw.text, backbuffer, xyi, draw.scale);
             }
         };
     }
@@ -204,33 +209,8 @@ handle_ui_events :: fn(UI: *GuiState) {
     UI.command_idx = 0;
 }
 
-redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState, fps: int, draw_swipe: v2) {
-    if opt_window == null {
-        log.warn("Still no window");
-        return;
-    }
-
-    window := ?opt_window;
-    buff := a.NativeWindow_Buffer {};
-    if a.NativeWindow_lock(window, &buff, null) != 0 {
-        log.warn("Failed to lock window buffer");
-        return;
-    }
-
-    if buff.bits == null || renderer.backbuffer == null {
-		a.NativeWindow_unlockAndPost(window);
-		return;
-	}
-    backbuffer := ?renderer.backbuffer;
-    backbuffer.width = buff.stride;
-    backbuffer.pixels = cast(*u32, ?buff.bits);
-
-    handle_ui_events(UI);
-
-	if draw_swipe.x != 0 || draw_swipe.y != 0 {
-		txt := io.sprint("X: %\nY: %", draw_swipe.x, draw_swipe.y);
-		draw_text(&renderer, font, txt);
-	}
+redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
+    backbuffer := ?draw.renderer.backbuffer;
 
     at := backbuffer.pixels;
     for y in backbuffer.height {
@@ -246,7 +226,37 @@ redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState, fps: int, draw_swi
         at += backbuffer.width;
     }
 
-    a.NativeWindow_unlockAndPost(window);
+    buff := a.NativeWindow_Buffer {};
+    if opt_window == null return;
+    if a.NativeWindow_lock(?opt_window, &buff, null) != 0 {
+        log.warn("Failed to lock window buffer");
+        return;
+    }
+
+    if buff.bits == null || draw.renderer.backbuffer == null {
+        if opt_window {
+            a.NativeWindow_unlockAndPost(?opt_window);
+        }
+		return;
+	}
+
+    at = backbuffer.pixels;
+    dst_at := cast(*u32, ?buff.bits);
+    for y in backbuffer.height {
+        for x in backbuffer.width {
+            if opt_window == null break;
+
+            dst_at[x] = at[x];
+        }
+        if opt_window == null break;
+
+        at += backbuffer.width;
+        dst_at += buff.stride;
+    }
+    if opt_window {
+        a.NativeWindow_unlockAndPost(?opt_window);
+    }
+
 }
 
 release_is_from_move: bool;
@@ -293,7 +303,7 @@ main :: fn(state_: *) -> ?* {
     class := ?class_;
 
     log.info("Trying to find method...");
-    method_ := (*env).GetMethodID(env, class, c"printMessage", c"()V"); 
+    ma_getBluetoothStatus := (*env).GetMethodID(env, class, c"getBluetoothStatus", c"()V"); 
     if method_ != null {
 		method := ?method_;
     	log.info("Calling method...");
@@ -308,7 +318,7 @@ main :: fn(state_: *) -> ?* {
     for {
 
         if opt_window != null && font.inited == false {
-            font = init_font(&renderer, activity.assetManager);
+            font = init_font(&draw.renderer, activity.assetManager);
         }
 
 		draw_swipe := v2 {};
@@ -317,7 +327,7 @@ main :: fn(state_: *) -> ?* {
             q := ?engine.queue;
             event: *a.InputEvent;
             for a.InputQueue_getEvent(q, &event) >= 0 {
-                if renderer.backbuffer == null {
+                if draw.renderer.backbuffer == null {
                     a.InputQueue_finishEvent(q, event, 1);
                     continue;
                 }
@@ -326,8 +336,7 @@ main :: fn(state_: *) -> ?* {
                     action := a.MotionEvent_getAction(event);
                     x := a.MotionEvent_getX(event, 0);
                     y := a.MotionEvent_getY(event, 0);
-                    backbuffer := ?renderer.backbuffer;
-                    screen_size := v2 {cast(f32, backbuffer.width), cast(f32, backbuffer.height)};
+                    screen_size := draw.get_screen_size();
                     ui_xy := v2_to_ui(.{x, y}, screen_size);
 
                     match action {
@@ -355,11 +364,14 @@ main :: fn(state_: *) -> ?* {
 
                 a.InputQueue_finishEvent(q, event, 1);
             }
-        } else {
-            log.warn("No queue: %", engine.queue);
+        }
+
+        if draw.renderer.backbuffer == null {
+            continue;
         }
         draw_hierarchy(&UI, &window.base);
-        redraw_window(start_ms, &font, &UI, cast(int, fps), draw_swipe);
+        handle_ui_events(&UI, &font);
+        redraw_window(start_ms, &font, &UI);
 
         end_ms := get_time_in_nanos() / 1_000_000;
         passed := end_ms - start_ms;

@@ -133,7 +133,7 @@ init_gui :: fn() -> GuiState {
 get_absolute_position :: fn(offset: v2, relative: v2) -> v2 {
 	return v2 {
 		x = offset.x + relative.x,
-		y = offset.y - relative.y,
+		y = offset.y + relative.y,
 	};
 }
 
@@ -212,7 +212,7 @@ draw_hierarchy :: fn(gui: *GuiState, top: *Widget) {
 	event: Event;
 	event.type = EventType.Draw;
 	event.data.draw.offset = v2 {};
-	event.data.draw.offset.y = ORTHO_HEIGHT;
+	//event.data.draw.offset.y = ORTHO_HEIGHT;
 
 	top.handle_event(gui, top, event);
 }
@@ -226,13 +226,13 @@ size_from_ui :: fn(size: v2, native_screen: v2) ->  v2 {
 v2_to_ui :: fn(native: v2, screen_size: v2) -> v2 {
     x := lerp(0, ORTHO_WIDTH,  native.x / screen_size.x);
     y := lerp(0, ORTHO_HEIGHT, native.y / screen_size.y);
-    return .{x, ORTHO_HEIGHT - y};
+    return .{x, y};
 }
 
 v2_from_ui :: fn(ui: v2, screen_size: v2) -> v2 {
     x := lerp(0, screen_size.x, ui.x / ORTHO_WIDTH);
     y := lerp(0, screen_size.y, ui.y / ORTHO_HEIGHT);
-    return .{x, screen_size.y-y};
+    return .{x, y};
 }
 
 print_gui :: fn(base: *Widget, level: int) {

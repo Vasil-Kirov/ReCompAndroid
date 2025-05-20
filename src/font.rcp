@@ -12,17 +12,20 @@ struct Font {
 
 FONT_SIZE :: 64;
 
-draw_text :: fn(r: *d.Renderer, font: *Font, text: string) {
+draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32) {
     if font.texture == null return;
     pixels := (?font.texture).pixels;
 
-    atx := 100;
-    aty := 100;
+    font_size := cast(i32, cast(f32, FONT_SIZE) * scale);
+
+    advance := cast(i32, cast(f32, font_size) * .7);
+    atx := at.x;
+    aty := at.y;
 	startx := atx;
     for c in text {
 		if c == '\n' {
 			atx = startx;
-			aty += FONT_SIZE;
+			aty += font_size;
 			continue;
 		}
         if c >= 'a' && c <= 'z' c -= 32;
@@ -31,9 +34,12 @@ draw_text :: fn(r: *d.Renderer, font: *Font, text: string) {
         xidx := (idx % 8);
 
 
-        d.copy_rect(r, r.backbuffer, font.texture,
-        .{atx, aty, FONT_SIZE, FONT_SIZE}, .{xidx*FONT_SIZE, yidx*FONT_SIZE, FONT_SIZE, FONT_SIZE});
-        atx += FONT_SIZE;
+        d.copy_rect(dst, font.texture,
+            .{atx, aty, font_size, font_size}, // dst_rect
+            .{xidx*FONT_SIZE, yidx*FONT_SIZE, FONT_SIZE, FONT_SIZE} // src_rect
+        );
+
+        atx += advance;
     }
 }
 
@@ -55,7 +61,7 @@ init_font :: fn(r: *d.Renderer, manager: *A.AssetManager) -> Font {
     pixels := buf + header.pixel_offset;
     pitch := ( (header.bpp * header.width + 31) / 32 ) * 4;
 
-    font_texture_ := d.allocate_texture(r, cast(int, header.width), cast(int, header.height));
+    font_texture_ := d.allocate_texture(cast(int, header.width), cast(int, header.height));
     if font_texture_ == null {
         log.fatal("Failed to allocate font texture");
         log.exit(1);
@@ -73,8 +79,9 @@ init_font :: fn(r: *d.Renderer, manager: *A.AssetManager) -> Font {
                 pixel := original_at + (x * 3);
                 new_at[x] = cast(u32, *(pixel+0)) << 0  |
                             cast(u32, *(pixel+1)) << 8  |
-                            cast(u32, *(pixel+2)) << 16 |
-                            0xFF << 24;
+                            cast(u32, *(pixel+2)) << 16;// |
+                            //0xFF << 24;
+                if new_at[x] != 0 new_at[x] |= 0xFF << 24;
 
             } else if header.bpp == 32 {
                 pixel := original_at + (x * 4);
