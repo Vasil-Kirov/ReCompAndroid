@@ -15,7 +15,7 @@ label_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 	match event.type {
         .Draw: {
 			pos := get_absolute_position (event.data.draw.offset, this.pos);
-            push_cmd(gui, cmd_drawbox(gui, .{pos, label.size}, .{0, 1, 1, 1}));
+            //push_cmd(gui, cmd_drawbox(gui, .{pos, label.size}, .{0, 1, 1, 1}));
             push_cmd(gui, cmd_drawtext(gui, label.text, pos, label.scale));
         }
     };

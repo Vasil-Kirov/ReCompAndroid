@@ -194,7 +194,7 @@ enum AssetMode: i32 {
   BUFFER = 3
 }
 
-AssetManager_open :: fn (mgr: *AssetManager, filename: *u8, mode: AssetMode) -> *Asset #link="AAssetManager_open";
+AssetManager_open :: fn (mgr: *AssetManager, filename: *u8, mode: AssetMode) -> ?*Asset #link="AAssetManager_open";
 Asset_close :: fn(asset: *Asset) #link="AAsset_close";
 Asset_getBuffer :: fn(asset: *Asset) -> ?* #link="AAsset_getBuffer";
 Asset_getLength64 :: fn(asset: *Asset) -> uint #link="AAsset_getLength64";

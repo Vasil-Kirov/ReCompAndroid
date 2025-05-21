@@ -27,14 +27,17 @@ scene_01 :: fn(ui: *GuiState) -> *Widget {
     add_child(&window.base, &main_box.base);
 
     lines := [4]*Flexbox{};
+	line_width := cast(f32, ORTHO_WIDTH);
+	line_height := cast(f32, ORTHO_HEIGHT - 20) / 4.0;
     for &line in lines {
         *line = create_flexbox(ui, .Horizontal, .SpaceEvenly, 1);
+		(*line).size = .{line_width, line_height};
     }
     for line in lines {
         add_child(&main_box.base, &line.base);
     }
 
-    connected := create_label(ui, "Connected", 1.0);
+    connected := create_label(ui, ":xConnected", 1.0);
     device_name := create_label(ui, "ESP32 TTGO", 1.0);
     add_child(&lines[0].base, &connected.base);
     add_child(&lines[0].base, &device_name.base);

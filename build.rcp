@@ -155,7 +155,7 @@ after_link :: fn() {
 }
 #else
 {
-    run_cmd("cp -r % %/android-assets", asset_dir, cd);
+    run_cmd("cp %/* %/android-assets", asset_dir, cd);
 }
 
     run_cmd("% package --debug-mode -v -f -F % -M %/../AndroidManifest.xml -A android-assets -S android-resources -I %",

@@ -29,6 +29,7 @@ window_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 			child_event := event;
             child_event.data.resize.size.y -= window.titlebar_height;
 			for child in window.children child.handle_event(gui, child, child_event);
+			for child in window.children child.pos = .{window.pos.x, window.pos.y + titlebar_size.y};
 
             return 0;
 		}

@@ -16,6 +16,11 @@ warn :: fn(fmt: string, args: ...) {
     a.log_write(.WARN, tag, str.data); 
 }
 
+error :: fn(fmt: string, args: ...) {
+    str := io.vsprint(fmt, args);
+    a.log_write(.ERROR, tag, str.data); 
+}
+
 fatal :: fn(fmt: string, args: ...) {
     str := io.vsprint(fmt, args);
     a.log_write(.FATAL, tag, str.data); 

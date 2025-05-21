@@ -105,6 +105,18 @@ copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect
     if src_ == null return;
     dst := ?dst_;
     src := ?src_;
+	src_rect := src_rect;
+	dst_rect := dst_rect;
+
+	if src_rect.width == 0 && src_rect.height == 0 {
+		src_rect.width = src.width;
+		src_rect.height = src.height;
+	}
+
+	if dst_rect.width == 0 && dst_rect.height == 0 {
+		dst_rect.width = dst.width;
+		dst_rect.height = dst.height;
+	}
 
     if dst_rect.width == src_rect.width && dst_rect.height == src_rect.height {
         copy_rect_no_rescaling(dst, src, dst_rect, src_rect);
@@ -119,13 +131,8 @@ copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect
     scale_x := cast(f32, src_rect.width) / cast(f32, dst_rect.width);
     scale_y := cast(f32, src_rect.height) / cast(f32, dst_rect.height);
 
-    scale_x = 1.0;
-    scale_y = 1.0;
-
-
     y_off := 0.0;
-    y := 0;
-    for cast(int, y_off) < src_rect.height {
+    for y in dst_rect.height {
         y_int_off := cast(int, y_off);
 
         dst_y := dst_rect.y + y;
@@ -134,21 +141,18 @@ copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect
         src_row := src.pixels + src_rect.x + src_y * src.width;
 
         x_off := 0.0;
-        x := 0;
-        for cast(int, x_off) < src_rect.width {
+        for x in dst_rect.width {
             x_int_off := cast(int, x_off);
             x_off += scale_x;
-            x+=1;
 
             pixel := src_row[x_int_off];
             if pixel & 0xFF_00_00_00 == 0 {
                 continue;
             }
 
-            dst_row[x-1] = pixel;
+            dst_row[x] = pixel;
         }
         y_off += scale_y;
-        y += 1;
     }
 }
 
