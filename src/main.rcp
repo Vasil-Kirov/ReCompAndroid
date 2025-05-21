@@ -1,5 +1,6 @@
 module main
 
+#import scene as *
 #import gui as *
 #import font as *
 #import log
@@ -16,6 +17,12 @@ module main
 struct Engine {
     frame: int,
     queue: ?*
+}
+
+enum BluetoothStatus {
+    NotSupported,
+    Disabled,
+    Enabled,
 }
 
 renderer_allocator: mem.Allocator;
@@ -201,6 +208,7 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
                 draw := cast(*CommandDrawText, command);
                 xy := v2_from_ui(draw.at, screen_size);
                 xyi := iv2 { cast(i32, xy.x), cast(i32, xy.y) };
+
                 draw_text(font, draw.text, backbuffer, xyi, draw.scale);
             }
         };
@@ -266,21 +274,12 @@ main :: fn(state_: *) -> ?* {
     engine := get_engine(activity);
 
     UI := init_gui();
-    window := create_window(&UI, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
-    flexbox := create_flexbox(&UI, .Vertical, .End, 1);
-    hello_btn := create_button(&UI, "Hello");
-    hello_btn.on_click = fn(this: *Button) {
-        log.info("Hello");
-    };
-    hello_btn2 := create_button(&UI, "Hello");
-    hello_btn3 := create_button(&UI, "Hello");
-    add_child(&window.base, &flexbox.base);
-    add_child(&flexbox.base, &hello_btn.base);
-    add_child(&flexbox.base, &hello_btn2.base);
-    add_child(&flexbox.base, &hello_btn3.base);
-    window_do_resize(&UI, window);
+    scene0 := scene_00(&UI);
+    scene1 := scene_01(&UI);
 
-	print_gui(&window.base, 0);
+    scene := scene1;
+
+	print_gui(scene, 0);
 
     env: *a.JNIEnv;
     vm := activity.vm;
@@ -303,13 +302,14 @@ main :: fn(state_: *) -> ?* {
     class := ?class_;
 
     log.info("Trying to find method...");
-    ma_getBluetoothStatus := (*env).GetMethodID(env, class, c"getBluetoothStatus", c"()V"); 
-    if method_ != null {
-		method := ?method_;
-    	log.info("Calling method...");
-    	(*env).CallVoidMethod(env, activity.clazz, method);
+    jm_getBluetoothStatus_ := (*env).GetMethodID(env, class, c"getBluetoothStatus", c"()I"); 
+    if jm_getBluetoothStatus_ == null {
+        log.fatal("Couldn't get bluetooth method");
+        log.exit(1);
     }
 
+    jm_getBluetoothStatus := ?jm_getBluetoothStatus_;
+    bluetooth_status := BluetoothStatus.Disabled;
 
 	fps := 0.0;
     font: Font;
@@ -320,8 +320,6 @@ main :: fn(state_: *) -> ?* {
         if opt_window != null && font.inited == false {
             font = init_font(&draw.renderer, activity.assetManager);
         }
-
-		draw_swipe := v2 {};
 
         if engine.queue {
             q := ?engine.queue;
@@ -342,18 +340,17 @@ main :: fn(state_: *) -> ?* {
                     match action {
                         .MOVE: {
                             release_is_from_move = true;
-							draw_swipe = ui_xy;
                             
-                            mouse_move(&UI, &window.base, ui_xy);
+                            mouse_move(&UI, scene, ui_xy);
                         }
                         .UP: {
-                            mouse_move(&UI, &window.base, ui_xy);
+                            mouse_move(&UI, scene, ui_xy);
                             if release_is_from_move {
                                 release_is_from_move = false; 
                                 yield;
                             }
 
-                            mouse_clicked(&UI, &window.base);
+                            mouse_clicked(&UI, scene);
 
                         }
                         .DOWN: {
@@ -369,7 +366,26 @@ main :: fn(state_: *) -> ?* {
         if draw.renderer.backbuffer == null {
             continue;
         }
-        draw_hierarchy(&UI, &window.base);
+
+        if bluetooth_status != .Enabled {
+            bluetooth_status = cast(BluetoothStatus, (*env).CallIntMethod(env, activity.clazz, jm_getBluetoothStatus));
+        }
+
+        backbuffer := ?draw.renderer.backbuffer;
+        screen_center := iv2 { cast(i32, backbuffer.width) / 2, cast(i32, backbuffer.height) / 2 };
+
+        match bluetooth_status {
+            .Enabled: {
+                draw_hierarchy(&UI, scene);
+            }
+            .NotSupported: {
+                draw_text_centered(&font, "Bluetooth not supported!", backbuffer, screen_center, 1.0);
+            }
+            .Disabled: {
+                draw_text_centered(&font, "Enable Bluetooth!", backbuffer, screen_center, 1.0);
+            }
+        };
+
         handle_ui_events(&UI, &font);
         redraw_window(start_ms, &font, &UI);
 

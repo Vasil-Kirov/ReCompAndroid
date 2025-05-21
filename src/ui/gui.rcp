@@ -144,7 +144,6 @@ default_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int 
 	if event.type == .GetSize_X return @int this.size.x;
 	if event.type == .GetSize_Y return @int this.size.y;
 	if event.type == .Resize {
-		this := this;
 		this.size = event.data.resize.size;
 	}
 	if event.type == .Draw {

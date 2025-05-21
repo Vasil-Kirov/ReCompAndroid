@@ -12,6 +12,35 @@ struct Font {
 
 FONT_SIZE :: 64;
 
+measure_text :: fn(text: string, scale: f32) -> iv2 {
+    size := iv2 {};
+    row_width :i32 = 0;
+
+    font_size := cast(i32, cast(f32, FONT_SIZE) * scale);
+    advance := cast(i32, cast(f32, font_size) * .7);
+
+    for c in text {
+		if c == '\n' {
+            size.x = if size.x > row_width size.x else row_width;
+            row_width = 0;
+			size.y += font_size;
+			continue;
+		}
+
+        row_width += advance;
+    }
+
+    size.x = if size.x > row_width size.x else row_width;
+    return size;
+}
+
+draw_text_centered :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32) {
+    size := measure_text(text, scale);
+    at.x -= size.x / 2;
+    at.y -= size.y / 2;
+    draw_text(font, text, dst, at, scale);
+}
+
 draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32) {
     if font.texture == null return;
     pixels := (?font.texture).pixels;

@@ -3,6 +3,7 @@ package com.vasko.pong;
 import android.app.NativeActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.bluetooth.BluetoothAdapter;
 
 public class MainActivity extends NativeActivity
 {

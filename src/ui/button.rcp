@@ -1,4 +1,4 @@
-module gui
+module gui;
 
 #import vmath as *
 #import log
@@ -62,10 +62,13 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 }
 
 create_button :: fn(gui: *GuiState, text: string) -> *Button {
+	return create_button_with_size(gui, text, .{120, 20});
+}
+
+create_button_with_size :: fn(gui: *GuiState, text: string, size: v2) -> *Button {
 	button := make_widget(gui, Button);
 	button.text = text;
-	button.size.x = 120;
-	button.size.y = 20;
+    button.size = size;
 	button.handle_event = button_event_handler;
 	button.hovered = false;
 	

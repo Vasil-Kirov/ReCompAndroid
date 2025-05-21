@@ -1,0 +1,45 @@
+module scene;
+
+#import gui as *
+#import log
+
+
+scene_00 :: fn(ui: *GuiState) -> *Widget {
+    window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
+    flexbox := create_flexbox(ui, .Vertical, .End, 1);
+    hello_btn := create_button(ui, "Hello");
+    hello_btn.on_click = fn(this: *Button) {
+        log.info("Hello");
+    };
+    hello_btn2 := create_button(ui, "Hello");
+    hello_btn3 := create_button(ui, "Hello");
+    add_child(&window.base, &flexbox.base);
+    add_child(&flexbox.base, &hello_btn.base);
+    add_child(&flexbox.base, &hello_btn2.base);
+    add_child(&flexbox.base, &hello_btn3.base);
+    window_do_resize(ui, window);
+    return cast(*Widget, window);
+}
+
+scene_01 :: fn(ui: *GuiState) -> *Widget {
+    window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
+    main_box := create_flexbox(ui, .Vertical, .SpaceEvenly, 1);
+    add_child(&window.base, &main_box.base);
+
+    lines := [4]*Flexbox{};
+    for &line in lines {
+        *line = create_flexbox(ui, .Horizontal, .SpaceEvenly, 1);
+    }
+    for line in lines {
+        add_child(&main_box.base, &line.base);
+    }
+
+    connected := create_label(ui, "Connected", 1.0);
+    device_name := create_label(ui, "ESP32 TTGO", 1.0);
+    add_child(&lines[0].base, &connected.base);
+    add_child(&lines[0].base, &device_name.base);
+
+    window_do_resize(ui, window);
+    return cast(*Widget, window);
+}
+

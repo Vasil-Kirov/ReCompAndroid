@@ -54,70 +54,122 @@ flexbox_get_child_size :: fn(gui: *GuiState, this: *Widget, child_idx: int) -> i
 flexbox_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
     if this.invisible return 0;
 
-	flexbox := @*Flexbox this;
+    flexbox := @*Flexbox this;
 
-	if event.type == EventType.Resize {
-		flexbox.size = event.data.resize.size;
-		log.info("Flexbox: %", flexbox.size);
+    if event.type == EventType.Resize {
+        flexbox.size = event.data.resize.size;
+        log.info("Flexbox: %", flexbox.size);
 
-		main_pos := 0.0;
-		cross_pos := flexbox.gap;
-		if flexbox.justify == Justify.Start {
-			for child_i, child in flexbox.children {
-				main_pos += flexbox.gap;
+        main_pos := 0.0;
+        cross_pos := flexbox.gap;
+        match flexbox.justify {
+            .Start: {
+                for child_i, child in flexbox.children {
+                    main_pos += flexbox.gap;
 
-				size := flexbox_get_child_size(gui, this, child_i);
+                    size := flexbox_get_child_size(gui, this, child_i);
 
-				if flexbox.direction == Direction.Horizontal {
-					child.pos = v2 { main_pos, cross_pos };
-					main_pos += size.x;
-				} else {
-					child.pos = v2 { cross_pos, main_pos };
-					main_pos += size.y;
-				}
+                    if flexbox.direction == Direction.Horizontal {
+                        child.pos = v2 { main_pos, cross_pos };
+                        main_pos += size.x;
+                    } else {
+                        child.pos = v2 { cross_pos, main_pos };
+                        main_pos += size.y;
+                    }
 
-				resize_event: Event;
-				resize_event.type = EventType.Resize;
-				resize_event.data.resize.size.x = @f32 size.x;
-				resize_event.data.resize.size.y = @f32 size.y;
+                    resize_event: Event;
+                    resize_event.type = EventType.Resize;
+                    resize_event.data.resize.size.x = @f32 size.x;
+                    resize_event.data.resize.size.y = @f32 size.y;
 
-				child.handle_event(gui, child, resize_event);
-			}
+                    child.handle_event(gui, child, resize_event);
+                }
 
-		} else if flexbox.justify == .End {
-			if flexbox.direction == Direction.Horizontal {
-				main_pos = flexbox.size.x;
-			} else {
-				main_pos = flexbox.size.y;
-			}
+            }
+            .End: {
+                if flexbox.direction == Direction.Horizontal {
+                    main_pos = flexbox.size.x;
+                } else {
+                    main_pos = flexbox.size.y;
+                }
 
 
-			for child_i, child in flexbox.children {
-				main_pos -= flexbox.gap;
+                for child_i, child in flexbox.children {
+                    main_pos -= flexbox.gap;
 
-				size := flexbox_get_child_size(gui, this, child_i);
+                    size := flexbox_get_child_size(gui, this, child_i);
 
-				if flexbox.direction == Direction.Horizontal {
-					main_pos -= size.x;
-					child.pos = v2 { main_pos, cross_pos };
-				} else {
-					main_pos -= size.y;
-					child.pos = v2 { cross_pos, main_pos };
-				}
+                    if flexbox.direction == Direction.Horizontal {
+                        main_pos -= size.x;
+                        child.pos = v2 { main_pos, cross_pos };
+                    } else {
+                        main_pos -= size.y;
+                        child.pos = v2 { cross_pos, main_pos };
+                    }
 
-				resize_event: Event;
-				resize_event.type = EventType.Resize;
-				resize_event.data.resize.size.x = @f32 size.x;
-				resize_event.data.resize.size.y = @f32 size.y;
+                    resize_event: Event;
+                    resize_event.type = EventType.Resize;
+                    resize_event.data.resize.size.x = @f32 size.x;
+                    resize_event.data.resize.size.y = @f32 size.y;
 
-				child.handle_event(gui, child, resize_event);
-			}
+                    child.handle_event(gui, child, resize_event);
+                }
 
-		} else {
-			#assert false && "Justify mode not implemented";
-		}
-		return 0;
-	}
-	return default_event_handler(gui, this, event);
+            }
+            .SpaceEvenly: {
+                child_size := cast(i32, 0);
+                flexbox_size := cast(f32, 0);
+
+                if flexbox.direction == Direction.Horizontal {
+                    flexbox_size = flexbox.size.x;
+                }
+                else {
+                    flexbox_size = flexbox.size.y;
+                }
+
+                for child_i, child in flexbox.children {
+                    size := flexbox_get_child_size(gui, this, child_i);
+                    if flexbox.direction == Direction.Horizontal {
+                        child_size += size.x;
+                    } else {
+                        child_size += size.y;
+                    }
+                }
+
+                total_gap_space := cast(i32, flexbox_size) - child_size;
+                if total_gap_space < 0 {
+                    total_gap_space = 0;
+                }
+
+                gap_space := cast(f32, total_gap_space) / (cast(f32, flexbox.children.count) + 1.0);
+
+                for child_i, child in flexbox.children {
+                    main_pos += gap_space;
+
+                    size := flexbox_get_child_size(gui, this, child_i);
+
+                    if flexbox.direction == Direction.Horizontal {
+                        child.pos = v2 { main_pos, cross_pos };
+                        main_pos += size.x;
+                    } else {
+                        child.pos = v2 { cross_pos, main_pos };
+                        main_pos += size.y;
+                    }
+
+                    resize_event: Event;
+                    resize_event.type = EventType.Resize;
+                    resize_event.data.resize.size.x = @f32 size.x;
+                    resize_event.data.resize.size.y = @f32 size.y;
+
+                    child.handle_event(gui, child, resize_event);
+                }
+            }
+            _: {
+                #assert false && "Justify mode not implemented";
+            }
+        };
+        return 0;
+    }
+    return default_event_handler(gui, this, event);
 }
 
