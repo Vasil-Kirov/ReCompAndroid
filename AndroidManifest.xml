@@ -18,6 +18,15 @@
 	<!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
 
 	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+	<!-- Required for BLE scanning from Android 10 (API 29) -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+	<!-- Required for Android 12+ -->
+	<uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
     
     <application
     android:label="Pong"

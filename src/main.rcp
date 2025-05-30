@@ -99,30 +99,6 @@ on_input_queue_destroyed :: fn(activity: *a.NativeActivity, queue: *a.InputQueue
     engine.queue = null;
 }
 
-call_hello :: fn(activity: *a.NativeActivity) {
-    env: *a.JNIEnv;
-    res: i32; 
-    res = (*activity.vm).GetEnv(activity.vm, &env, a.JNI_VERSION_1_6);
-    if res != a.JNI_OK {
-        log.fatal("Failed to get JNI enviorment: %", res);
-        log.exit(1);
-    }
-
-    mainClass := (*env).GetObjectClass(env, activity.clazz);
-    if mainClass == null {
-        log.fatal("Failed to get main class??");
-        log.exit(1);
-    }
-
-    printMethod := (*env).GetMethodID(env, ?mainClass, c"printMessage", c"()V");
-    if printMethod == null {
-        log.fatal("Failed to get printMethod??");
-        log.exit(1);
-    }
-
-    (*env).CallVoidMethod(env, activity.clazz, ?printMethod);
-}
-
 ANativeActivity_onCreate :: fn #foreign(activity: *a.NativeActivity, saved_state: *, saved_state_size: int) {
     a.log_write(.INFO, c"vpong", c"onCreate() start");
     // SIGSEGV
@@ -130,7 +106,6 @@ ANativeActivity_onCreate :: fn #foreign(activity: *a.NativeActivity, saved_state
     // SIGTRAP
     signal(5, handle_segfault);
 
-    //call_hello(activity);
 
     attributes: pthread.attr_t;
 
@@ -304,11 +279,18 @@ main :: fn(state_: *) -> ?* {
     log.info("Trying to find method...");
     jm_getBluetoothStatus_ := (*env).GetMethodID(env, class, c"getBluetoothStatus", c"()I"); 
     if jm_getBluetoothStatus_ == null {
-        log.fatal("Couldn't get bluetooth method");
+        log.fatal("Couldn't find getBluetoothStatus method");
+        log.exit(1);
+    }
+
+    jm_getData_ := (*env).GetMethodID(env, class, c"getData", c"()[B"); 
+    if jm_getData_ == null {
+        log.fatal("Couldn't find getData method");
         log.exit(1);
     }
 
     jm_getBluetoothStatus := ?jm_getBluetoothStatus_;
+    jm_getData := ?jm_getData_;
     bluetooth_status := BluetoothStatus.Disabled;
 
 	fps := 0.0;
@@ -371,6 +353,8 @@ main :: fn(state_: *) -> ?* {
             bluetooth_status = cast(BluetoothStatus, (*env).CallIntMethod(env, activity.clazz, jm_getBluetoothStatus));
         }
 
+        handle_ui_events(&UI, &font);
+
         backbuffer := ?draw.renderer.backbuffer;
         screen_center := iv2 { cast(i32, backbuffer.width) / 2, cast(i32, backbuffer.height) / 2 };
 
@@ -386,7 +370,18 @@ main :: fn(state_: *) -> ?* {
             }
         };
 
-        handle_ui_events(&UI, &font);
+		byte_arr_ := (*env).CallObjectMethod(env, activity.clazz, jm_getData, null);
+		if byte_arr_ {
+			byte_arr := ?byte_arr_;
+			len := (*env).GetArrayLength(env, byte_arr);
+			elems := (*env).GetByteArrayElements(env, byte_arr, null);
+			if elems != null {
+				text := io.sprint("Got: %s", cast(*u8, ?elems));
+                draw_text_centered(&font, text, backbuffer, screen_center, 1.0);
+				(*env).ReleaseByteArrayElements(env, byte_arr, ?elems, a.JNI_ABORT);
+			}
+		}
+
         redraw_window(start_ms, &font, &UI);
 
         end_ms := get_time_in_nanos() / 1_000_000;

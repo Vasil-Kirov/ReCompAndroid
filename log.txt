@@ -1,0 +1,1057 @@
+--------- beginning of main
+05-28 15:30:50.853   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.860  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:50.863   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.864   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:50.864   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.868 25085 25201 D PI-ScanInterceptor: local first active time: 1624349713665
+05-28 15:30:50.868 25085 25201 D PI-ScanInterceptor: the first scan time: 1624349713665
+05-28 15:30:50.869   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:50.869   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.870   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.875 26641 26641 I com.vasko.pong: Unquickening 22 vdex files!
+05-28 15:30:50.877  4230 14115 I SCTaskStackListener: onTaskStackChanged! inSplit = false
+05-28 15:30:50.884 25085 25201 E AutoInstalls: Layout definition not found in package: android.autoinstalls.config.Xiaomi.begonia
+05-28 15:30:50.886   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:50.887   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.887   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.887   525   530 E statsd  : Predicate 5980654721335871649 dropping data for dimension key (10)0x2010101->10584[I] (10)0x30000->Icing[S] 
+05-28 15:30:50.887   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.887   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:50.888   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.889   525   530 E statsd  : Predicate 5980654721335871649 dropping data for dimension key (10)0x2010101->10584[I] (10)0x30000->Icing[S] 
+05-28 15:30:50.889 25085 25201 W FirebaseRemoteConfig: No value of type 'String' exists for parameter key 'sid'.
+05-28 15:30:50.893   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.893   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.896 25085 25201 D PI-ScanDispatch: interruptCode = 7
+05-28 15:30:50.896 25085 25201 D PI-ScanDispatch: send msg to security, the interrupt result：7
+05-28 15:30:50.896  1043  1051 I adbd    : jdwp connection from 26641
+05-28 15:30:50.897  4230  4230 I NewGlobalInstallCheckTask: handleMessage: interrupt and unbind. blockType = 7
+05-28 15:30:50.897  4230  4230 I NewGlobalInstallCheckTask: finish: the queue first task operate over.remove first task.
+05-28 15:30:50.902   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:50.906  1316  1568 E WifiVendorHal: getWifiLinkLayerStats_1_3_Internal(l.976) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+05-28 15:30:50.908 10540 26627 I Auth    : (REDACTED) [SupervisedAccountIntentOperationV2] onHandleIntent: %s
+05-28 15:30:50.909   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.910   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:50.910   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.911  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10155, uidState = 10
+05-28 15:30:50.911  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 99554, uidState = 10
+05-28 15:30:50.911  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 99396, uidState = 5
+05-28 15:30:50.911  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10515, uidState = 5
+05-28 15:30:50.911  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10178, uidState = 5
+05-28 15:30:50.916   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.916   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.919   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:50.920  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10155, uidState = 19
+05-28 15:30:50.920  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 99554, uidState = 19
+05-28 15:30:50.932 10540 26626 W SQLiteLog: (28) double-quoted string literal: "com.vasko.pong"
+05-28 15:30:50.932   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.933   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:50.933   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.935   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:50.939   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.944   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:50.944   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23424648
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23425672
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23425672
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23426696
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23426696
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23427720
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23427720
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23428744
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23428744
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23429768
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23429768
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23430792
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23430792
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23431816
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23431816
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23432840
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23432840
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23433864
+05-28 15:30:50.945 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23433864
+05-28 15:30:50.945 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23434888
+05-28 15:30:50.946 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23434888
+05-28 15:30:50.946 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23435912
+05-28 15:30:50.946 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23435912
+05-28 15:30:50.946 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23436936
+05-28 15:30:50.946 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23436936
+05-28 15:30:50.946 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23437960
+05-28 15:30:50.952   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:50.955   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.956   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:50.956   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.957 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23437960
+05-28 15:30:50.957 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23438984
+05-28 15:30:50.957 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23438984
+05-28 15:30:50.957 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23440008
+05-28 15:30:50.957 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23440008
+05-28 15:30:50.957 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23441032
+05-28 15:30:50.957 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23441032
+05-28 15:30:50.957 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23442056
+05-28 15:30:50.957 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23442056
+05-28 15:30:50.958 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23443080
+05-28 15:30:50.958 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23443080
+05-28 15:30:50.958 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23444104
+05-28 15:30:50.958 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23444104
+05-28 15:30:50.958 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23445128
+05-28 15:30:50.958 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23445128
+05-28 15:30:50.958 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23446152
+05-28 15:30:50.959 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23446152
+05-28 15:30:50.959 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23447176
+05-28 15:30:50.960  5601  8644 D PerfEngineController: ForegroundInfo{mForegroundPackageName='com.vasko.pong', mForegroundUid=10584, mForegroundPid=26641, mLastForegroundPackageName='com.teslacoilsw.launcher', mLastForegroundUid=10252, mLastForegroundPid=13665, mMultiWindowForegroundPackageName='null', mMultiWindowForegroundUid=-1, mFlags=1}
+05-28 15:30:50.960 26889 26959 I ProcessMonitor: onForegroundInfoChanged: ForegroundInfo{mForegroundPackageName='com.vasko.pong', mForegroundUid=10584, mForegroundPid=26641, mLastForegroundPackageName='com.teslacoilsw.launcher', mLastForegroundUid=10252, mLastForegroundPid=13665, mMultiWindowForegroundPackageName='null', mMultiWindowForegroundUid=-1, mFlags=1}
+05-28 15:30:50.960 10803 31175 I GST     : forePkg: com.vasko.pong, preForePkg: com.teslacoilsw.launcher
+05-28 15:30:50.960  4230 14115 I ProcessMonitor: onForegroundInfoChanged: ForegroundInfo{mForegroundPackageName='com.vasko.pong', mForegroundUid=10584, mForegroundPid=26641, mLastForegroundPackageName='com.teslacoilsw.launcher', mLastForegroundUid=10252, mLastForegroundPid=13665, mMultiWindowForegroundPackageName='null', mMultiWindowForegroundUid=-1, mFlags=1}
+05-28 15:30:50.960  4230 14115 I VideoBoxUtils: isSupportVideoBox: false
+05-28 15:30:50.960   575   653 I libPowerHal: [perfNotifyAppState] foreground:com.vasko.pong, pid:26641, uid:10584
+05-28 15:30:50.961   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+--------- beginning of system
+05-28 15:30:50.961  1316  1316 W Looper  : Drained
+05-28 15:30:50.961   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.962  5601  6414 I ThermalInfoCollector: collectForgroundAppsInfo
+05-28 15:30:50.963  4230 14115 I VideoToolBoxService: splitMode: onfalse
+05-28 15:30:50.963  4230 14115 I VideoToolBoxService: not support vtb. skipExit : false
+05-28 15:30:50.966   575   653 I UxUtility: notifyForegroundApp pack:com.vasko.pong, uid:10584
+05-28 15:30:50.966   575   653 I TouchUtility: notifyAppState error = NULL
+05-28 15:30:50.967   575   597 I mtkpower@impl: [notifyAppState] pc:1, com.teslacoilsw.launcher => com.vasko.pong
+05-28 15:30:50.968   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:50.968   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:50.969   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:50.969   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:50.970   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:50.970  1316  1337 I Timeline: Timeline: App_transition_ready time:117497596
+05-28 15:30:50.973   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:50.974   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:50.974   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:50.976  1789  1789 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+05-28 15:30:50.977  1316  3237 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:50.977   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:50.978   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:50.978   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:50.978   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.979   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:50.979   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.979  3112  3112 V PhoneWindow: DecorView setVisiblity: visibility = 8, Parent = android.view.ViewRootImpl@3e98e72, this = DecorView@20492c3[InputMethod]
+05-28 15:30:50.983  1789  2004 D MiuiPhoneStatusBarPolicy: updateManagedProfile: secondSpace = false
+05-28 15:30:50.985   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.985   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:50.986   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:50.988   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:50.988   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:50.989   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:50.990   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:50.990   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:50.990   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:50.991   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:50.991   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:50.992  4393  8713 D PMonitor:  onForegroundActivitiesChanged:pid = 26641,activity-uid=10584,foregroundActivities=true
+05-28 15:30:50.994  1316  1333 W Looper  : Slow dispatch took 103ms android.fg h=android.os.Handler c=<recycled PooledLambda@53a2165> m=0
+05-28 15:30:50.994   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:50.995  1789  1789 D NotificationFilterController: filter group summary suppressed key=0|com.google.android.googlequicksearchbox|0|1510566243::SUMMARY::wx|10179
+05-28 15:30:50.998  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10584, uidState = 2
+05-28 15:30:50.998   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:50.998   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.001   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.002   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.002   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.002   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.002   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.003   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.003   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.005   486   486 I beanpodkeymaster: cmd:8 Received 165 byte response
+05-28 15:30:51.005   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.006   639  1678 D AF::TrackHandle: OpPlayAudio: track:137 usage:3 not muted
+05-28 15:30:51.007  1316  1775 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.007   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.008   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.008   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.008   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.009   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.009   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.011   654   654 I BufferQueueProducer: [FramebufferSurface](this:0xb40000750a459ed0,id:-1,api:1,p:654,c:654) queueBuffer: fps=2.02 dur=8913.24 max=8631.46 min=15.40
+05-28 15:30:51.013  1316  3237 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.014   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.014   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.016   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:51.018   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.019   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:51.019   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.019   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.021   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.022   654   702 I BufferQueueProducer: [StatusBar#0](this:0xb40000748546e658,id:6,api:1,p:1789,c:654) queueBuffer: fps=0.30 dur=3297.37 max=3297.37 min=3297.37
+05-28 15:30:51.023   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.023   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.024   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.024   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.024   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.024   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:51.024   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.024   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.025   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.025   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.027   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.027  1316  1998 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.028   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.028   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.029   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.030   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.030   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.030   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.030   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.031   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.031   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.031   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.034   639  1678 D AF::TrackHandle: OpPlayAudio: track:137 usage:3 not muted
+05-28 15:30:51.034   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.034   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.034   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.036   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.036 26641 26641 W ResourceType: CREATING STRING CACHE OF 16 bytes
+05-28 15:30:51.038   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.038   486   486 I beanpodkeymaster: cmd:8 Received 132 byte response
+05-28 15:30:51.038   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.039   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.039   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.039   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.044  1316  3237 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.047   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.048   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.048   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.048   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:51.049   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.049   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:51.049   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.050   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.050   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.050   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.051   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.051   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:51.051   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.052   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.053   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.053   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.053   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.054   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.054   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.054   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.055   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.055   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.055   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.056   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.056   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.057   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.058   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.058   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.060 10540 20580 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+05-28 15:30:51.060   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.061  1316  3753 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.061   486   486 I beanpodkeymaster: cmd:8 Received 165 byte response
+05-28 15:30:51.061   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.062   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.062   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.062   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.067   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:51.067   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.068   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:51.068   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.069   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.069   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.070   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.070   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.071   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.072   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.072   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.073 26641 26641 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+05-28 15:30:51.073   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.074   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:51.074   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.074 26641 26641 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+05-28 15:30:51.077   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.077   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.078  1316  2103 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.080   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.081   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.081   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.082   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.082   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.082   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.083   639  1678 D AF::TrackHandle: OpPlayAudio: track:137 usage:3 not muted
+05-28 15:30:51.086   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.086   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.087   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.087   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.093   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.093   533  9808 I chatty  : uid=1041(audioserver) writer identical 1 line
+05-28 15:30:51.094   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.094  1316  1998 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.094   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.094   533  9808 I chatty  : uid=1041(audioserver) writer identical 1 line
+05-28 15:30:51.094   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.095   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.095   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.095   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.096   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.097   486   486 I beanpodkeymaster: cmd:8 Received 132 byte response
+05-28 15:30:51.097  1316  1333 W Looper  : Slow delivery took 228ms android.fg h=android.os.Handler c=<recycled PooledLambda@55ba85f> m=0
+05-28 15:30:51.097  1316  1333 W Looper  : Slow dispatch took 103ms android.fg h=android.os.Handler c=<recycled PooledLambda@55ba85f> m=0
+05-28 15:30:51.097   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.098   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.098   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.098   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.100   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.100   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.100   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.102   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.106   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.106   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.106   639  1678 D AF::TrackHandle: OpPlayAudio: track:137 usage:3 not muted
+05-28 15:30:51.107 10540 20580 I Icing   : Indexing done com.google.android.gms-apps
+05-28 15:30:51.109 10540 20580 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+05-28 15:30:51.111  1316  1998 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.114   464   471 E PSITrigger: get PSI events detail failed!! errno=25
+05-28 15:30:51.114 26641 26673 D libMEOW : meow reload base cfg path: na
+05-28 15:30:51.114 26641 26673 D libMEOW : meow reload overlay cfg path: /vendor/etc/meow.cfg
+05-28 15:30:51.115 10540 20580 I Icing   : Indexing done com.google.android.gms-apps
+05-28 15:30:51.116   639  1678 D AF::TrackHandle: OpPlayAudio: track:137 usage:3 not muted
+05-28 15:30:51.116   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.117   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.117   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.119   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.121 26641 26673 D libMEOW : applied 1 plugins for [com.vasko.pong]:
+05-28 15:30:51.122 26641 26673 D libMEOW :   plugin 1: [libMEOW_gift.so]:
+05-28 15:30:51.123   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.123   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.124 26641 26641 D View    : com.vasko.pong initForcedUseForceDark: 1
+05-28 15:30:51.128  1316  2103 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.135   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.140   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.141   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.141   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.142 26641 26641 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.143 26641 26641 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.144  1316  1775 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.146   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.146   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.150 26641 26641 D DecorView[]: getWindowModeFromSystem  windowmode is 1
+05-28 15:30:51.150 26641 26641 D DecorView: createDecorCaptionView windowingMode:1 mWindowMode 1 isFullscreen: true
+05-28 15:30:51.152   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.161  1316  1775 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.162   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.169   533  9808 I chatty  : uid=1041(audioserver) writer identical 8 lines
+05-28 15:30:51.169   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.169   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.172   575   653 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:12584
+05-28 15:30:51.172   575   653 I libPowerHal: [perfLockRel] hdl:12584, idx:2
+05-28 15:30:51.172   575   653 I libPowerHal: [PD] scn:2 hdl:12584 lock_user:system_server pid:1316 tid:3753 dur:400
+05-28 15:30:51.172   575   653 I libPowerHal: system_server: set gpu opp level: 27
+05-28 15:30:51.172   575   653 I libPowerHal: system_server: set gpu opp level max: 0
+05-28 15:30:51.174 26641 26641 I vpong   : onCreate() start
+05-28 15:30:51.174   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.174   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.175 26641 26641 I vpong   : _onCreate() completed successfully
+05-28 15:30:51.177 26641 26674 I vpong   :  Widget -> xy: { 0, 0 }, size { 640.0, 360.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : 	 Widget -> xy: { 0, 10.0 }, size { 640.0, 350.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : 		 Widget -> xy: { 1.0, 2.0 }, size { 640.0, 85.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : 			 Widget -> xy: { 38.33, 1.0 }, size { 275.0, 10.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : 			 Widget -> xy: { 351.67, 1.0 }, size { 250.0, 10.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : 		 Widget -> xy: { 1.0, 89.0 }, size { 640.0, 85.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : 		 Widget -> xy: { 1.0, 176.0 }, size { 640.0, 85.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : 		 Widget -> xy: { 1.0, 263.0 }, size { 640.0, 85.0 }
+05-28 15:30:51.177 26641 26674 I vpong   : Attaching current thread...
+05-28 15:30:51.177  1316  3678 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.178 26641 26674 I vpong   : Trying to find class...
+05-28 15:30:51.178 26641 26674 I vpong   : Found it!
+05-28 15:30:51.181 26641 26641 D AndroidRuntime: Shutting down VM
+--------- beginning of crash
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: FATAL EXCEPTION: main
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: Process: com.vasko.pong, PID: 26641
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.vasko.pong/com.vasko.pong.MainActivity}: java.lang.NullPointerException: Attempt to invoke virtual method 'void android.bluetooth.le.BluetoothLeScanner.startScan(android.bluetooth.le.ScanCallback)' on a null object reference
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3576)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3748)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:85)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2187)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:236)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8057)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:620)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1011)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'void android.bluetooth.le.BluetoothLeScanner.startScan(android.bluetooth.le.ScanCallback)' on a null object reference
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at com.vasko.pong.MainActivity.startScan(MainActivity.java:53)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at com.vasko.pong.MainActivity.onCreate(MainActivity.java:48)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8142)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8114)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1309)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3549)
+05-28 15:30:51.184 26641 26641 E AndroidRuntime: 	... 11 more
+05-28 15:30:51.186   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.186   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.186   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.187   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.193   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.193   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.194  1316  2103 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.198   575   653 I libPowerHal: [perfNotifyAppState] pack:com.vasko.pong, pid:26641, STATE_DEAD
+05-28 15:30:51.199   575   653 D RilUtility: notify_rild_crash_pid_set certPid:-1, crash:26641, scn:0x0
+05-28 15:30:51.200  1316  1325 I system_server: Background concurrent copying GC freed 700335(34MB) AllocSpace objects, 175(6652KB) LOS objects, 27% free, 63MB/87MB, paused 170us total 616.135ms
+05-28 15:30:51.200  1316  3678 W ActivityTaskManager:   Force finishing activity com.vasko.pong/.MainActivity
+05-28 15:30:51.200  1316 26675 I DropBoxManagerService: add tag=data_app_crash isTagEnabled=true flags=0x2
+05-28 15:30:51.202  1316  1327 W System  : A resource failed to call close. 
+05-28 15:30:51.202   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.203  1316  1327 W System  : A resource failed to call release. 
+05-28 15:30:51.203  1316  1327 I chatty  : uid=1000(system) FinalizerDaemon identical 1 line
+05-28 15:30:51.203  1316  1327 W System  : A resource failed to call release. 
+05-28 15:30:51.204  1316 26675 W AES     : Exception Log handling...
+05-28 15:30:51.205  1316 26675 W AES     : Skipped - do not care third party apk
+05-28 15:30:51.208   654   654 I SurfaceFlinger: operator()(), mtkRenderCntDebug 1200, screenshot (Splash Screen com.vasko.pong#0)
+05-28 15:30:51.209   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.209   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.209   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.212  1316  1775 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.215   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.215   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.215   575   653 I libPowerHal: [perfLockAcq] idx:2 hdl:12586 hint:22 pid:575 duration:10000 => ret_hdl:12586
+05-28 15:30:51.215   575   653 I libPowerHal: [PE] scn:2 hdl:12586 hint:22 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.216   575   653 I libPowerHal: [perfLockRel] hdl:12583, idx:1
+05-28 15:30:51.216   575   653 I libPowerHal: [PD] scn:1 hdl:12583 hint:22 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.217  1789  1789 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+05-28 15:30:51.219   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.221 26641 26641 I Process : Sending signal. PID: 26641 SIG: 9
+05-28 15:30:51.227  1316  3237 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong} com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.232   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.233   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.233   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.234   654   702 I BufferQueueProducer: [NavigationBar0#0](this:0xb40000748546ca58,id:4,api:1,p:1789,c:654) queueBuffer: fps=2.62 dur=9151.53 max=8685.49 min=11.09
+05-28 15:30:51.236   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.238  1316  2103 I ActivityManager: Process com.vasko.pong (pid 26641) has died: fg  TOP 
+05-28 15:30:51.238  1316  1348 I Process : PerfMonitor : current process killing process group. PID: 26641
+05-28 15:30:51.238   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.238   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.238  1316  1348 I libprocessgroup: Successfully killed process cgroup uid 10584 pid 26641 in 0ms
+05-28 15:30:51.239   527   527 I Zygote  : Process 26641 exited due to signal 9 (Killed)
+05-28 15:30:51.240  4393  8713 I com.xiaomi.xms: oneway function results will be dropped but finished with status UNKNOWN_TRANSACTION and parcel size 0
+05-28 15:30:51.240   575   653 I libPowerHal: [perfNotifyAppState] pack:com.vasko.pong, pid:26641, STATE_DEAD
+05-28 15:30:51.240   575   653 D RilUtility: notify_rild_crash_pid_set certPid:-1, crash:26641, scn:0x0
+05-28 15:30:51.241  1316  2103 I mtkpower_client: perf_lock_acq, hdl:12581, dur:400, num:8, tid:2103
+05-28 15:30:51.242  1316  2103 I mtkpower_client: ret_hdl:12587
+05-28 15:30:51.242   575   653 I libPowerHal: [perfLockAcq] idx:1 hdl:12587 hint:-1 pid:1316 duration:400 => ret_hdl:12587
+05-28 15:30:51.242   575   653 I libPowerHal: [PE] scn:1 hdl:12587 lock_user:system_server pid:1316 tid:2103 dur:400
+05-28 15:30:51.242   575   653 I libPowerHal: system_server: set gpu opp level: 0
+05-28 15:30:51.242   575   653 I libPowerHal: system_server: set gpu opp level max: 0
+05-28 15:30:51.244 26889 26905 I ProcessMonitor: onForegroundInfoChanged: ForegroundInfo{mForegroundPackageName='com.teslacoilsw.launcher', mForegroundUid=10252, mForegroundPid=13665, mLastForegroundPackageName='com.vasko.pong', mLastForegroundUid=10584, mLastForegroundPid=26641, mMultiWindowForegroundPackageName='null', mMultiWindowForegroundUid=-1, mFlags=0}
+05-28 15:30:51.244  4230 14115 I ProcessMonitor: onForegroundInfoChanged: ForegroundInfo{mForegroundPackageName='com.teslacoilsw.launcher', mForegroundUid=10252, mForegroundPid=13665, mLastForegroundPackageName='com.vasko.pong', mLastForegroundUid=10584, mLastForegroundPid=26641, mMultiWindowForegroundPackageName='null', mMultiWindowForegroundUid=-1, mFlags=0}
+05-28 15:30:51.244  4230 14115 I VideoBoxUtils: isSupportVideoBox: false
+05-28 15:30:51.244  1316  3681 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Splash Screen com.vasko.pong#0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0 Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.245  1316  3681 I InputDispatcher: Window went away: Window{66641f6 mode=0 rootTaskId=113 u0 Splash Screen com.vasko.pong}
+05-28 15:30:51.245  5601  6414 I ThermalInfoCollector: collectForgroundAppsInfo
+05-28 15:30:51.245 10803 31175 I GST     : forePkg: com.teslacoilsw.launcher, preForePkg: com.vasko.pong
+05-28 15:30:51.245  5601 23594 D PerfEngineController: ForegroundInfo{mForegroundPackageName='com.teslacoilsw.launcher', mForegroundUid=10252, mForegroundPid=13665, mLastForegroundPackageName='com.vasko.pong', mLastForegroundUid=10584, mLastForegroundPid=26641, mMultiWindowForegroundPackageName='null', mMultiWindowForegroundUid=-1, mFlags=0}
+05-28 15:30:51.245  1316  2103 I Timeline: Timeline: App_transition_ready time:117497871
+05-28 15:30:51.248  1316  2103 I Timeline: Timeline: App_transition_ready time:117497874
+05-28 15:30:51.249  1316  1337 D View    : [Warning] assignParent to null: this = DecorView@5ab85d[pong]
+05-28 15:30:51.250   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:51.250   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.251   654  2104 I BufferQueueProducer: [Splash Screen com.vasko.pong#0](id:28e000008eb,api:2,p:1316,c:654) disconnect(): api=2
+05-28 15:30:51.251  4230 14115 I VideoToolBoxService: splitMode: onfalse
+05-28 15:30:51.251  4230 14115 I VideoToolBoxService: not support vtb. skipExit : false
+05-28 15:30:51.251   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:51.251   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.252   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.254   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.255   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.255   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.255   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.255  1316  1337 I Timeline: Timeline: App_transition_ready time:117497881
+05-28 15:30:51.255   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.255   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.255   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.255   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.256  1316  1337 W WindowManager: Changing focus fromnull to Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} displayId=0 Callers=com.android.server.wm.RootWindowContainer.updateFocusedWindowLocked:473 com.android.server.wm.WindowManagerService.updateFocusedWindowLocked:6209 com.android.server.wm.WindowState.removeIfPossible:2502 com.android.server.wm.WindowState.removeIfPossible:2377 
+05-28 15:30:51.255   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.256   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.257   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:51.258   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.259  1316  1337 I InputTransport: Destroy ARC handle: 0xb40000705e05e040
+05-28 15:30:51.260   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.261   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.261   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.261   654   654 I BufferQueueConsumer: [Splash Screen com.vasko.pong#0](id:28e000008eb,api:0,p:-1,c:654) disconnect()
+05-28 15:30:51.261   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.261   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.261   654   654 I BufferQueue: [Splash Screen com.vasko.pong#0](this:0xb400007485476458,id:2283,api:2,p:-1,c:-1) onDestructor()
+05-28 15:30:51.261   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.261   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.261  1316  1459 I GED     : ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 27, oppidx_max 27, oppidx_min 0
+05-28 15:30:51.262  1316  3681 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.262   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.263   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.263   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.264  1316  3681 I InputDispatcher: Window went away: Splash Screen com.vasko.pong#0
+05-28 15:30:51.264  1316  3681 I InputDispatcher: Window went away: com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher#0
+05-28 15:30:51.265   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.267   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.267   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.267  1316  1555 I MiuiNetworkPolicy: removeUidState uid = 10584
+05-28 15:30:51.267  5601 23594 D UidObserver: onUidGone entry uid = 10584
+05-28 15:30:51.267   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.267 13665 13665 V PhoneWindow: DecorView setVisiblity: visibility = 0, Parent = android.view.ViewRootImpl@a160dc4, this = DecorView@6057271[NovaLauncher]
+05-28 15:30:51.267   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.269   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.269  2483  2483 D RecentsImpl: mActivityStateObserver com.teslacoilsw.launcher.NovaLauncher
+05-28 15:30:51.269  2483  2483 W RecentsImpl: onResumed className=com.teslacoilsw.launcher.NovaLauncher   mIsInAnotherPro=false
+05-28 15:30:51.271  2483  2483 D Launcher.Model: LauncherAppsCallback onPackageChanged|com.vasko.pong|UserHandle{0}
+05-28 15:30:51.271  2483  2483 E Launcher.Model: Launcher is not running,process later
+05-28 15:30:51.272  3112  3112 V PhoneWindow: DecorView setVisiblity: visibility = 8, Parent = android.view.ViewRootImpl@3e98e72, this = DecorView@20492c3[InputMethod]
+05-28 15:30:51.273   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.273  1789  1789 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+05-28 15:30:51.274   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.274   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.275   575   598 I mtkpower@impl: [setMode] type:5, enabled:0
+05-28 15:30:51.275   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.276   486   486 I beanpodkeymaster: cmd:8 Received 165 byte response
+05-28 15:30:51.276   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.277   575   653 I libPowerHal: [perfLockRel] hdl:12586, idx:2
+05-28 15:30:51.277   575   653 I libPowerHal: [PD] scn:2 hdl:12586 hint:22 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.277   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.278   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.278   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.278   575   597 I mtkpower@impl: [mtkPowerHint] hint:21, hold:6000, ext:30, ext_hold:35000
+05-28 15:30:51.278  1316  3676 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.278  1316  3676 I InputDispatcher: Focus entered window: Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} in display 0
+05-28 15:30:51.279   575   653 I libPowerHal: [perfLockRel] hdl:12582, idx:0
+05-28 15:30:51.279   575   653 I libPowerHal: [PD] scn:0 hdl:12582 hint:11 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.279   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.279   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.279   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.280   575   653 I libPowerHal: [perfLockAcq] idx:2 hdl:12588 hint:21 pid:575 duration:6000 => ret_hdl:12588
+05-28 15:30:51.280   575   653 I libPowerHal: [PE] scn:2 hdl:12588 hint:21 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.280   575   653 I libPowerHal: [perfLockRel] hdl:12585, idx:3
+05-28 15:30:51.280   575   653 I libPowerHal: [PD] scn:3 hdl:12585 hint:21 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.280   575   653 I libPowerHal: [perfLockAcq] idx:4 hdl:12589 hint:30 pid:575 duration:35000 => ret_hdl:12589
+05-28 15:30:51.281   575   653 I libPowerHal: [PE] scn:4 hdl:12589 hint:30 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.283  3112  3112 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():1961 
+05-28 15:30:51.284   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.284   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.285  3112  3112 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+05-28 15:30:51.285   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.286  3112  3112 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1233 onStartInput(EditorInfo{EditorInfo{packageName=com.teslacoilsw.launcher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+05-28 15:30:51.287   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:51.287   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.287  3112  3112 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+05-28 15:30:51.287   558   558 I android.hardware.thermal@2.0-service.mtk: fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: NONE value: 34.4 ret_temps size 0
+05-28 15:30:51.287   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:51.287   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.289   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.289   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.289   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.290   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.290   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:51.290   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.292   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.293   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.293   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.294   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.294   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.294   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.294  1316  2103 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.296   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.296   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.296   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.299   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.299   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.299   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.300   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.300   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.301   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.301   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.301   486   486 I beanpodkeymaster: cmd:8 Received 132 byte response
+05-28 15:30:51.301   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.301   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.301   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.303   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.303   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.304   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.304  1789  1789 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+05-28 15:30:51.305   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.305  1316  1337 I Timeline: Timeline: App_transition_ready time:117497931
+05-28 15:30:51.306   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.306   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.311  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.315   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:51.315   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.316   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:51.316   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.317   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.317   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.317   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.318   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.319   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:51.319   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.319   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.321  1789  1789 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+05-28 15:30:51.322   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.322  1789  2004 D MiuiPhoneStatusBarPolicy: updateManagedProfile: secondSpace = false
+05-28 15:30:51.322   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.322   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.323   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.324   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.324   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.325   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.325   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.325   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.326   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.326   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.326   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.327  1316  1998 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.329   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.329   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.329   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.329   543   637 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:43.923737,dur:1001.74,max:143.36,min:5.96  
+05-28 15:30:51.329   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.330   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.330   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.330   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.331   486   486 I beanpodkeymaster: cmd:8 Received 165 byte response
+05-28 15:30:51.331   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.332   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.332   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.332   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.336   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.336   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.336   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.336   486   486 I beanpodkeymaster: cmd:20 Received 4 byte response
+05-28 15:30:51.336   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.336   486   486 I beanpodkeymaster: cmd:4 Received 48 byte response
+05-28 15:30:51.337   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.338   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.338   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.339   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.340   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.341   486   486 I beanpodkeymaster: cmd:c Received 36 byte response
+05-28 15:30:51.341   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.343   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.343   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.343   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.344  1316  1998 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.344   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.344   486   486 I beanpodkeymaster: cmd:8 Received 34 byte response
+05-28 15:30:51.344   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.345   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.345   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.345   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.346   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.347   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.347   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.348   486   486 I beanpodkeymaster: Enter BeanpodKeymaster BeginOperation
+05-28 15:30:51.348   486   486 I beanpodkeymaster: cmd:4 Received 24 byte response
+05-28 15:30:51.348   486   486 I beanpodkeymaster: Exit BeanpodKeymaster BeginOperation
+05-28 15:30:51.349   486   486 I beanpodkeymaster: Enter BeanpodKeymaster UpdateOperation
+05-28 15:30:51.349   486   486 I beanpodkeymaster: cmd:8 Received 132 byte response
+05-28 15:30:51.349   486   486 I beanpodkeymaster: Exit BeanpodKeymaster UpdateOperation
+05-28 15:30:51.350   486   486 I beanpodkeymaster: Enter BeanpodKeymaster FinishOperation
+05-28 15:30:51.350   486   486 I beanpodkeymaster: cmd:c Received 20 byte response
+05-28 15:30:51.350   486   486 I beanpodkeymaster: Exit BeanpodKeymaster FinishOperation
+05-28 15:30:51.352   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.353   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.357  1316  1333 W Looper  : Drained
+05-28 15:30:51.353   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.361  1316  3685 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.369   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.369   961  1025 D AAL     : 05-28 03:30:51.104 BL= 279,ESS= 257, 05-28 03:30:51.137 BL= 279,ESS= 258, 05-28 03:30:51.237 BL= 279,ESS= 260, 05-28 03:30:51.337 BL= 279,ESS= 262, 05-28 03:30:51.369 BL= 280,ESS= 262, 
+05-28 15:30:51.369   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.376   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.376   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.377  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.383  1789  1807 I ndroid.systemu: NativeAlloc concurrent copying GC freed 8401(502KB) AllocSpace objects, 0(0B) LOS objects, 49% free, 14MB/29MB, paused 72us total 146.515ms
+05-28 15:30:51.385  4230  5207 D TrafficManageService: onReceive: intent.action = com.android.server.action.NETWORK_STATS_UPDATED
+05-28 15:30:51.386   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.392   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.393   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.393   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.394  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.399   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.399   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.402   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.411  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.415   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.416   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.416   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.419   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.421   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.427   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.427   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.427  1316  1998 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.435   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.439   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.439   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.439   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.444  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.445   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.445   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.452   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.461  1316  1998 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.462   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.462   533  9808 I chatty  : uid=1041(audioserver) writer identical 3 lines
+05-28 15:30:51.462   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.462 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23447176
+05-28 15:30:51.462 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23448200
+05-28 15:30:51.462   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23448200
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23449224
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23449224
+05-28 15:30:51.463 19215 19374 I chatty  : uid=10452(com.spotify.music) AndroidAudioDri identical 1 line
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23449224
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23450248
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23450248
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23451272
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23451272
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23452296
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23452296
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23453320
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23453320
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23454344
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23454344
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23455368
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23455368
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23456392
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23456392
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23457416
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23457416
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23458440
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23458440
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23459464
+05-28 15:30:51.463 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23459464
+05-28 15:30:51.463 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23460488
+05-28 15:30:51.465 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23460488
+05-28 15:30:51.465 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23461512
+05-28 15:30:51.465 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23461512
+05-28 15:30:51.465 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23462536
+05-28 15:30:51.465 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23462536
+05-28 15:30:51.465 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23463560
+05-28 15:30:51.466 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23463560
+05-28 15:30:51.466 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23464584
+05-28 15:30:51.466 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23464584
+05-28 15:30:51.466 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23465608
+05-28 15:30:51.466 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23465608
+05-28 15:30:51.466 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23466632
+05-28 15:30:51.467 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23466632
+05-28 15:30:51.467 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23467656
+05-28 15:30:51.467 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23467656
+05-28 15:30:51.467 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23468680
+05-28 15:30:51.467 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23468680
+05-28 15:30:51.467 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23469704
+05-28 15:30:51.468   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.468   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.469   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.477  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.484   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.485   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.485   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.485   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.490   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.491   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.491   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.494  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.496 15715 15774 I akeh    : (REDACTED) remove existing package for update: %s
+05-28 15:30:51.496   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.496   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.497 15715 25419 I dpqy    : (REDACTED) soft deleting data for %s
+05-28 15:30:51.498 15715 15769 I akeh    : (REDACTED) remove existing package for update: %s
+05-28 15:30:51.502 15715 15762 I akeh    : (REDACTED) remove existing package for update: %s
+05-28 15:30:51.502   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.504 15715 15769 I akeh    : (REDACTED) remove existing package for update: %s
+05-28 15:30:51.507 15715 15774 I akeh    : (REDACTED) remove existing package for update: %s
+05-28 15:30:51.508   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.508   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.509   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.509 15715 15774 I akeh    : (REDACTED) remove existing package for update: %s
+05-28 15:30:51.511  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.513 15715 15770 I dpqo    : Scheduling deletion propagation for Geller data.
+05-28 15:30:51.513 15715 26583 I dpqo    : Performing deletion propagation for Geller data.
+05-28 15:30:51.514   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.514   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.515 15715 15770 I dpqo    : Scheduling deletion propagation for Geller data.
+05-28 15:30:51.515 15715 15774 I dpqo    : Scheduling deletion propagation for Geller data.
+05-28 15:30:51.515 15715 25419 I dpqy    : (REDACTED) Writing data of size=%d bytes with N=%d keys to Geller corpus %s at ts=%d
+05-28 15:30:51.515 15715 25402 I dpqo    : Performing deletion propagation for Geller data.
+05-28 15:30:51.515 15715 26583 I dpqo    : Performing deletion propagation for Geller data.
+05-28 15:30:51.516 15715 15762 I dpqo    : Scheduling deletion propagation for Geller data.
+05-28 15:30:51.516 15715 15774 I akeh    : refreshDeviceAppInfoForAccount done.
+05-28 15:30:51.516 15715 15770 I dpqo    : Scheduling deletion propagation for Geller data.
+05-28 15:30:51.516 15715 26582 I dpqo    : Performing deletion propagation for Geller data.
+05-28 15:30:51.516 15715 26584 I dpqo    : Performing deletion propagation for Geller data.
+05-28 15:30:51.519   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.521 15715 15774 I akeh    : refreshDeviceAppInfoForAccount done.
+05-28 15:30:51.524 15715 15774 I akeh    : refreshDeviceAppInfoForAccount done.
+05-28 15:30:51.524 15715 15770 I dpqo    : Scheduling deletion propagation for Geller data.
+05-28 15:30:51.525 15715 26582 I dpqo    : Performing deletion propagation for Geller data.
+05-28 15:30:51.527  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.529 15715 15770 I akeh    : refreshDeviceAppInfoForAccount done.
+05-28 15:30:51.530   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.531   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.531   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.531  4230  5207 D TrafficManageService: onReceive: intent.action = com.android.server.action.NETWORK_STATS_UPDATED
+05-28 15:30:51.533 15715 15770 I akeh    : refreshDeviceAppInfoForAccount done.
+05-28 15:30:51.535   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.536 15715 15770 I akeh    : refreshDeviceAppInfoForAccount done.
+05-28 15:30:51.536   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.536   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.544  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.546  1316  1337 I Timeline: Timeline: App_transition_stopped time:117498172
+05-28 15:30:51.550  1316  1459 I GED     : [GT]_get_procNameprocess pid(1316)
+05-28 15:30:51.550  1316  1459 I GED     : [GT]_getprocess name(system_server)
+05-28 15:30:51.550  1316  1459 I system_server: [GT] ret(1) gt_status(00000000) aniso_debug_level(0) gt_aniso_max_level(16) ani so mask(00000001) tri mask(00000002)
+05-28 15:30:51.550  1316  1459 I libMEOW_gift: ctx:0xb400006f027a7c90, ARC not Enabled.
+05-28 15:30:51.552   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.553   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.559   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.560   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.561  1316  3238 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.566  1316  1459 I GED     : ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 27, oppidx_max 27, oppidx_min 0
+05-28 15:30:51.569   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.576   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.577   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.577   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.577  1316  2103 I InputDispatcher: setInputWindows displayId=0 Window{84ae030 mode=0 rootTaskId=1 u0 NavigationBar0} Window{4a063c0 mode=0 rootTaskId=1 u0 StatusBar} Window{77ce709 mode=0 rootTaskId=1 u0 com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaLauncher} Window{21365ac mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.MiuiKeyguardPictorialWallpaper} Window{2192320 mode=0 rootTaskId=1 u0 com.miui.miwallpaper.wallpaperservice.ImageWallpaper} 
+05-28 15:30:51.582   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.583   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.583   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.585   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.588   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.600   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.600   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.602   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.606   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.606   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.619   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.623   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.629   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.629   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.632  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10450, uidState = 19
+05-28 15:30:51.632  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10360, uidState = 19
+05-28 15:30:51.636   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.637   527   527 D Zygote  : Forked child process 26678
+05-28 15:30:51.639  1316  1347 I ActivityManager: Start proc 26678:tv.twitch.bttvandroid.app/u0a360 for broadcast {tv.twitch.bttvandroid.app/com.google.firebase.iid.FirebaseInstanceIdReceiver} caller=com.google.android.gms
+05-28 15:30:51.643   575   653 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:12587
+05-28 15:30:51.643   575   653 I libPowerHal: [perfLockRel] hdl:12587, idx:1
+05-28 15:30:51.643   575   653 I libPowerHal: [PD] scn:1 hdl:12587 lock_user:system_server pid:1316 tid:2103 dur:400
+05-28 15:30:51.643   575   653 I libPowerHal: system_server: set gpu opp level: 27
+05-28 15:30:51.643   575   653 I libPowerHal: system_server: set gpu opp level max: 0
+05-28 15:30:51.646   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.646   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.646   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.650 26678 26678 E bttvandroid.ap: Not starting debugger since process cannot load the jdwp agent.
+05-28 15:30:51.652   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.652   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.652   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.652   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.657   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.658   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.663  1316  1555 I MiuiNetworkPolicy: updateUidState uid = 10360, uidState = 11
+05-28 15:30:51.668   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.669   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.669   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.669   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.674   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.674   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.686   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.687   961  1025 D AAL     : 05-28 03:30:51.436 BL= 280,ESS= 264, 05-28 03:30:51.486 BL= 280,ESS= 262, 05-28 03:30:51.553 BL= 279,ESS= 262, 05-28 03:30:51.587 BL= 279,ESS= 260, 05-28 03:30:51.687 BL= 279,ESS= 258, 
+05-28 15:30:51.692   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.702  1316  1336 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{4c7c9d4 u0 com.vasko.pong/.MainActivity t-1 f}}
+05-28 15:30:51.698   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.698   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.702   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.703   575   653 I libPowerHal: [perfNotifyAppState] foreground:com.teslacoilsw.launcher, pid:13665, uid:10252
+05-28 15:30:51.703   575   653 I UxUtility: notifyForegroundApp pack:com.teslacoilsw.launcher, uid:10252
+05-28 15:30:51.703   575   653 I TouchUtility: notifyAppState error = NULL
+05-28 15:30:51.703   575   597 I mtkpower@impl: [notifyAppState] pc:0, com.vasko.pong => com.teslacoilsw.launcher
+05-28 15:30:51.704   575   653 I libPowerHal: [perfLockAcq] idx:0 hdl:12590 hint:21 pid:575 duration:1 => ret_hdl:12590
+05-28 15:30:51.704   575   653 I libPowerHal: [PE] scn:0 hdl:12590 hint:21 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.704   575   653 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:12590
+05-28 15:30:51.704   575   653 I libPowerHal: [perfLockRel] hdl:12590, idx:0
+05-28 15:30:51.704   575   653 I libPowerHal: [PD] scn:0 hdl:12590 hint:21 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.704   575   653 I libPowerHal: [perfLockRel] hdl:12588, idx:2
+05-28 15:30:51.704   575   653 I libPowerHal: [PD] scn:2 hdl:12588 hint:21 comm:mtkpower@1.0-se pid:575
+05-28 15:30:51.704   575   653 I libPowerHal: [setClusterFreq] scn:MTKPOWER_HINT_PROCESS_CREATE, freq:0, 0
+05-28 15:30:51.704   575   653 I libPowerHal: MTKPOWER_HINT_PROCESS_CREATE: cpu_ctrl set cpu freq: -1 -1 -1 -1
+05-28 15:30:51.704   575   653 I libPowerHal: [PD] MTKPOWER_HINT_PROCESS_CREATE update cmd:1000000, param:1
+05-28 15:30:51.705   575   653 I libPowerHal: [PD] MTKPOWER_HINT_PROCESS_CREATE update cmd:1408300 param:40
+05-28 15:30:51.705   575   653 I libPowerHal: [PD] MTKPOWER_HINT_PROCESS_CREATE update cmd:1000000 param:1
+05-28 15:30:51.719   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.737   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.737   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.743   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.744   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.752   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.755 11340 18043 W GCM     : Force release of GOOGLE_C2DM lock
+05-28 15:30:51.760   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.767   533  9808 I chatty  : uid=1041(audioserver) writer identical 8 lines
+05-28 15:30:51.767   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.769   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.773   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.773   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.780 11340 18043 W GCM     : Force release of GOOGLE_C2DM lock
+05-28 15:30:51.783   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.784   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.784   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.785   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.790   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.790   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.803   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.806   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.813   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.813   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.820   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.830   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.836   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.836   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.836   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.836   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.842   533  9808 I chatty  : uid=1041(audioserver) writer identical 2 lines
+05-28 15:30:51.842   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.852   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.853   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.859   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:51.859   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.869   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.870 26678 26678 D NetworkSecurityConfig: Using Network Security Config from resource default_security_config debugBuild: false
+05-28 15:30:51.875   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.876   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.876 26678 26678 D NetworkSecurityConfig: Using Network Security Config from resource default_security_config debugBuild: false
+05-28 15:30:51.876   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.882   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.882   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.887   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.898   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.899   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.899   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.903   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.905   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.905   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.905 25085 25230 I System.out: [okhttp]:check permission begin!
+05-28 15:30:51.905 25085 25230 I System.out: [okhttp]:not MMS!
+05-28 15:30:51.905 25085 25230 I System.out: [okhttp]:not Email!
+05-28 15:30:51.914 26678 26700 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.920 26678 26700 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.920   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.921 26678 26700 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.922   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.922   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.922   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.923 26678 26700 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.928   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.934   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.934   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.936 26678 26700 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.936   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.939 26678 26700 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.941 26678 26700 E libc    : Access denied finding property "ro.vendor.pref_scale_resolution"
+05-28 15:30:51.942  4230  5207 D TrafficManageService: onReceive: intent.action = com.android.server.action.NETWORK_STATS_UPDATED
+05-28 15:30:51.944   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.944   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.944   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.946 25085 25230 I System.out: [OkHttp] sendRequest>>
+05-28 15:30:51.946 25085 25230 I System.out: [OkHttp] sendRequest<<
+05-28 15:30:51.950   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.950   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.953   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.967   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.968   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.968   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.969   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.972 26678 26678 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+05-28 15:30:51.974   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.974   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.986   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:51.989   525  2742 E statsd  : Stats puller failed for tag: 10011 at 335765243912292
+05-28 15:30:51.990   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.991   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:51.991   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:51.991 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23469704
+05-28 15:30:51.991 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23470728
+05-28 15:30:51.991 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23470728
+05-28 15:30:51.991 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23471752
+05-28 15:30:51.991 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23471752
+05-28 15:30:51.991 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23472776
+05-28 15:30:51.991 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23472776
+05-28 15:30:51.991 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23473800
+05-28 15:30:51.991 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23473800
+05-28 15:30:51.991 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23474824
+05-28 15:30:51.991 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23474824
+05-28 15:30:51.991 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23475848
+05-28 15:30:51.992 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23475848
+05-28 15:30:51.992 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23476872
+05-28 15:30:51.992 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23476872
+05-28 15:30:51.992 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23477896
+05-28 15:30:51.992 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23477896
+05-28 15:30:51.992 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23478920
+05-28 15:30:51.992 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23478920
+05-28 15:30:51.992 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23479944
+05-28 15:30:51.992 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23479944
+05-28 15:30:51.992 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23480968
+05-28 15:30:51.992 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23480968
+05-28 15:30:51.992 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23481992
+05-28 15:30:51.992 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23481992
+05-28 15:30:51.992 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23483016
+05-28 15:30:51.997   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.002   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:52.002   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.003   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:52.013   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.020   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:52.020   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.020   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:52.028 26678 26678 I FirebaseCrashlytics: Initializing Firebase Crashlytics 18.6.0 for tv.twitch.bttvandroid.app
+05-28 15:30:52.036   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:52.036   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.043   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:52.043   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.052   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:52.059   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.066   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:52.066   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.067 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23483016
+05-28 15:30:52.067 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23484040
+05-28 15:30:52.067 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23484040
+05-28 15:30:52.067 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23485064
+05-28 15:30:52.067 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23485064
+05-28 15:30:52.067 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23486088
+05-28 15:30:52.067 26678 26678 I FirebaseInitProvider: FirebaseApp initialization successful
+05-28 15:30:52.067 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23486088
+05-28 15:30:52.067 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23487112
+05-28 15:30:52.067 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23487112
+05-28 15:30:52.067 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23488136
+05-28 15:30:52.068 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23488136
+05-28 15:30:52.068 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23489160
+05-28 15:30:52.068 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23489160
+05-28 15:30:52.068 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23490184
+05-28 15:30:52.068 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23490184
+05-28 15:30:52.068 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23491208
+05-28 15:30:52.068 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23491208
+05-28 15:30:52.069 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23492232
+05-28 15:30:52.069 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23492232
+05-28 15:30:52.069 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23493256
+05-28 15:30:52.069   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:52.069 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23493256
+05-28 15:30:52.069 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23494280
+05-28 15:30:52.069 19215 19374 D AudioTrack: getMarkerPosition(): 0x6f8bcb5500, marker = 23494280
+05-28 15:30:52.069 19215 19374 D AudioTrack: setMarkerPosition(607): 0x6f8bcb5500, marker = 23495304
+05-28 15:30:52.071 26678 26709 D libcrashlytics: Initializing libcrashlytics version 3.2.0
+05-28 15:30:52.077 26678 26709 D libcrashlytics: Initializing native crash handling successful.
+05-28 15:30:52.082   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.083   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:52.083   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.086   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:52.088   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.095   533  9808 I chatty  : uid=1041(audioserver) writer identical 4 lines
+05-28 15:30:52.095   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.097 26678 26709 I FirebaseCrashlytics: No version control information found
+05-28 15:30:52.102   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8
+05-28 15:30:52.105   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.112   533  9808 I chatty  : uid=1041(audioserver) writer identical 6 lines
+05-28 15:30:52.112   533  9808 I BTAudioHalDeviceProxy: LoadAudioConfig: savitech low latency = 0
+05-28 15:30:52.119   961  1025 D AAL     : DRECurveCalculation: BLKNUM = 16 8

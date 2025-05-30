@@ -69,11 +69,11 @@ run_cmd :: fn(fmt: string, args: ...) {
 
 compile_java_file :: fn(build_tools: string, cd: string, class_name: string, android_jar: string) -> string {
     io.println("Compiling: %...", class_name);
-    run_cmd("javac -source 11 -target 11 -d %0 -classpath %2 %0/../src/java/%1.java", cd, class_name, android_jar);
-    run_cmd("java -cp %/lib/d8.jar com.android.tools.r8.D8 %/com/vasko/pong/%.class --lib %", build_tools, cd, class_name, android_jar);
+    run_cmd("javac -Xlint -source 11 -target 11 -d %0 -classpath %2 %0/../src/java/%1.java", cd, class_name, android_jar);
+    run_cmd("java -cp %/lib/d8.jar com.android.tools.r8.D8 %/com/vasko/pong/*.class --lib %", build_tools, cd, android_jar);
 
     io.println("Compilation Finished!");
-    return "classes.dex";
+    return "*.dex";
 }
 
 after_link :: fn() {

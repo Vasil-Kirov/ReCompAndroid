@@ -1,5 +1,7 @@
 module android
 
+JNI_COMMIT :: cast(i32, 1);
+JNI_ABORT :: cast(i32, 2);
 
 struct _jmethodID {
 }
@@ -217,7 +219,7 @@ struct JNINativeInterface {
 	NewFloatArray: *fn #foreign(a: *JNIEnv, b: i32) -> *,
 	NewDoubleArray: *fn #foreign(a: *JNIEnv, b: i32) -> *,
 	GetBooleanArrayElements: *fn #foreign(a: *JNIEnv, b: *, c: *u8) -> *u8,
-	GetByteArrayElements: *fn #foreign(a: *JNIEnv, b: *, c: *u8) -> *i8,
+	GetByteArrayElements: *fn #foreign(a: *JNIEnv, b: *, c: ?*u8) -> ?*i8,
 	GetCharArrayElements: *fn #foreign(a: *JNIEnv, b: *, c: *u8) -> *u16,
 	GetShortArrayElements: *fn #foreign(a: *JNIEnv, b: *, c: *u8) -> *i16,
 	GetIntArrayElements: *fn #foreign(a: *JNIEnv, b: *, c: *u8) -> *i32,
