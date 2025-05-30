@@ -2,26 +2,48 @@ module scene;
 
 #import gui as *
 #import log
+#import mem
 
-
-scene_00 :: fn(ui: *GuiState) -> *Widget {
-    window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
-    flexbox := create_flexbox(ui, .Vertical, .End, 1);
-    hello_btn := create_button(ui, "Hello");
-    hello_btn.on_click = fn(this: *Button) {
-        log.info("Hello");
-    };
-    hello_btn2 := create_button(ui, "Hello");
-    hello_btn3 := create_button(ui, "Hello");
-    add_child(&window.base, &flexbox.base);
-    add_child(&flexbox.base, &hello_btn.base);
-    add_child(&flexbox.base, &hello_btn2.base);
-    add_child(&flexbox.base, &hello_btn3.base);
-    window_do_resize(ui, window);
-    return cast(*Widget, window);
+struct Scene {
+    widget: *Widget,
+    id: int,
+    connect_label: ?*Label,
+    device_name_label: ?*Label,
 }
 
-scene_01 :: fn(ui: *GuiState) -> *Widget {
+
+scene_00 :: fn(ui: *GuiState) -> Scene {
+    window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
+    flexbox := create_flexbox(ui, .Vertical, .SpaceEvenly, 1);
+    add_child(&window.base, &flexbox.base);
+    //hello_btn := create_button(ui, "Hello");
+    //hello_btn.on_click = fn(this: *Button) {
+    //    log.info("Hello");
+    //};
+    //hello_btn2 := create_button(ui, "Hello");
+    //hello_btn3 := create_button(ui, "Hello");
+    //add_child(&flexbox.base, &hello_btn.base);
+    //add_child(&flexbox.base, &hello_btn2.base);
+    //add_child(&flexbox.base, &hello_btn3.base);
+
+
+    points := mem.make_slice(GraphPoint, 7, &ui.alloc);
+    points[0] = GraphPoint { 0.0, 1.0 };
+    points[1] = GraphPoint { 1.0, 5.0 };
+    points[2] = GraphPoint { 4.0, 4.0 };
+    points[3] = GraphPoint { 5.0, 3.0 };
+    points[4] = GraphPoint { 5.5, 10.0 };
+    points[5] = GraphPoint { 6.0, 9.0 };
+    points[6] = GraphPoint { 8.0, 6.0 };
+    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 200});
+    add_child(&flexbox.base, &graph.base);
+
+
+    window_do_layout(ui, window);
+    return .{ widget = cast(*Widget, window), id = 0 };
+}
+
+scene_01 :: fn(ui: *GuiState) -> Scene {
     window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
     main_box := create_flexbox(ui, .Vertical, .SpaceEvenly, 1);
     add_child(&window.base, &main_box.base);
@@ -30,19 +52,36 @@ scene_01 :: fn(ui: *GuiState) -> *Widget {
 	line_width := cast(f32, ORTHO_WIDTH);
 	line_height := cast(f32, ORTHO_HEIGHT - 20) / 4.0;
     for &line in lines {
-        *line = create_flexbox(ui, .Horizontal, .SpaceEvenly, 1);
-		(*line).size = .{line_width, line_height};
+        *line = create_flexbox(ui, .Horizontal, .SpaceEvenly, 1, .FillCross);
+		(*line).size = .{line_width, 0};
     }
     for line in lines {
         add_child(&main_box.base, &line.base);
     }
 
+    points := mem.make_slice(GraphPoint, 7, &ui.alloc);
+    points[0] = GraphPoint { 0.0, 1.0 };
+    points[1] = GraphPoint { 1.0, 5.0 };
+    points[2] = GraphPoint { 4.0, 4.0 };
+    points[3] = GraphPoint { 5.0, 3.0 };
+    points[4] = GraphPoint { 5.5, 10.0 };
+    points[5] = GraphPoint { 7.0, 9.0 };
+    points[6] = GraphPoint { 8.0, 6.0 };
+
+    top_name := create_label(ui, "Smart Watch Monitor", 1.0);
     connected := create_label(ui, ":xConnected", 1.0);
     device_name := create_label(ui, "ESP32 TTGO", 1.0);
-    add_child(&lines[0].base, &connected.base);
-    add_child(&lines[0].base, &device_name.base);
+    sync_timer := create_label(ui, ":sLast Sync: ...", 1.0);
+    refresh_btn := create_button(ui, ":rRefresh");
+    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{520, 150});
+    add_child(&lines[0].base, &top_name.base);
+    add_child(&lines[1].base, &connected.base);
+    add_child(&lines[1].base, &device_name.base);
+    add_child(&lines[2].base, &sync_timer.base);
+    add_child(&lines[2].base, &refresh_btn.base);
+    add_child(&lines[3].base, &graph.base);
 
-    window_do_resize(ui, window);
-    return cast(*Widget, window);
+    window_do_layout(ui, window);
+    return .{ widget = cast(*Widget, window), id = 1, connect_label = connected, device_name_label = device_name, };
 }
 

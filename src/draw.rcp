@@ -156,16 +156,82 @@ copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect
     }
 }
 
-draw_color :: fn(dst_: ?*Texture, rect: Rect, color: u32) {
+draw_color :: fn(dst_: ?*Texture, rect: Rect, color: u32, no_fill: bool = false) {
     if dst_ == null return;
     dst := ?dst_;
 
     dst_at := dst.pixels + rect.x + (rect.y * dst.width);
+    if no_fill {
+        for y in rect.height {
+            for x in rect.width {
+                if x + 1 == rect.width || y + 1 == rect.height || x == rect.x || y == rect.x
+                    dst_at[x] = color;
+            }
+            dst_at += dst.width;
+        }
+        return;
+    }
     for y in rect.height {
         for x in rect.width {
             dst_at[x] = color;
         }
         dst_at += dst.width;
+    }
+}
+
+draw_circle :: fn(dst_: ?*Texture, x0: int, y0: int, r: int, color: u32) {
+    if dst_ == null return;
+    dst := ?dst_;
+
+    x := r;
+    y := 0;
+    decision := 1 - x;
+    for y <= x {
+        draw_line(dst, x0 - x, y0 + y, x0 + x, y0 + y, color, 1);
+        draw_line(dst, x0 - x, y0 - y, x0 + x, y0 - y, color, 1);
+        draw_line(dst, x0 - y, y0 + x, x0 + y, y0 + x, color, 1);
+        draw_line(dst, x0 - y, y0 - x, x0 + y, y0 - x, color, 1);
+
+        y += 1;
+        if decision <= 0 {
+            decision += 2 * y + 1;
+        } else {
+            x -= 1;
+            decision += 2 * (y - x) + 1;
+        }
+    }
+}
+
+draw_line :: fn(dst_: ?*Texture, x0: int, y0: int, x1: int, y1: int, color: u32, thickness: int) {
+    if dst_ == null return;
+    dst := ?dst_;
+
+    dx := abs(x1 - x0);
+    dy := abs(y1 - y0);
+    err := dx-dy;
+    sx := if x0 < x1 then 1 else -1;
+    sy := if y0 < y1 then 1 else -1;
+
+    x := x0;
+    y := y0;
+    for {
+        dst.pixels[y * dst.width + x] = color;
+        // thickness
+        {
+            for dy := -thickness; dy <= thickness; dy+=1 {
+                for dx := -thickness; dx <= thickness; dx+=1 {
+                    px := x + dx;
+                    py := y + dy;
+                    if px >= 0 && px < dst.width && py >= 0 && py < dst.height {
+                        dst.pixels[py * dst.width + px] = color;
+                    }
+                }
+            }
+        }
+        if x == x1 && y == y1 break;
+        e2 := 2*err;
+        if e2 > -dy { err -= dy; x += sx; }
+        if e2 < dx { err += dx; y += sy; }
     }
 }
 

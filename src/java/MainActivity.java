@@ -11,12 +11,14 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.TextView;
 import android.content.Context;
+import android.content.Intent;
 
 import java.util.UUID;
 import java.nio.charset.StandardCharsets;
 
 public class MainActivity extends NativeActivity
 {
+	private final static int REQUEST_ENABLE_BT = 1;
     private static final String TAG = "vpong";
     private static final String SERVICE_UUID = "6e053c45-71bb-4c40-9d82-cc3be83952da";
     private static final String CHARACTERISTIC_UUID = "b8af02f9-e29b-4576-9c5a-fd80b7eda684";
@@ -24,6 +26,7 @@ public class MainActivity extends NativeActivity
     private BluetoothAdapter bluetoothAdapter;
     private BluetoothLeScanner scanner;
     private BluetoothGatt bluetoothGatt;
+	private BluetoothDevice connectedDevice = null;
 
 	private byte[] currentValue = null;
 
@@ -38,51 +41,62 @@ public class MainActivity extends NativeActivity
             if (device.getName() != null && device.getName().equals("ESP32_BLE_Smart_Device")) {
                 scanner.stopScan(this);
                 connectToDevice(device);
+				connectedDevice = device;
             }
         }
     };
+	
+	public void doPermissionsAndStartScan() {
+		scanner = bluetoothAdapter.getBluetoothLeScanner();
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { 
 
-	@Override
-	public void onCreate(Bundle savedInstance)
-	{
-		//bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-		BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
-		bluetoothAdapter = bluetoothManager.getAdapter();
-        scanner = bluetoothAdapter.getBluetoothLeScanner();
-		super.onCreate(savedInstance);
+			java.util.List<String> permissionsToRequest = new java.util.ArrayList<>();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { 
-
-            java.util.List<String> permissionsToRequest = new java.util.ArrayList<>();
-
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+			if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
 			{
 				permissionsToRequest.add(Manifest.permission.ACCESS_FINE_LOCATION);
-            }
+			}
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // Android 12+
-                if (checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
-                    permissionsToRequest.add(Manifest.permission.BLUETOOTH_SCAN);
-                }
-                if (checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                    permissionsToRequest.add(Manifest.permission.BLUETOOTH_CONNECT);
-                }
-                if (checkSelfPermission(Manifest.permission.BLUETOOTH_ADVERTISE) != PackageManager.PERMISSION_GRANTED) {
-                    permissionsToRequest.add(Manifest.permission.BLUETOOTH_ADVERTISE);
-                }
-            }
 
 			if (permissionsToRequest.isEmpty()) {
-                startScan();
-            }
+				startScan();
+			}
 			else {
 				requestPermissions(permissionsToRequest.toArray(new String[0]), 1);
 			}
 
-        } else {
-            startScan();
-        }
-		startScan();
+		} else {
+			startScan();
+		}
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstance) {
+		//bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+		BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+		bluetoothAdapter = bluetoothManager.getAdapter();
+		if (!bluetoothAdapter.isEnabled()) {
+			Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+		}
+		else {
+			doPermissionsAndStartScan();
+		}
+
+		super.onCreate(savedInstance);
+	}
+
+	@Override
+	public void onActivityResult (int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_ENABLE_BT) {
+			if (resultCode != RESULT_OK) {
+				Log.d(TAG, "Bluetooth not enabled!");
+				finish();
+				return;
+			}
+
+			doPermissionsAndStartScan();
+		}
 	}
 
     @Override
@@ -103,17 +117,16 @@ public class MainActivity extends NativeActivity
         Log.d(TAG, "Scanning for BLE devices...");
     }
 
-    private void connectToDevice(BluetoothDevice device)
-	{
+    private void connectToDevice(BluetoothDevice device) {
         Log.d(TAG, "Connecting to device...");
         bluetoothGatt = device.connectGatt(this, false, gattCallback);
     }
 
-	public int getBluetoothStatus()
-	{
+	public int getBluetoothStatus() {
 		if (bluetoothAdapter == null) return 0; // not bluetooth support
 		if (!bluetoothAdapter.isEnabled()) return 1; // not enabled
-		return 2; // enabled
+		if (connectedDevice == null) return 2; // enabled
+		return 3; // connected
 	}
 
     private final BluetoothGattCallback gattCallback = new BluetoothGattCallback() {

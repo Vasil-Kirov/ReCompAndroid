@@ -21,10 +21,10 @@ struct Flexbox {
 	gap: f32,
 }
 
-create_flexbox :: fn(gui: *GuiState, direction: Direction, justify: Justify, gap: f32) -> *Flexbox {
+create_flexbox :: fn(gui: *GuiState, direction: Direction, justify: Justify, gap: f32, flags: WidgetFlags = .NoFlags) -> *Flexbox {
 	MAX_CHILDREN :: 32;
 
-	flexbox := make_widget(gui, Flexbox);
+	flexbox := make_widget(gui, Flexbox, flags);
 	flexbox.handle_event = flexbox_event_handler;
 	flexbox.direction = direction;
 	flexbox.justify = justify;
@@ -40,12 +40,12 @@ flexbox_get_child_size :: fn(gui: *GuiState, flexbox: *Flexbox, child_idx: int) 
 	#assert flexbox.children.count > child_idx;
 
 	xsize_event: Event;
-	xsize_event.type = EventType.GetSize_X;
+	xsize_event.type = EventType.Measure_X;
 
 	x_size := flexbox.handle_event(gui, flexbox.children[child_idx], xsize_event);
 
 	ysize_event: Event;
-	ysize_event.type = EventType.GetSize_Y;
+	ysize_event.type = EventType.Measure_Y;
 	y_size := flexbox.handle_event(gui, flexbox.children[child_idx], ysize_event);
 
 	return iv2 { @i32 x_size, @i32 y_size };
@@ -58,17 +58,77 @@ flexbox_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int 
     flexbox := @*Flexbox this;
 
 	match event.type {
-		.Resize: {
-			flexbox.size = event.data.resize.size;
+		.Layout: {
+            flexbox.pos = event.data.layout.pos;
+			flexbox.size = event.data.layout.size;
 			calculate_flexbox_size(gui, flexbox);
 			return 0;
 		}
-		.GetSize_X: {
-			return cast(int, flexbox.size.x);
+		.Measure_X: {
+
+            if flexbox.size.x != 0
+                return cast(int, flexbox.size.x);
+
+            gap := flexbox.gap;
+
+            is_main_axis := flexbox.direction == .Horizontal;
+            children_size := 0.0;
+            for child in flexbox.children {
+                xsize_event: Event;
+                xsize_event.type = EventType.Measure_X;
+
+                x_size := cast(f32, flexbox.handle_event(gui, child, xsize_event));
+                if is_main_axis {
+                    children_size += x_size;
+                } else {
+                    children_size = if children_size < x_size x_size else children_size;
+                }
+            }
+
+            if is_main_axis {
+                children_size += gap * cast(f32, flexbox.children.count + 1);
+            }
+            else {
+                children_size += gap * 2;
+            }
+
+            return cast(int, children_size);
 		}
-		.GetSize_Y: {
-			return cast(int, flexbox.size.y);
+		.Measure_Y: {
+            if flexbox.size.y != 0
+			    return cast(int, flexbox.size.y);
+
+            gap := flexbox.gap;
+
+            is_main_axis := flexbox.direction == .Vertical;
+            children_size := 0.0;
+            for child in flexbox.children {
+                xsize_event: Event;
+                xsize_event.type = EventType.Measure_Y;
+
+                y_size := cast(f32, flexbox.handle_event(gui, child, xsize_event));
+                if is_main_axis {
+                    children_size += y_size;
+                } else {
+                    children_size = if children_size < y_size y_size else children_size;
+                }
+            }
+
+            if is_main_axis {
+                children_size += gap * cast(f32, flexbox.children.count + 1);
+            }
+            else {
+                children_size += gap * 2;
+            }
+
+            return cast(int, children_size);
 		}
+        /*
+        .Draw: {
+			pos := get_absolute_position (event.data.draw.offset, this.pos);
+            push_cmd(gui, cmd_drawbox(gui, .{pos, this.size}, .{0, 0.4, 1, 1}, true));
+        }
+        */
 	};
 
     return default_event_handler(gui, this, event);
@@ -83,21 +143,23 @@ calculate_flexbox_size :: fn(gui: *GuiState, flexbox: *Flexbox) {
                 main_pos += flexbox.gap;
 
                 size := flexbox_get_child_size(gui, flexbox, child_i);
+                child_pos: v2;
 
                 if flexbox.direction == Direction.Horizontal {
-                    child.pos = v2 { main_pos, cross_pos };
+                    child_pos = v2 { main_pos, cross_pos };
                     main_pos += size.x;
                 } else {
-                    child.pos = v2 { cross_pos, main_pos };
+                    child_pos = v2 { cross_pos, main_pos };
                     main_pos += size.y;
                 }
 
-                resize_event: Event;
-                resize_event.type = EventType.Resize;
-                resize_event.data.resize.size.x = @f32 size.x;
-                resize_event.data.resize.size.y = @f32 size.y;
+                layout_event: Event;
+                layout_event.type = .Layout;
+                layout_event.data.layout.size.x = cast(f32, size.x);
+                layout_event.data.layout.size.y = cast(f32, size.y);
+                layout_event.data.layout.pos = child_pos;
 
-                child.handle_event(gui, child, resize_event);
+                child.handle_event(gui, child, layout_event);
             }
 
         }
@@ -113,21 +175,23 @@ calculate_flexbox_size :: fn(gui: *GuiState, flexbox: *Flexbox) {
                 main_pos -= flexbox.gap;
 
                 size := flexbox_get_child_size(gui, flexbox, child_i);
+                child_pos: v2;
 
                 if flexbox.direction == Direction.Horizontal {
                     main_pos -= size.x;
-                    child.pos = v2 { main_pos, cross_pos };
+                    child_pos = v2 { main_pos, cross_pos };
                 } else {
                     main_pos -= size.y;
-                    child.pos = v2 { cross_pos, main_pos };
+                    child_pos = v2 { cross_pos, main_pos };
                 }
 
-                resize_event: Event;
-                resize_event.type = EventType.Resize;
-                resize_event.data.resize.size.x = @f32 size.x;
-                resize_event.data.resize.size.y = @f32 size.y;
+                layout_event: Event;
+                layout_event.type = .Layout;
+                layout_event.data.layout.size.x = cast(f32, size.x);
+                layout_event.data.layout.size.y = cast(f32, size.y);
+                layout_event.data.layout.pos = child_pos;
 
-                child.handle_event(gui, child, resize_event);
+                child.handle_event(gui, child, layout_event);
             }
 
         }
@@ -161,21 +225,23 @@ calculate_flexbox_size :: fn(gui: *GuiState, flexbox: *Flexbox) {
                 main_pos += gap_space;
 
                 size := flexbox_get_child_size(gui, flexbox, child_i);
+                child_pos: v2;
 
                 if flexbox.direction == Direction.Horizontal {
-                    child.pos = v2 { main_pos, cross_pos };
+                    child_pos = v2 { main_pos, cross_pos };
                     main_pos += size.x;
                 } else {
-                    child.pos = v2 { cross_pos, main_pos };
+                    child_pos = v2 { cross_pos, main_pos };
                     main_pos += size.y;
                 }
 
-                resize_event: Event;
-                resize_event.type = EventType.Resize;
-                resize_event.data.resize.size.x = @f32 size.x;
-                resize_event.data.resize.size.y = @f32 size.y;
+                layout_event: Event;
+                layout_event.type = .Layout;
+                layout_event.data.layout.size.x = cast(f32, size.x);
+                layout_event.data.layout.size.y = cast(f32, size.y);
+                layout_event.data.layout.pos = child_pos;
 
-                child.handle_event(gui, child, resize_event);
+                child.handle_event(gui, child, layout_event);
             }
         }
         _: {

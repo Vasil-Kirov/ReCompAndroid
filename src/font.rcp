@@ -14,12 +14,14 @@ struct Font {
 
 FONT_SIZE :: 64;
 
+ADVANCE_FACTOR :: .45;
+
 measure_text :: fn(text: string, scale: f32) -> iv2 {
     size := iv2 {};
     row_width :i32 = 0;
 
     font_size := cast(i32, cast(f32, FONT_SIZE) * scale);
-    advance := cast(i32, cast(f32, font_size) * .7);
+    advance := cast(i32, cast(f32, font_size) * ADVANCE_FACTOR);
 
     for c in text {
 		if c == '\n' {
@@ -49,11 +51,12 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 
     font_size := cast(i32, cast(f32, FONT_SIZE) * scale);
 
-    advance := cast(i32, cast(f32, font_size) * .7);
+    advance := cast(i32, cast(f32, font_size) * ADVANCE_FACTOR);
     atx := at.x;
     aty := at.y;
 	startx := atx;
     for i in text.count {
+        extra_advance := cast(i32, 0);
 		c := text[i];
 		if c == '\n' {
 			atx = startx;
@@ -71,6 +74,7 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 			i += 1;
 
 			icon_size := cast(i32, cast(f32, font_size) * .65);
+            extra_advance = 15;
 
 			match text[i] {
 				'v': {
@@ -86,6 +90,7 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 				_: {
 					i-=1;
 					no_draw_char = false;
+                    extra_advance = 0;
 				}
 			};
 		}
@@ -98,7 +103,7 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 				);
 		}
 
-        atx += advance;
+        atx += advance + extra_advance;
     }
 }
 
@@ -184,29 +189,29 @@ struct BMP_Header {
 }
 
 bmp_read_header :: fn(r: *Reader) -> BMP_Header {
-    log.info("reader: % % %", r.start, r.at, r.end);
-    log.info("BMP: header");
+//    log.info("reader: % % %", r.start, r.at, r.end);
+//    log.info("BMP: header");
     id1 := readu8(r);
     id2 := readu8(r);
-    log.info("BMP: id: % %", id1, id2);
+//    log.info("BMP: id: % %", id1, id2);
     #assert id1 == 'B';
     #assert id2 == 'M';
 
     skip_bytes(r, 8);
 
     pixel_offset := readu32(r);
-    log.info("BMP: pixel_offset: %", pixel_offset);
+//    log.info("BMP: pixel_offset: %", pixel_offset);
     
     bmi_size := readu32(r);
-    log.info("BMI Size: %", bmi_size);
+//    log.info("BMI Size: %", bmi_size);
     pixel_width := readu32(r);
     pixel_height := readu32(r);
     color_planes := readu16(r);
-    log.info("BMP: width: %, height: %, color planes: %", pixel_width, pixel_height, color_planes);
+//    log.info("BMP: width: %, height: %, color planes: %", pixel_width, pixel_height, color_planes);
     #assert color_planes == 1;
     bpp := readu16(r);
     compression_method := readu32(r);
-	log.info("bpp: %, compression method: %", bpp, compression_method);
+//  log.info("bpp: %, compression method: %", bpp, compression_method);
     #assert compression_method == 0;
 
 

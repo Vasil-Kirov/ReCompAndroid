@@ -13,28 +13,30 @@ window_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
 	window := @*Window this;
 	match event.type {
-		EventType.GetSize_X: {
+		EventType.Measure_X: {
 			return @int window.size.x;
 		}
-		EventType.GetSize_Y: {
+		EventType.Measure_Y: {
 			return @int window.size.y;
 		}
-		EventType.Resize: {
-			window.size = event.data.resize.size;
-            titlebar_size := v2 { window.size.x, clamp(10, 0, window.size.y) };
+		EventType.Layout: {
+            window.pos = event.data.layout.pos;
+			window.size = event.data.layout.size;
+            titlebar_size := v2 { window.size.x, clamp(10.0, 0, window.size.y) };
 			window.titlebar_height = titlebar_size.y;
 			#assert window.children.count <= 1;
 
 			// Child fills the window
+            // - titlbar and - bottom buttons on phone
 			child_event := event;
-            child_event.data.resize.size.y -= window.titlebar_height;
+            child_event.data.layout.size.y -= window.titlebar_height - 20;
 			for child in window.children child.handle_event(gui, child, child_event);
 			for child in window.children child.pos = .{window.pos.x, window.pos.y + titlebar_size.y};
 
             return 0;
 		}
 		EventType.Draw: {
-            titlebar_size := v2 { window.size.x, clamp(10, 0, window.size.y) };
+            titlebar_size := v2 { window.size.x, clamp(10.0, 0, window.size.y) };
             window.titlebar_height = titlebar_size.y;
 
 			pos := get_absolute_position (event.data.draw.offset, this.pos);
@@ -54,10 +56,10 @@ window_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 	return default_event_handler(gui, this, event);
 }
 
-create_window :: fn(gui: *GuiState, pos: v2, size: v2) -> *Window {
+create_window :: fn(gui: *GuiState, pos: v2, size: v2 = .{640, 360}, flags: WidgetFlags = .NoFlags) -> *Window {
 	MAX_WINDOW_CHILDREN :: 1;
 
-	window := make_widget(gui, Window);
+	window := make_widget(gui, Window, flags);
 	window.pos = pos;
 	window.size = size;
 	window.children = alloc_children(gui, MAX_WINDOW_CHILDREN);
@@ -67,10 +69,11 @@ create_window :: fn(gui: *GuiState, pos: v2, size: v2) -> *Window {
 	return window;
 }
 
-window_do_resize :: fn(gui: *GuiState, this: *Window) {
+window_do_layout :: fn(gui: *GuiState, this: *Window) {
 	event: Event;
-	event.type = EventType.Resize;
-	event.data.resize.size = this.size;
+	event.type = EventType.Layout;
+	event.data.layout.pos = this.pos;
+	event.data.layout.size = this.size;
 	this.handle_event(gui, &this.base, event);
 }
 

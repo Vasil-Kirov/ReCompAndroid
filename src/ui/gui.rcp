@@ -72,9 +72,9 @@ struct GuiState {
 enum EventType {
 	Draw,
 	Update,
-	Resize,
-	GetSize_X,
-	GetSize_Y,
+    Layout,
+	Measure_X,
+	Measure_Y,
 	MouseMove,
 	MouseClicked,
 }
@@ -82,7 +82,8 @@ enum EventType {
 struct Event {
 	type: EventType,
 	data: union {
-		resize: struct {
+		layout: struct {
+            pos: v2,
 			size: v2,
 		},
 		draw: struct {
@@ -97,6 +98,11 @@ struct Event {
 	},
 }
 
+enum WidgetFlags {
+    NoFlags,
+    FillCross,
+}
+
 struct Widget {
 	pos: v2,
 	size: v2,
@@ -104,6 +110,7 @@ struct Widget {
 	child_capacity: int,
 	handle_event: *fn(gui: *GuiState, this: *Widget, event: Event) -> int,
 
+    flags: WidgetFlags,
     invisible: bool,
 }
 
@@ -141,10 +148,11 @@ default_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int 
     if this.invisible return 0;
 
 	event := event;
-	if event.type == .GetSize_X return @int this.size.x;
-	if event.type == .GetSize_Y return @int this.size.y;
-	if event.type == .Resize {
-		this.size = event.data.resize.size;
+	if event.type == .Measure_X return @int this.size.x;
+	if event.type == .Measure_Y return @int this.size.y;
+	if event.type == .Layout {
+        this.pos = event.data.layout.pos;
+		this.size = event.data.layout.size;
 	}
 	if event.type == .Draw {
 		offset_event: Event;
@@ -165,7 +173,7 @@ default_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int 
 	return 0;
 }
 
-make_widget :: fn(gui: *GuiState, t: type) -> *t {
+make_widget :: fn(gui: *GuiState, t: type, flags: WidgetFlags) -> *t {
 	gui := gui;
 
 	opt_result := make_type(t, &gui.alloc);

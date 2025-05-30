@@ -22,7 +22,7 @@ puts :: fn #foreign(str: *u8);
 files := []string {
     "main", "android", "pthread", "backtrace", "binary_stream",
     "log", "vmath", "font", "draw", "scene",
-    "ui/gui", "ui/commands", "ui/flexbox", "ui/window", "ui/button", "ui/label",
+    "ui/gui", "ui/commands", "ui/flexbox", "ui/window", "ui/button", "ui/label", "ui/graph",
 
 };
 
@@ -73,7 +73,7 @@ compile_java_file :: fn(build_tools: string, cd: string, class_name: string, and
     run_cmd("java -cp %/lib/d8.jar com.android.tools.r8.D8 %/com/vasko/pong/*.class --lib %", build_tools, cd, android_jar);
 
     io.println("Compilation Finished!");
-    return "*.dex";
+    return "classes.dex";
 }
 
 after_link :: fn() {

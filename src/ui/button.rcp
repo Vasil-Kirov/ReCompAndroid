@@ -16,14 +16,9 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
 	button := @*Button this;
 	match event.type {
-		EventType.GetSize_X: {
-			return @int button.size.x;
-		}
-		EventType.GetSize_Y: {
-			return @int button.size.y;
-		}
-		EventType.Resize: {
-			button.size = event.data.resize.size;
+		EventType.Layout: {
+            button.pos  = event.data.layout.pos;
+			button.size = event.data.layout.size;
 			return 0;
 		}
 		EventType.Draw: {
@@ -61,12 +56,8 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 	return default_event_handler(gui, this, event);
 }
 
-create_button :: fn(gui: *GuiState, text: string) -> *Button {
-	return create_button_with_size(gui, text, .{120, 20});
-}
-
-create_button_with_size :: fn(gui: *GuiState, text: string, size: v2) -> *Button {
-	button := make_widget(gui, Button);
+create_button :: fn(gui: *GuiState, text: string, size: v2 = .{120, 20}, flags: WidgetFlags = .NoFlags) -> *Button {
+	button := make_widget(gui, Button, flags);
 	button.text = text;
     button.size = size;
 	button.handle_event = button_event_handler;

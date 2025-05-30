@@ -23,6 +23,7 @@ enum BluetoothStatus {
     NotSupported,
     Disabled,
     Enabled,
+    Connected,
 }
 
 renderer_allocator: mem.Allocator;
@@ -177,14 +178,37 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
 
 				//xy.y -= size.y;
 
-                draw.draw_color(backbuffer, draw.v2_to_rect(xy, size), color);
+                draw.draw_color(backbuffer, draw.v2_to_rect(xy, size), color, drawbox.empty);
+            }
+            .DrawCircle: {
+                circle := cast(*CommandDrawCircle, command);
+                radius := circle.radius;
+                xy := v2_from_ui(circle.at, screen_size);
+                color := draw.v4_to_color(circle.color);
+                size := size_from_ui(.{radius, radius}, screen_size);
+
+                draw.draw_circle(backbuffer, cast(int, xy.x), cast(int, xy.y), cast(int, size.x), color);
+            }
+            .DrawLine: {
+                drawline := cast(*CommandDrawLine, command);
+                xy0 := v2_from_ui(drawline.from, screen_size);
+                xy1 := v2_from_ui(drawline.to, screen_size);
+                color := draw.v4_to_color(drawline.color);
+                draw.draw_line(backbuffer,
+                    cast(int, xy0.x), cast(int, xy0.y),
+                    cast(int, xy1.x), cast(int, xy1.y),
+                    color, cast(int, drawline.scale));
             }
             .DrawText: {
                 draw := cast(*CommandDrawText, command);
                 xy := v2_from_ui(draw.at, screen_size);
                 xyi := iv2 { cast(i32, xy.x), cast(i32, xy.y) };
 
-                draw_text(font, draw.text, backbuffer, xyi, draw.scale);
+                if draw.centered {
+                    draw_text_centered(font, draw.text, backbuffer, xyi, draw.scale);
+                } else {
+                    draw_text(font, draw.text, backbuffer, xyi, draw.scale);
+                }
             }
         };
     }
@@ -254,7 +278,7 @@ main :: fn(state_: *) -> ?* {
 
     scene := scene1;
 
-	print_gui(scene, 0);
+	print_gui(scene.widget, 0);
 
     env: *a.JNIEnv;
     vm := activity.vm;
@@ -323,16 +347,16 @@ main :: fn(state_: *) -> ?* {
                         .MOVE: {
                             release_is_from_move = true;
                             
-                            mouse_move(&UI, scene, ui_xy);
+                            mouse_move(&UI, scene.widget, ui_xy);
                         }
                         .UP: {
-                            mouse_move(&UI, scene, ui_xy);
+                            mouse_move(&UI, scene.widget, ui_xy);
                             if release_is_from_move {
                                 release_is_from_move = false; 
                                 yield;
                             }
 
-                            mouse_clicked(&UI, scene);
+                            mouse_clicked(&UI, scene.widget);
 
                         }
                         .DOWN: {
@@ -349,9 +373,7 @@ main :: fn(state_: *) -> ?* {
             continue;
         }
 
-        if bluetooth_status != .Enabled {
-            bluetooth_status = cast(BluetoothStatus, (*env).CallIntMethod(env, activity.clazz, jm_getBluetoothStatus));
-        }
+        bluetooth_status = cast(BluetoothStatus, (*env).CallIntMethod(env, activity.clazz, jm_getBluetoothStatus));
 
         handle_ui_events(&UI, &font);
 
@@ -359,8 +381,15 @@ main :: fn(state_: *) -> ?* {
         screen_center := iv2 { cast(i32, backbuffer.width) / 2, cast(i32, backbuffer.height) / 2 };
 
         match bluetooth_status {
+            .Connected: {
+                if scene.id == 1 {
+                    connect := ?scene.connect_label;
+                    connect.text = ":vConnected";
+                }
+                draw_hierarchy(&UI, scene.widget);
+            }
             .Enabled: {
-                draw_hierarchy(&UI, scene);
+                draw_hierarchy(&UI, scene.widget);
             }
             .NotSupported: {
                 draw_text_centered(&font, "Bluetooth not supported!", backbuffer, screen_center, 1.0);
