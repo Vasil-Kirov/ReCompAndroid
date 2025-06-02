@@ -33,9 +33,11 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
             button_color := theme.primary;
 			if button.hovered button_color = highlight(button_color);
 
+            text_pos := pos + button.size / .{2, 2};
+
             push_cmd(gui, cmd_drawbox(gui, .{border, border_size}, shadow));
             push_cmd(gui, cmd_drawbox(gui, .{pos, button.size},    button_color));
-            push_cmd(gui, cmd_drawtext(gui, button.text, pos, 0.5));
+            push_cmd(gui, cmd_drawtext(gui, button.text, text_pos, 0.5, true));
 		}
 		EventType.MouseMove: {
 			mouse := event.data.mouse_move.mouse;
