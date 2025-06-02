@@ -164,7 +164,7 @@ draw_color :: fn(dst_: ?*Texture, rect: Rect, color: u32, no_fill: bool = false)
     if no_fill {
         for y in rect.height {
             for x in rect.width {
-                if x + 1 == rect.width || y + 1 == rect.height || x == rect.x || y == rect.x
+                if x + 1 == rect.width || y + 1 == rect.height || x == 0 || y == 0
                     dst_at[x] = color;
             }
             dst_at += dst.width;

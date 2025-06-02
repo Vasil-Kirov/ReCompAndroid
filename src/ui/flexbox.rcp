@@ -123,12 +123,11 @@ flexbox_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int 
 
             return cast(int, children_size);
 		}
-        /*
-        .Draw: {
-			pos := get_absolute_position (event.data.draw.offset, this.pos);
-            push_cmd(gui, cmd_drawbox(gui, .{pos, this.size}, .{0, 0.4, 1, 1}, true));
-        }
-        */
+        
+        // .Draw: {
+		// 	pos := get_absolute_position (event.data.draw.offset, this.pos);
+        //     push_cmd(gui, cmd_drawbox(gui, .{pos, this.size}, .{0, 0.4, 1, 1}, true));
+        // }
 	};
 
     return default_event_handler(gui, this, event);

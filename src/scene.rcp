@@ -27,15 +27,16 @@ scene_00 :: fn(ui: *GuiState) -> Scene {
     //add_child(&flexbox.base, &hello_btn3.base);
 
 
-    points := mem.make_slice(GraphPoint, 7, &ui.alloc);
-    points[0] = GraphPoint { 0.0, 1.0 };
-    points[1] = GraphPoint { 1.0, 5.0 };
-    points[2] = GraphPoint { 4.0, 4.0 };
-    points[3] = GraphPoint { 5.0, 3.0 };
-    points[4] = GraphPoint { 5.5, 10.0 };
-    points[5] = GraphPoint { 6.0, 9.0 };
-    points[6] = GraphPoint { 8.0, 6.0 };
-    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 200});
+    points := mem.make_slice(GraphPoint, 8, &ui.alloc);
+    points[0] = GraphPoint { 0.0, 0.0 };
+    points[1] = GraphPoint { 0.5, 1.0 };
+    points[2] = GraphPoint { 1.0, 5.0 };
+    points[3] = GraphPoint { 4.0, 4.0 };
+    points[4] = GraphPoint { 5.0, 3.0 };
+    points[5] = GraphPoint { 5.5, 10.0 };
+    points[6] = GraphPoint { 6.0, 9.0 };
+    points[7] = GraphPoint { 8.0, 6.0 };
+    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 200}, 10);
     add_child(&flexbox.base, &graph.base);
 
 
@@ -59,21 +60,22 @@ scene_01 :: fn(ui: *GuiState) -> Scene {
         add_child(&main_box.base, &line.base);
     }
 
-    points := mem.make_slice(GraphPoint, 7, &ui.alloc);
-    points[0] = GraphPoint { 0.0, 1.0 };
-    points[1] = GraphPoint { 1.0, 5.0 };
-    points[2] = GraphPoint { 4.0, 4.0 };
-    points[3] = GraphPoint { 5.0, 3.0 };
-    points[4] = GraphPoint { 5.5, 10.0 };
-    points[5] = GraphPoint { 7.0, 9.0 };
-    points[6] = GraphPoint { 8.0, 6.0 };
+    points := mem.make_slice(GraphPoint, 8, &ui.alloc);
+    points[0] = GraphPoint { 0.0, 0.0 };
+    points[1] = GraphPoint { 0.5, 1.0 };
+    points[2] = GraphPoint { 1.0, 5.0 };
+    points[3] = GraphPoint { 4.0, 4.0 };
+    points[4] = GraphPoint { 5.0, 3.0 };
+    points[5] = GraphPoint { 5.5, 8.0 };
+    points[6] = GraphPoint { 6.0, 9.0 };
+    points[7] = GraphPoint { 8.0, 6.0 };
 
     top_name := create_label(ui, "Smart Watch Monitor", 1.0);
     connected := create_label(ui, ":xConnected", 1.0);
     device_name := create_label(ui, "ESP32 TTGO", 1.0);
     sync_timer := create_label(ui, ":sLast Sync: ...", 1.0);
     refresh_btn := create_button(ui, ":rRefresh");
-    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{520, 150});
+    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 150}, 10);
     add_child(&lines[0].base, &top_name.base);
     add_child(&lines[1].base, &connected.base);
     add_child(&lines[1].base, &device_name.base);

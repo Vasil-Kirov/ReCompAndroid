@@ -12,7 +12,9 @@ struct GraphPoint {
 struct Graph {
     using Widget,
     points: []GraphPoint,
+    y_top: f32,
     label: string,
+    vertical_lines: int,
     x_label: string,
     y_label: string,
 }
@@ -29,14 +31,16 @@ sort_graph :: fn(points: []GraphPoint) {
     }
 }
 
-create_graph :: fn(gui: *GuiState, points: []GraphPoint, label: string, x_label: string, y_label: string, size: v2, flags: WidgetFlags = .NoFlags) -> *Graph {
+create_graph :: fn(gui: *GuiState, points: []GraphPoint, label: string, x_label: string, y_label: string, size: v2, y_max: f32, line_count: int = 11, flags: WidgetFlags = .NoFlags) -> *Graph {
     graph := make_widget(gui, Graph, flags);
 
     graph.label = label;
     graph.x_label = x_label;
     graph.y_label = y_label;
     graph.handle_event = graph_event_handler;
+    graph.y_top = y_max;
     graph.size = size;
+    graph.vertical_lines = line_count;
 
     set_graph_points(graph, points);
 
@@ -63,39 +67,42 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
             gap := min(graph.size.x / 15.0, graph.size.y / 15.0);
 
-            // Title
-            title_pos := v2 {pos.x + graph.size.x / 2, pos.y + gap /* TITLE_OFFSET*/};
-            push_cmd(gui, cmd_drawtext(gui, graph.label, title_pos, 1.0, true));
 
             // 
             // Calculate minimal and maximum value
             //
 
-            min_y := 0.0;
-            max_y := 0.0;
-            for point in graph.points {
-                min_y = min(point.value, min_y);
-                max_y = max(point.value, max_y);
-            }
-            step_y := (max_y - min_y) / 10.0;
+            steps := cast(f32, graph.vertical_lines);
+            step_y := graph.y_top / (steps-1.0);
+            if step_y == 0 return 0;
 
 
-            left := pos.x + gap * 5;
+            left := pos.x + gap * 6;
             right := pos.x + graph.size.x - gap;
-            top := pos.y + gap * TITLE_OFFSET * 2;
+            top := pos.y + gap;
             bottom := pos.y + graph.size.y - gap;
             lb := v2 { left, bottom };
             lt := v2 { left, top };
             rb := v2 { right, bottom };
             rt := v2 { right, top };
 
-            line_step := (graph.size.y - gap * 2) / 10.0;
+            // Title
+            title_pos := v2 {lerp(lb.x, rb.x, 0.5), pos.y + gap};
+            push_cmd(gui, cmd_drawtext(gui, graph.label, title_pos, 1.0, true));
+
+            //push_cmd(gui, cmd_drawcircle(gui, pos, 5.0, theme.error));
+            //push_cmd(gui, cmd_drawcircle(gui, pos+graph.size, 5.0, theme.error));
+            //push_cmd(gui, cmd_drawbox(gui, .{pos, this.size}, theme.error, true));
+
+            line_step := (lb.y - lt.y) / steps;
+
+            top_line := lt.y + line_step;
 
             // horizontal lines
             {
                 at := lb;
 
-                for y := min_y; y < max_y; y += step_y {
+                for i in cast(int, steps) {
                     to := v2 { right, at.y };
 
                     push_cmd(gui, cmd_drawline(gui, at, to, theme.secondary));
@@ -105,32 +112,40 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
             // y values
             {
-                at := lb;
-                at.x -= gap * 5;
-                at.y -= 2.5;
+                at := v2 { pos.x + gap * 3, lb.y - 2.5 };
 
-                for y := min_y; y < max_y; y += step_y {
+                for y := 0.0; y <= graph.y_top; y += step_y {
                     text := io.sprint("%", y);
-                    push_cmd(gui, cmd_drawtext(gui, text, at, .75));
+                    push_cmd(gui, cmd_drawtext(gui, text, at, .75, true));
                     at.y -= line_step;
                 }
             }
 
-            // lines
+            // lines & points
             if graph.points.count > 0 {
                 beg_t := graph.points[0].time;
                 end_t := graph.points[graph.points.count-1].time;
-                x_scale := (rb.x - lb.x) / (end_t - beg_t);
-                y_scale := (lb.y - lt.y) / (max_y - min_y);
+                //x_scale := (rb.x - lb.x) / (end_t - beg_t);
+                //y_scale := (lb.y - top_line) / (max_y - min_y);
+
+                x_scale := end_t - beg_t;
+                y_scale := graph.y_top;
 
                 start := lb;
                 for i, point in graph.points {
-                    x := lb.x + (point.time * x_scale);
-                    y := lb.y - (point.value * y_scale);
+                    //x := lb.x + (point.time * x_scale);
+                    //y := lb.y - (point.value * y_scale);
+                    x_t := (point.time-beg_t)  / x_scale;
+                    y_t := point.value / y_scale;
+                    x := lerp(lb.x, rb.x, x_t);
+                    y := lerp(top_line, lb.y, 1-y_t);
                     if i + 1 != graph.points.count {
                         next_point := graph.points[i+1];
-                        nx := lb.x + (next_point.time  * x_scale);
-                        ny := lb.y - (next_point.value * y_scale);
+
+                        nx_t := (next_point.time-beg_t)  / x_scale;
+                        ny_t := next_point.value / y_scale;
+                        nx := lerp(lb.x, rb.x, nx_t);
+                        ny := lerp(top_line, lb.y, 1-ny_t);
 
                         push_cmd(gui, cmd_drawline(gui, .{x, y}, .{nx, ny}, theme.surface, 2));
                     }
