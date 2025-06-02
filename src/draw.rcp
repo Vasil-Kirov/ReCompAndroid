@@ -89,6 +89,14 @@ copy_rect_no_rescaling :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, s
     src_at := src.pixels + src_rect.x + (src_rect.y * src.width);
     // @TODO: Clipping
 
+    dst_rect := dst_rect;
+    dst_rect.width = clamp(dst_rect.x + dst_rect.width, 0, dst.width) - dst_rect.x;
+    dst_rect.height = clamp(dst_rect.y + dst_rect.height, 0, dst.height) - dst_rect.y;
+
+    src_rect := src_rect;
+    src_rect.width = clamp(src_rect.x + src_rect.width, 0, src.width) - src_rect.x;
+    src_rect.height = clamp(src_rect.y + src_rect.height, 0, src.height) - src_rect.y;
+
     for y in dst_rect.height {
         for x in dst_rect.width {
             pixel := src_at[x];
