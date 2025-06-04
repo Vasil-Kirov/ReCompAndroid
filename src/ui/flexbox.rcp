@@ -136,7 +136,6 @@ flexbox_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int 
 
 calculate_flexbox_size :: fn(gui: *GuiState, flexbox: *Flexbox) {
     main_pos := 0.0;
-    cross_pos := flexbox.gap;
     cross_middle := 0.0;
     if flexbox.direction == .Horizontal {
         cross_middle = flexbox.size.y / 2;
@@ -185,10 +184,10 @@ calculate_flexbox_size :: fn(gui: *GuiState, flexbox: *Flexbox) {
 
                 if flexbox.direction == Direction.Horizontal {
                     main_pos -= size.x;
-                    child_pos = v2 { main_pos, cross_pos - size.y/2 };
+                    child_pos = v2 { main_pos, cross_middle - size.y/2 };
                 } else {
                     main_pos -= size.y;
-                    child_pos = v2 { cross_pos - size.x/2, main_pos };
+                    child_pos = v2 { cross_middle - size.x/2, main_pos };
                 }
 
                 layout_event: Event;
@@ -234,10 +233,10 @@ calculate_flexbox_size :: fn(gui: *GuiState, flexbox: *Flexbox) {
                 child_pos: v2;
 
                 if flexbox.direction == Direction.Horizontal {
-                    child_pos = v2 { main_pos, cross_pos - size.y / 2 };
+                    child_pos = v2 { main_pos, cross_middle - size.y / 2 };
                     main_pos += size.x;
                 } else {
-                    child_pos = v2 { cross_pos - size.x / 2, main_pos };
+                    child_pos = v2 { cross_middle - size.x / 2, main_pos };
                     main_pos += size.y;
                 }
 

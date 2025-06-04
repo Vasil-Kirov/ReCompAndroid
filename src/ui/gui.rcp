@@ -185,6 +185,7 @@ make_widget :: fn(gui: *GuiState, t: type, flags: WidgetFlags) -> *t {
 	set(result, 0, size_of Widget);
 	result.handle_event = default_event_handler;
     result.identify = return_widget;
+    // result.identify = fn() -> string { return "Widget"; }; @COMPILER_BUG
 	return result;
 }
 
