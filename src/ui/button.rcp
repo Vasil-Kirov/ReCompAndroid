@@ -52,6 +52,7 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 			if button.hovered && button.on_click {
 				button.on_click(button);
 			}
+            button.hovered = false;
 		}
 	};
 
@@ -60,6 +61,7 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
 create_button :: fn(gui: *GuiState, text: string, size: v2 = .{120, 20}, flags: WidgetFlags = .NoFlags) -> *Button {
 	button := make_widget(gui, Button, flags);
+    button.identify = fn() -> string { return "Button"; };
 	button.text = text;
     button.size = size;
 	button.handle_event = button_event_handler;

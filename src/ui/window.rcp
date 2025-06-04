@@ -60,6 +60,7 @@ create_window :: fn(gui: *GuiState, pos: v2, size: v2 = .{640, 360}, flags: Widg
 	MAX_WINDOW_CHILDREN :: 1;
 
 	window := make_widget(gui, Window, flags);
+    window.identify = fn() -> string { return "Window"; };
 	window.pos = pos;
 	window.size = size;
 	window.children = alloc_children(gui, MAX_WINDOW_CHILDREN);

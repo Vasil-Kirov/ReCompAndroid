@@ -9,6 +9,7 @@ struct Font {
     texture: ?*d.Texture,
 	tick: ?*d.Texture,
 	x: ?*d.Texture,
+    sync: ?*d.Texture,
     inited: bool,
 }
 
@@ -87,6 +88,11 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 							.{atx, aty, icon_size, icon_size}, // dst_rect
 							.{}); // src_rect
 				}
+                's': {
+					d.copy_rect(dst, font.sync,
+							.{atx, aty, icon_size, icon_size}, // dst_rect
+							.{}); // src_rect
+                }
 				_: {
 					i-=1;
 					no_draw_char = false;
@@ -110,8 +116,9 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 init_font :: fn(r: *d.Renderer, manager: *A.AssetManager) -> Font {
     return .{
         texture = bmp_to_texture("Font.bmp", manager),
-		tick = bmp_to_texture("checked.bmp", manager),
-		x = bmp_to_texture("remove.bmp", manager),
+		tick = bmp_to_texture("check.bmp", manager),
+		x = bmp_to_texture("cancel.bmp", manager),
+		sync = bmp_to_texture("sync.bmp", manager),
         inited = true,
     };
 }

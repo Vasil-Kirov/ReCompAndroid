@@ -46,7 +46,7 @@ scene_00 :: fn(ui: *GuiState) -> Scene {
 
 scene_01 :: fn(ui: *GuiState) -> Scene {
     window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
-    main_box := create_flexbox(ui, .Vertical, .SpaceEvenly, 1);
+    main_box := create_flexbox(ui, .Vertical, .Start, 1);
     add_child(&window.base, &main_box.base);
 
     lines := [4]*Flexbox{};
@@ -74,7 +74,7 @@ scene_01 :: fn(ui: *GuiState) -> Scene {
     connected := create_label(ui, ":xConnected", 1.0);
     device_name := create_label(ui, "ESP32 TTGO", 1.0);
     sync_timer := create_label(ui, ":sLast Sync: ...", 1.0);
-    refresh_btn := create_button(ui, ":rRefresh");
+    refresh_btn := create_button(ui, "Refresh");
     graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 150}, 10);
     add_child(&lines[0].base, &top_name.base);
     add_child(&lines[1].base, &connected.base);

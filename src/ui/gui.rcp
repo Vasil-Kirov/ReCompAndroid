@@ -109,6 +109,7 @@ struct Widget {
 	children: []*Widget,
 	child_capacity: int,
 	handle_event: *fn(gui: *GuiState, this: *Widget, event: Event) -> int,
+    identify: *fn() -> string,
 
     flags: WidgetFlags,
     invisible: bool,
@@ -173,6 +174,8 @@ default_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int 
 	return 0;
 }
 
+return_widget :: fn() -> string { return "Widget"; }
+
 make_widget :: fn(gui: *GuiState, t: type, flags: WidgetFlags) -> *t {
 	gui := gui;
 
@@ -181,6 +184,7 @@ make_widget :: fn(gui: *GuiState, t: type, flags: WidgetFlags) -> *t {
 	result := ?opt_result;
 	set(result, 0, size_of Widget);
 	result.handle_event = default_event_handler;
+    result.identify = return_widget;
 	return result;
 }
 
@@ -248,7 +252,7 @@ print_gui :: fn(base: *Widget, level: int) {
 		tabs[i] = '\t';
 	}
 
-	log.info("%s Widget -> xy: %, size %", &tabs[0], base.pos, base.size);
+	log.info("%s % -> xy: %, size %", &tabs[0], base.identify(), base.pos, base.size);
 	for child in base.children {
 		print_gui(child, level+1);
 	}

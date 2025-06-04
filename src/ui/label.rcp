@@ -25,6 +25,8 @@ label_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
 create_label :: fn(gui: *GuiState, text: string, scale: f32, flags: WidgetFlags = .NoFlags) -> *Label {
 	label := make_widget(gui, Label, flags);
+    label.identify = fn() -> string { return "Label"; };
+
 
     y_size :: cast(i32, 8);
     x_size := cast(i32, cast(f32, text.count) * 16.5 * scale);

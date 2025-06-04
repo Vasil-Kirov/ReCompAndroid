@@ -41,6 +41,7 @@ sort_graph :: fn(points: []GraphPoint) {
 create_graph :: fn(gui: *GuiState, points: []GraphPoint, label: string, x_label: string, y_label: string, size: v2, y_max: f32, line_count: int = 11, flags: WidgetFlags = .NoFlags) -> *Graph {
     graph := make_widget(gui, Graph, flags);
 
+    graph.identify = fn() -> string { return "Graph"; };
     graph.label = label;
     graph.x_label = x_label;
     graph.y_label = y_label;
@@ -158,14 +159,16 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 
                         push_cmd(gui, cmd_drawline(gui, .{x, y}, .{nx, ny}, theme.surface, 2));
                     }
-                    push_cmd(gui, cmd_drawcircle(gui, .{x, y}, 5.0, theme.success));
+                    color := theme.success;
                     if graph.mouse_in_rect.x > 0 {
                         if is_point_in_rect(graph.mouse_in_rect, .{x, y} - pos - .{10, 10}, .{50, 50}) {
                             hovered.point = point;
                             hovered.xy = .{x, y};
                             hovered.valid = true;
+                            color = theme.error;
                         }
                     }
+                    push_cmd(gui, cmd_drawcircle(gui, .{x, y}, 5.0, color));
                 }
             }
 
