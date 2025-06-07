@@ -129,6 +129,19 @@ public class MainActivity extends NativeActivity
 		return 3; // connected
 	}
 
+	public void sendRefreshRequest() {
+		BluetoothGattService service = bluetoothGatt.getService(UUID.fromString(SERVICE_UUID));
+		if (service != null) {
+			BluetoothGattCharacteristic characteristic = service.getCharacteristic(UUID.fromString(CHARACTERISTIC_UUID));
+			if (characteristic != null) {
+				byte[] dataToSend = "update".getBytes(StandardCharsets.UTF_8);
+				characteristic.setValue(dataToSend);
+				boolean success = bluetoothGatt.writeCharacteristic(characteristic);
+				Log.d(TAG, "Writing?: " + (success ? "True" : "False"));
+			}
+		}
+	}
+
     private final BluetoothGattCallback gattCallback = new BluetoothGattCallback() {
 
         @Override

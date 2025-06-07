@@ -7,6 +7,7 @@ struct Button {
 	using Widget,
 	text: string,
 	hovered: bool,
+	text_scale: f32,
 	on_click: ?*fn(this: *Button),
 	user_data: ?*,
 }
@@ -34,10 +35,11 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 			if button.hovered button_color = highlight(button_color);
 
             text_pos := pos + button.size / .{2, 2};
+			//text_pos.y -= measure_label(button.text, button.text_scale).y / 4;
 
             push_cmd(gui, cmd_drawbox(gui, .{border, border_size}, shadow));
             push_cmd(gui, cmd_drawbox(gui, .{pos, button.size},    button_color));
-            push_cmd(gui, cmd_drawtext(gui, button.text, text_pos, 0.5, true));
+            push_cmd(gui, cmd_drawtext(gui, button.text, text_pos, button.text_scale, true));
 		}
 		EventType.MouseMove: {
 			mouse := event.data.mouse_move.mouse;
@@ -59,13 +61,14 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 	return default_event_handler(gui, this, event);
 }
 
-create_button :: fn(gui: *GuiState, text: string, size: v2 = .{120, 20}, flags: WidgetFlags = .NoFlags) -> *Button {
+create_button :: fn(gui: *GuiState, text: string, size: v2 = .{120, 20}, text_scale: f32 = 1.0, flags: WidgetFlags = .NoFlags) -> *Button {
 	button := make_widget(gui, Button, flags);
     button.identify = fn() -> string { return "Button"; };
 	button.text = text;
     button.size = size;
 	button.handle_event = button_event_handler;
 	button.hovered = false;
+	button.text_scale = text_scale;
 	
 	return button;
 }

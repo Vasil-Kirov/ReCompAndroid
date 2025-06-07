@@ -23,18 +23,19 @@ label_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
     return default_event_handler(gui, this, event);
 }
 
+measure_label :: fn(text: string, scale: f32) -> v2 {
+    y_size :: 8.0;
+    x_size := cast(f32, text.count) * 16.5 * scale;
+	return .{x_size, y_size};
+}
+
 create_label :: fn(gui: *GuiState, text: string, scale: f32, flags: WidgetFlags = .NoFlags) -> *Label {
 	label := make_widget(gui, Label, flags);
+
     label.identify = fn() -> string { return "Label"; };
-
-
-    y_size :: cast(i32, 8);
-    x_size := cast(i32, cast(f32, text.count) * 16.5 * scale);
-
 	label.text = text;
     label.scale = scale;
-	label.size.x = x_size;
-	label.size.y = y_size;
+	label.size = measure_label(text, scale);
 	label.handle_event = label_event_handler;
 	
 	return label;

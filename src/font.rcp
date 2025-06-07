@@ -4,6 +4,7 @@ module font;
 #import log
 #import bstream as *
 #import draw as d
+#import vmath as *
 
 struct Font {
     texture: ?*d.Texture,
@@ -17,6 +18,7 @@ FONT_SIZE :: 64;
 
 ADVANCE_FACTOR :: .45;
 
+// @NOTE: A lot of the values in this function are from trial an error
 measure_text :: fn(text: string, scale: f32) -> iv2 {
     size := iv2 {};
     row_width :i32 = 0;
@@ -24,16 +26,45 @@ measure_text :: fn(text: string, scale: f32) -> iv2 {
     font_size := cast(i32, cast(f32, FONT_SIZE) * scale);
     advance := cast(i32, cast(f32, font_size) * ADVANCE_FACTOR);
 
-    for c in text {
+	font_height := cast(i32, cast(f32, font_size) * .75);
+	row_height := cast(i32, 0);
+	size.y = 0;
+
+    for i in text.count {
+        extra_advance := cast(i32, 0);
+		c := text[i];
 		if c == '\n' {
             size.x = if size.x > row_width size.x else row_width;
             row_width = 0;
-			size.y += font_size;
+			size.y += row_height;
+			row_height = font_size;
 			continue;
 		}
 
-        row_width += advance;
+		if c == ':' && i + 1 < text.count {
+			i += 1;
+
+			icon_size := cast(i32, cast(f32, font_size) * ICON_SCALE * .95);
+            extra_advance = 30;
+
+			match text[i] {
+				'v': {}
+				'x': {}
+				's': {}
+				_: {
+					i -= 1;
+					extra_advance = 0;
+				}
+			};
+
+			if extra_advance > 0 row_height = max(row_height, icon_size);
+		} else {
+			row_height = max(row_height, font_height);
+		}
+
+        row_width += advance + extra_advance;
     }
+	size.y += row_height;
 
     size.x = if size.x > row_width size.x else row_width;
     return size;
@@ -41,10 +72,14 @@ measure_text :: fn(text: string, scale: f32) -> iv2 {
 
 draw_text_centered :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32) {
     size := measure_text(text, scale);
+	//d.draw_color(dst, .{at.x, at.y, size.x, size.y}, 0xFF_FF_00_FF, true);
     at.x -= size.x / 2;
     at.y -= size.y / 2;
+	//d.draw_color(dst, .{at.x, at.y, size.x, size.y}, 0xFF_00_FF_FF, true);
     draw_text(font, text, dst, at, scale);
 }
+
+ICON_SCALE :: .65;
 
 draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32) {
     if font.texture == null return;
@@ -74,7 +109,7 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 			no_draw_char = true;
 			i += 1;
 
-			icon_size := cast(i32, cast(f32, font_size) * .65);
+			icon_size := cast(i32, cast(f32, font_size) * ICON_SCALE);
             extra_advance = 15;
 
 			match text[i] {

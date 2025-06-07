@@ -266,6 +266,7 @@ redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
 
 }
 
+
 release_is_from_move: bool;
 main :: fn(state_: *) -> ?* { 
     activity := cast(*a.NativeActivity, state_);
@@ -313,8 +314,16 @@ main :: fn(state_: *) -> ?* {
         log.exit(1);
     }
 
+	jm_sendRefreshRequest_ := (*env).GetMethodID(env, class, c"sendRefreshRequest", c"()V"); 
+    if jm_getData_ == null {
+        log.fatal("Couldn't find sendRefreshRequest method");
+        log.exit(1);
+    }
+
     jm_getBluetoothStatus := ?jm_getBluetoothStatus_;
     jm_getData := ?jm_getData_;
+	jm_sendRefreshRequest := ?jm_sendRefreshRequest_;
+
     bluetooth_status := BluetoothStatus.Disabled;
 
 	fps := 0.0;
@@ -409,6 +418,11 @@ main :: fn(state_: *) -> ?* {
                 draw_text_centered(&font, text, backbuffer, screen_center, 1.0);
 				(*env).ReleaseByteArrayElements(env, byte_arr, ?elems, a.JNI_ABORT);
 			}
+		}
+
+		if should_request_refresh {
+			reset_request();
+			(*env).CallObjectMethod(env, activity.clazz, jm_sendRefreshRequest, null);
 		}
 
         redraw_window(start_ms, &font, &UI);

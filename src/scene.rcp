@@ -11,6 +11,11 @@ struct Scene {
     device_name_label: ?*Label,
 }
 
+should_request_refresh := 0;
+
+reset_request :: fn() {
+	should_request_refresh = 0;
+}
 
 scene_00 :: fn(ui: *GuiState) -> Scene {
     window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
@@ -73,8 +78,11 @@ scene_01 :: fn(ui: *GuiState) -> Scene {
     top_name := create_label(ui, "Smart Watch Monitor", 1.0);
     connected := create_label(ui, ":xConnected", 1.0);
     device_name := create_label(ui, "ESP32 TTGO", 1.0);
-    sync_timer := create_label(ui, ":sLast Sync: ...", 1.0);
-    refresh_btn := create_button(ui, "Refresh");
+    sync_timer := create_label(ui, "Last Sync: 00:00", 1.0);
+    refresh_btn := create_button(ui, ":s", .{120, 20}, 2.0);
+	refresh_btn.on_click = fn(this: *Button) {
+		should_request_refresh = 1;
+	};
     graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 150}, 10);
     add_child(&lines[0].base, &top_name.base);
     add_child(&lines[1].base, &connected.base);
