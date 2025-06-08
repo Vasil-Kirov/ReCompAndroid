@@ -20,15 +20,15 @@ module build
 puts :: fn #foreign(str: *u8);
 //files := []string { "main.rcp", "android.rcp", "jninativeinterface.rcp", "pthread.rcp", "backtrace.rcp" };
 files := []string {
-    "main", "android", "pthread", "backtrace", "binary_stream",
-    "log", "vmath", "font", "draw", "scene",
+    "main", "android", "pthread", "backtrace", "binary_stream", "sem",
+    "log", "vmath", "font", "draw", "scene", "shader",
     "ui/gui", "ui/commands", "ui/flexbox", "ui/window", "ui/button", "ui/label", "ui/graph",
 
 };
 
 modules :: []string {
-    "main", "android", "pthread", "backtrace", "bstream",
-    "log", "vmath", "font", "draw", "scene",
+    "main", "android", "pthread", "backtrace", "bstream", "sem",
+    "log", "vmath", "font", "draw", "scene", "shader",
     "gui",
 };
 

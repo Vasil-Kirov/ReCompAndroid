@@ -1,5 +1,6 @@
 module font;
 
+#import gui
 #import android as A
 #import log
 #import bstream as *
@@ -150,15 +151,15 @@ draw_text :: fn(font: *Font, text: string, dst: ?*d.Texture, at: iv2, scale: f32
 
 init_font :: fn(r: *d.Renderer, manager: *A.AssetManager) -> Font {
     return .{
-        texture = bmp_to_texture("Font.bmp", manager),
-		tick = bmp_to_texture("check.bmp", manager),
-		x = bmp_to_texture("cancel.bmp", manager),
-		sync = bmp_to_texture("sync.bmp", manager),
+        texture = bmp_to_texture("Font.bmp", manager, gui.theme.text),
+		tick = bmp_to_texture("check.bmp", manager, gui.theme.success),
+		x = bmp_to_texture("cancel.bmp", manager, gui.theme.error),
+		sync = bmp_to_texture("sync.bmp", manager, .{1, 1, 1, 1}),
         inited = true,
     };
 }
 
-bmp_to_texture :: fn(name: string, manager: *A.AssetManager) -> ?*d.Texture {
+bmp_to_texture :: fn(name: string, manager: *A.AssetManager, color: v4) -> ?*d.Texture {
     log.info("Loading %...", name);
     asset_ := A.AssetManager_open(manager, name.data, .BUFFER);
 	if asset_ == null {
@@ -194,6 +195,7 @@ bmp_to_texture :: fn(name: string, manager: *A.AssetManager) -> ?*d.Texture {
     original_at := cast(*u8, pixels) + pitch * (header.height-1);
     new_at := tex.pixels;
 
+    col := v4_to_color(color);
     // BGR(A) to ARGB
     for y in header.height {
         for x in header.width {
@@ -214,6 +216,7 @@ bmp_to_texture :: fn(name: string, manager: *A.AssetManager) -> ?*d.Texture {
             } else {
                 #assert false;
             }
+            if new_at[x] != 0 new_at[x] = col;
         }
         original_at -= pitch;
         new_at += tex.width;

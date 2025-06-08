@@ -2,9 +2,11 @@ module gui;
 
 #import mem
 #import log
+#import shader as *
 
 enum CommandType {
     DrawBox,
+    DrawShader,
     DrawText,
     DrawLine,
     DrawCircle,
@@ -15,6 +17,12 @@ struct CommandDrawBox {
     color: v4,
     box: Box,
     empty: bool,
+}
+
+struct CommandDrawShader {
+    using Command,
+    box: Box,
+    shader: shader.Shader,
 }
 
 struct CommandDrawText {
@@ -83,6 +91,14 @@ cmd_drawbox :: fn(gui: *GuiState, box: Box, color: v4, empty: bool = false) -> *
     command.box = box;
     command.color = color;
     command.empty = empty;
+    return cast(*Command, command);
+}
+
+cmd_drawshader :: fn(gui: *GuiState, box: Box, shader: Shader) -> *Command {
+    command := cmd_alloc(gui, CommandDrawShader);
+    command.type = .DrawShader;
+    command.box = box;
+    command.shader = shader;
     return cast(*Command, command);
 }
 

@@ -13,12 +13,17 @@ struct m4 {
 	row4: [4]f32,
 }
 
+exp :: fn #link="expf"(t: f32) -> f32;
 sin :: fn #link="sinf"(t: f32) -> f32;
 cos :: fn #link="cosf"(t: f32) -> f32;
 sqrt :: fn #link="sqrtf"(t: f32) -> f32;
 
 PI   :: 3.14159265358979323846;
 PI_2 :: 1.57079632679489661923;
+
+max_v2 :: fn(a: v2, b: v2) -> v2 #inline {
+    return .{max(a.x, b.x), max(a.y, b.y)};
+}
 
 max :: fn(a0: $t, a1: t) -> t #inline {
     return if a0 > a1 a0 else a1;
@@ -63,8 +68,16 @@ map :: fn (t: f32, from1: f32, to1: f32, from2: f32, to2: f32) -> f32 #inline {
  return from2 + ((to2 - from2) / (to1 - from1)) * (t - from1);
 }
 
+sigmoid :: fn(t: f32) -> f32 {
+    return 1.0 / (1.0 + exp(-t));
+}
+
 lerp :: fn (a: f32, b: f32, t: f32) -> f32 #inline {
 	return a + (b - a) * t;
+}
+
+lerp_v4 :: fn(a: v4, b: v4, t: f32) -> v4 #inline {
+    return a + (b - a) * .{t, t, t, t};
 }
 
 clamp :: fn (x: $t, min: t, max: t) -> t #inline {
@@ -89,4 +102,29 @@ is_point_in_rect :: fn(pos: v2, bottom_left: v2, size: v2) -> bool {
 	return true;
 }
 
+color_to_v4 :: fn(c: u32) -> v4 {
+    SCALE :: 1.0 / 255.0;
+    a := cast(f32, (c >> 24) & 0xFF);
+    r := cast(f32, (c >> 16) & 0xFF);
+    g := cast(f32, (c >> 8) & 0xFF);
+    b := cast(f32, (c >> 0) & 0xFF);
+    rgba := v4 {r, g, b, a};
+    mult := v4 {SCALE, SCALE, SCALE, SCALE};
+    return rgba * mult;
+}
+
+v4_to_color :: fn(c: v4) -> u32 {
+    r := cast(u32, c.x * 255.0);
+    g := cast(u32, c.y * 255.0);
+    b := cast(u32, c.z * 255.0);
+    a := cast(u32, c.w * 255.0);
+    return a << 24 | r << 16 | g << 8 | b;
+}
+
+distance_v2 :: fn(a: v2, b: v2) -> f32 {
+    x := abs(a.x - b.x);
+    y := abs(a.y - b.y);
+
+    return sqrt(x * x + y * y);
+}
 

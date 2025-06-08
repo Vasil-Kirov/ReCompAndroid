@@ -1,0 +1,132 @@
+module shader;
+
+#import gui
+#import mem
+#import vmath as *
+#import log
+
+
+struct Shader {
+    pixel: *fn(uniforms: Uniforms, user_data: ?*) -> u32,
+    user_data: ?*,
+}
+
+struct Uniforms {
+    uv: v2,
+    frag_coord: v2,
+    resolution: v2,
+    dst_pixel: u32,
+}
+
+struct Gradient
+{
+    from: v4,
+    to: v4,
+}
+
+gradient :: fn(from: v4, to: v4) -> Shader {
+    gradient_ := mem.make_type(Gradient, &mem.temp_alloc);
+    #assert gradient_;
+    gradient := ?gradient_;
+    gradient.from = from;
+    gradient.to = to;
+    return .{
+        fn(input: Uniforms, user_data: ?*) -> u32 {
+            #assert user_data;
+            uv := input.uv;
+            colors := cast(*Gradient, ?user_data);
+            result := lerp_v4(colors.from, colors.to, (uv.x + uv.y) * .5);
+            return v4_to_color(result);
+        },
+        gradient,
+    };
+}
+
+alpha_blend :: fn(dst: v4, src: v4) -> v4 {
+    alpha := src.w;
+    alpha4 := v4{alpha, alpha, alpha, alpha};
+    rgba := src * alpha4 + dst * (v4{1, 1, 1, 1} - alpha4);
+    out_alpha := alpha + dst.w * (1 - alpha);
+    rgba.w = out_alpha;
+    return rgba;
+}
+
+normal_blend :: fn(dst: v4, src: v4) -> v4 {
+    final_alpha := src.w + dst.w * (1.0 - src.w);
+
+    color := (src * v4{src.w} + dst * v4{dst.w} * v4{1-src.w}) / v4{final_alpha};
+    return v4 {
+        color.x, color.y, color.z, final_alpha
+    };
+}
+
+sdf_round_rect :: fn(p: v2, b: v2, r: f32) -> f32 {
+    q := v2{abs(p.x), abs(p.y)}-b+v2{r};
+    return min(max(q.x,q.y),0.0) + v2_len(max_v2(q,v2{0.0})) - r;
+}
+
+make_shadow :: fn(pos: v2, half_size: v2, corner_rd: f32, blur_rd: f32) -> f32 {
+    dist := sigmoid(sdf_round_rect(pos, half_size, corner_rd + blur_rd) / blur_rd);
+    return clamp(dist, 0.0, 1.0);
+}
+
+struct ButtonShd
+{
+    button_color: v4,
+}
+
+button_shd :: fn(button_color: v4) -> Shader {
+    data_ := mem.make_type(ButtonShd, &mem.temp_alloc);
+    #assert data_;
+    data := ?data_;
+    data.button_color = button_color;
+    return .{
+
+        fn(input: Uniforms, user_data: ?*) -> u32 {
+            #assert user_data;
+            data := cast(*ButtonShd, ?user_data);
+
+            corner_radius := 32.0;
+            blur_radius := 12.0;
+
+            center := input.resolution/v2{2};
+            hsize := input.resolution/v2{4};
+            shadow_offset := v2 {0.0, input.resolution.y / 15.0};
+            p := input.frag_coord - center;
+
+            upper_shadow_color := v4{0.60, 0.65, 0.85, 1};
+            lower_shadow_color := v4{0.06, 0.07, 0.14, 1};
+
+
+            lower_shadow := make_shadow(p - shadow_offset, hsize, corner_radius, blur_radius);
+            upper_shadow := make_shadow(p + shadow_offset, hsize, corner_radius, blur_radius);
+            rect := clamp(sdf_round_rect(p, hsize, corner_radius), 0, 1);
+
+            blend := color_to_v4(input.dst_pixel);
+
+            final_lower_shadow := lower_shadow_color;
+            final_lower_shadow.w = 1.0 - lower_shadow;
+            final_color := normal_blend(blend, final_lower_shadow);
+
+            final_upper_shadow := upper_shadow_color;
+            final_upper_shadow.w = 1.0 - upper_shadow;
+            final_color = normal_blend(final_color, final_upper_shadow);
+
+            button_color := data.button_color;
+            button_color.w = 1 - rect;
+            final_color = normal_blend(final_color, button_color);
+
+            final_color = v4 {
+                final_color.x * final_color.w,
+                final_color.y * final_color.w,
+                final_color.z * final_color.w,
+                final_color.w
+            };
+            
+            return v4_to_color(final_color);
+
+        },
+        data,
+    };
+}
+

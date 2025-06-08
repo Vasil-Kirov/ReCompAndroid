@@ -1,5 +1,8 @@
 module draw;
 
+#import sem
+#import intrin as *;
+#import shader as *;
 #import vmath as *;
 #import mem
 #import log
@@ -68,14 +71,6 @@ free_texture :: fn(t: *Texture) {
     r.alloc.free(t, r.alloc);
 }
 
-v4_to_color :: fn(c: v4) -> u32 {
-    r := cast(u32, c.x * 255.0);
-    g := cast(u32, c.y * 255.0);
-    b := cast(u32, c.z * 255.0);
-    a := cast(u32, c.w * 255.0);
-    return a << 24 | r << 16 | g << 8 | b;
-}
-
 copy_rect_no_rescaling :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect) {
     if dst_ == null return;
     if src_ == null return;
@@ -87,15 +82,6 @@ copy_rect_no_rescaling :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, s
 
     dst_at := dst.pixels + dst_rect.x + (dst_rect.y * dst.width);
     src_at := src.pixels + src_rect.x + (src_rect.y * src.width);
-    // @TODO: Clipping
-
-    dst_rect := dst_rect;
-    dst_rect.width = clamp(dst_rect.x + dst_rect.width, 0, dst.width) - dst_rect.x;
-    dst_rect.height = clamp(dst_rect.y + dst_rect.height, 0, dst.height) - dst_rect.y;
-
-    src_rect := src_rect;
-    src_rect.width = clamp(src_rect.x + src_rect.width, 0, src.width) - src_rect.x;
-    src_rect.height = clamp(src_rect.y + src_rect.height, 0, src.height) - src_rect.y;
 
     for y in dst_rect.height {
         for x in dst_rect.width {
@@ -125,6 +111,9 @@ copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect
 		dst_rect.width = dst.width;
 		dst_rect.height = dst.height;
 	}
+
+    dst_rect = clamp_rect(dst, dst_rect);
+    src_rect = clamp_rect(src, src_rect);
 
     if dst_rect.width == src_rect.width && dst_rect.height == src_rect.height {
         copy_rect_no_rescaling(dst, src, dst_rect, src_rect);
@@ -168,6 +157,8 @@ draw_color :: fn(dst_: ?*Texture, rect: Rect, color: u32, no_fill: bool = false)
     if dst_ == null return;
     dst := ?dst_;
 
+    rect := clamp_rect(dst, rect);
+
     dst_at := dst.pixels + rect.x + (rect.y * dst.width);
     if no_fill {
         for y in rect.height {
@@ -184,6 +175,130 @@ draw_color :: fn(dst_: ?*Texture, rect: Rect, color: u32, no_fill: bool = false)
             dst_at[x] = color;
         }
         dst_at += dst.width;
+    }
+}
+
+struct Job {
+    do: *fn(data: ?*),
+    data: ?*,
+}
+
+MAX_JOBS :: 640;
+struct ThreadQueue {
+    completed_jobs: int,
+    at_job: int,
+    job_count: int,
+    post_job_idx: int,
+    semaphore: sem.sem_t,
+    jobs: [640]Job,
+}
+
+struct ShaderJobData {
+    uniforms: Uniforms,
+    rect: Rect,
+    shader: Shader,
+    y: int,
+    u_mult: f32,
+    v_mult: f32,
+    dst_at: *u32,
+}
+
+SHADER_THREAD_COUNT :: 8;
+threads := [8]int{};
+thread_queue: ThreadQueue;
+
+try_do_work :: fn() -> bool {
+    original_at_job := atomic_load(&thread_queue.at_job);
+    job_count := atomic_load(&thread_queue.job_count);
+    if job_count > original_at_job {
+        _, success := compare_exchange(&thread_queue.at_job, original_at_job, original_at_job+1);
+        if success {
+            job_index := original_at_job;
+            job := thread_queue.jobs[job_index % MAX_JOBS];
+            job.do(job.data);
+            atomic_add(&thread_queue.completed_jobs, 1);
+        }
+        return true;
+    }
+	return false;
+}
+
+enqueue_job :: fn(job: Job) {
+    job_idx := thread_queue.job_count;
+    thread_queue.jobs[job_idx % MAX_JOBS] = job;
+    fence();
+    atomic_add(&thread_queue.job_count, 1);
+    sem.post(&thread_queue.semaphore);
+}
+
+shader_draw_thread_fn :: fn(unused: ?*) -> ?* {
+
+    for {
+        if !try_do_work() {
+            sem.wait(&thread_queue.semaphore);
+        }
+    }
+
+    return null;
+}
+
+draw_with_shader :: fn(dst_: ?*Texture, rect: Rect, shader: Shader) {
+    if dst_ == null return;
+    dst := ?dst_;
+
+    rect := rect;
+
+    if rect.width == 0 rect.width = dst.width;
+    if rect.height == 0 rect.height = dst.height;
+
+    rect = clamp_rect(dst, rect);
+    if rect.width == 0 || rect.height == 0 return;
+
+    u_mult := 1.0 / cast(f32, rect.width);
+    v_mult := 1.0 / cast(f32, rect.height);
+
+    dst_at := dst.pixels + rect.x + (rect.y * dst.width);
+    uniforms := Uniforms {
+        resolution = v2 { cast(f32, rect.width), cast(f32, rect.height) },
+    };
+
+    #assert rect.height < 640;
+    job_data := [640]ShaderJobData{};
+
+
+    for y in rect.height {
+        job_data[y] = ShaderJobData {
+            uniforms = uniforms,
+            rect = rect,
+            shader = shader,
+            y = y,
+            u_mult = u_mult,
+            v_mult = v_mult,
+            dst_at = dst_at,
+        };
+        job := Job {
+            fn(data: ?*) {
+                #assert data;
+                job_data := *cast(*ShaderJobData, ?data);
+                using job_data;
+
+                for x in rect.width {
+                    uv := v2 {cast(f32, x) * u_mult, cast(f32, y) * v_mult};
+                    uniforms.uv = uv;
+                    uniforms.frag_coord = v2 { cast(f32, x), cast(f32, y) };
+                    uniforms.dst_pixel = dst_at[x];
+                    dst_at[x] = shader.pixel(uniforms, shader.user_data);
+                }
+
+            },
+            &job_data[y],
+        };
+        enqueue_job(job);
+        dst_at += dst.width;
+    }
+
+    for thread_queue.job_count > atomic_load(&thread_queue.completed_jobs) {
+        try_do_work();
     }
 }
 
@@ -242,6 +357,18 @@ draw_line :: fn(dst_: ?*Texture, x0: int, y0: int, x1: int, y1: int, color: u32,
         if e2 < dx { err += dx; y += sy; }
     }
 }
+
+clamp_rect :: fn(tex: *Texture, rect: Rect) -> Rect {
+    x := clamp(rect.x, 0, tex.width);
+    y := clamp(rect.y, 0, tex.height);
+    return .{
+        x,
+        y,
+        clamp(rect.width, 0, tex.width - x),
+        clamp(rect.height, 0, tex.height - y),
+    };
+}
+
 
 get_screen_size :: fn() -> v2 {
     if renderer.backbuffer == null return .{};

@@ -41,7 +41,7 @@ scene_00 :: fn(ui: *GuiState) -> Scene {
     points[5] = GraphPoint { 5.5, 10.0 };
     points[6] = GraphPoint { 6.0, 9.0 };
     points[7] = GraphPoint { 8.0, 6.0 };
-    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 200}, 10);
+    graph := create_graph(ui, points, "Test Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 200}, 10);
     add_child(&flexbox.base, &graph.base);
 
 
@@ -51,7 +51,7 @@ scene_00 :: fn(ui: *GuiState) -> Scene {
 
 scene_01 :: fn(ui: *GuiState) -> Scene {
     window := create_window(ui, .{0,0}, .{ORTHO_WIDTH, ORTHO_HEIGHT});
-    main_box := create_flexbox(ui, .Vertical, .Start, 1);
+    main_box := create_flexbox(ui, .Vertical, .Start, 10);
     add_child(&window.base, &main_box.base);
 
     lines := [4]*Flexbox{};
@@ -78,12 +78,12 @@ scene_01 :: fn(ui: *GuiState) -> Scene {
     top_name := create_label(ui, "Smart Watch Monitor", 1.0);
     connected := create_label(ui, ":xConnected", 1.0);
     device_name := create_label(ui, "ESP32 TTGO", 1.0);
-    sync_timer := create_label(ui, "Last Sync: 00:00", 1.0);
+    sync_timer := create_label(ui, "Last Sync: --:--", 1.0);
     refresh_btn := create_button(ui, ":s", .{120, 20}, 2.0);
 	refresh_btn.on_click = fn(this: *Button) {
 		should_request_refresh = 1;
 	};
-    graph := create_graph(ui, points, "Main Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 150}, 10);
+    graph := create_graph(ui, points, "Test Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 150}, 10);
     add_child(&lines[0].base, &top_name.base);
     add_child(&lines[1].base, &connected.base);
     add_child(&lines[1].base, &device_name.base);

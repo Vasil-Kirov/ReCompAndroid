@@ -1,0 +1,18 @@
+module sem;
+
+union sem_t {
+    __size: [32]u8,
+    __align: u64,
+}
+
+close       :: fn #link="sem_close"(sem: *sem_t) -> i32;
+destroy     :: fn #link="sem_destroy"(sem: *sem_t) -> i32;
+getvalue    :: fn #link="sem_getvalue"(sem: *sem_t, sval: *i32) -> i32;
+init        :: fn #link="sem_init"(sem: *sem_t, pshared: i32, value: u32) -> i32;
+open        :: fn #foreign #link="sem_open"(name: *u8, oflag: i32, args: ...) -> ?*sem_t;
+post        :: fn #link="sem_post"(sem: *sem_t) -> i32;
+//sem_timedwait   :: fn(sem: *sem_t, const struct timespec *restrict) -> i32;
+trywait     :: fn #link="sem_trywait"(sem: *sem_t) -> i32;
+unlink      :: fn #link="sem_unlink"(name: *u8) -> i32;
+wait        :: fn #link="sem_wait"(sem: *sem_t) -> i32;
+

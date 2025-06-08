@@ -130,6 +130,7 @@ public class MainActivity extends NativeActivity
 	}
 
 	public void sendRefreshRequest() {
+		if (bluetoothGatt == null) return;
 		BluetoothGattService service = bluetoothGatt.getService(UUID.fromString(SERVICE_UUID));
 		if (service != null) {
 			BluetoothGattCharacteristic characteristic = service.getCharacteristic(UUID.fromString(CHARACTERISTIC_UUID));

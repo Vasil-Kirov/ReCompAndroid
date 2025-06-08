@@ -1,5 +1,8 @@
 module main
 
+#import sem
+#import shader
+#import vmath as *
 #import scene as *
 #import gui as *
 #import font as *
@@ -169,12 +172,20 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
     for i in UI.command_idx {
         command := UI.commands[i];
         match command.type {
+            .DrawShader: {
+                shader := cast(*CommandDrawShader, command);
+                box := shader.box;
+                xy := v2_from_ui(box.xy, screen_size);
+                size := size_from_ui(box.size, screen_size);
+
+                draw.draw_with_shader(backbuffer, draw.v2_to_rect(xy, size), shader.shader);
+            }
             .DrawBox: {
                 drawbox := cast(*CommandDrawBox, command);
                 box := drawbox.box;
                 xy := v2_from_ui(box.xy, screen_size);
                 size := size_from_ui(box.size, screen_size);
-                color := draw.v4_to_color(drawbox.color);
+                color := v4_to_color(drawbox.color);
 
 				//xy.y -= size.y;
 
@@ -184,7 +195,7 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
                 circle := cast(*CommandDrawCircle, command);
                 radius := circle.radius;
                 xy := v2_from_ui(circle.at, screen_size);
-                color := draw.v4_to_color(circle.color);
+                color := v4_to_color(circle.color);
                 size := size_from_ui(.{radius, radius}, screen_size);
 
                 draw.draw_circle(backbuffer, cast(int, xy.x), cast(int, xy.y), cast(int, size.x), color);
@@ -193,7 +204,7 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
                 drawline := cast(*CommandDrawLine, command);
                 xy0 := v2_from_ui(drawline.from, screen_size);
                 xy1 := v2_from_ui(drawline.to, screen_size);
-                color := draw.v4_to_color(drawline.color);
+                color := v4_to_color(drawline.color);
                 draw.draw_line(backbuffer,
                     cast(int, xy0.x), cast(int, xy0.y),
                     cast(int, xy1.x), cast(int, xy1.y),
@@ -266,9 +277,22 @@ redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
 
 }
 
+setup_shader_threads :: fn() {
+    sem.init(&draw.thread_queue.semaphore, 0, 0);
+    for i in draw.SHADER_THREAD_COUNT {
+        thread: int;
+        if pthread.create(&thread, null, draw.shader_draw_thread_fn, null) != 0 {
+            log.fatal("pthread_create() failed");
+            exit(1);
+        }
+        draw.threads[i] = thread;
+    }
+}
 
 release_is_from_move: bool;
-main :: fn(state_: *) -> ?* { 
+main :: fn(state_: *) -> ?* {
+    setup_shader_threads();
+
     activity := cast(*a.NativeActivity, state_);
 
     engine := get_engine(activity);
@@ -422,20 +446,22 @@ main :: fn(state_: *) -> ?* {
 
 		if should_request_refresh {
 			reset_request();
-			(*env).CallObjectMethod(env, activity.clazz, jm_sendRefreshRequest, null);
+			(*env).CallVoidMethod(env, activity.clazz, jm_sendRefreshRequest);
 		}
 
         redraw_window(start_ms, &font, &UI);
 
         end_ms := get_time_in_nanos() / 1_000_000;
         passed := end_ms - start_ms;
-        if passed < 16 {
-            usleep(cast(uint, (16 - passed) * 1000));
+        for passed < 16 {
+            //usleep(cast(uint, (16 - passed) * 1000));
             end_ms = get_time_in_nanos() / 1_000_000;
+            passed = end_ms - start_ms;
         }
 
 		passed = end_ms - start_ms;
 		fps = 1.0/(cast(f32, passed)/1000.0);
+        //log.info("fps: %", fps);
 
         start_ms = end_ms;
         mem.reset_temp();

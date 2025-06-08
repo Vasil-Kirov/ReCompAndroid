@@ -157,15 +157,15 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
                         nx := lerp(lb.x, rb.x, nx_t);
                         ny := lerp(top_line, lb.y, 1-ny_t);
 
-                        push_cmd(gui, cmd_drawline(gui, .{x, y}, .{nx, ny}, theme.surface, 2));
+                        push_cmd(gui, cmd_drawline(gui, .{x, y}, .{nx, ny}, theme.primary, 2));
                     }
-                    color := theme.success;
+                    color := theme.secondary;
                     if graph.mouse_in_rect.x > 0 {
                         if is_point_in_rect(graph.mouse_in_rect, .{x, y} - pos - .{10, 10}, .{50, 50}) {
                             hovered.point = point;
                             hovered.xy = .{x, y};
                             hovered.valid = true;
-                            color = theme.error;
+                            color = theme.warning;
                         }
                     }
                     push_cmd(gui, cmd_drawcircle(gui, .{x, y}, 5.0, color));
