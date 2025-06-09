@@ -185,7 +185,7 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
                 box := drawbox.box;
                 xy := v2_from_ui(box.xy, screen_size);
                 size := size_from_ui(box.size, screen_size);
-                color := v4_to_color(drawbox.color);
+                color := drawbox.color;
 
 				//xy.y -= size.y;
 
@@ -195,7 +195,7 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
                 circle := cast(*CommandDrawCircle, command);
                 radius := circle.radius;
                 xy := v2_from_ui(circle.at, screen_size);
-                color := v4_to_color(circle.color);
+                color := circle.color;
                 size := size_from_ui(.{radius, radius}, screen_size);
 
                 draw.draw_circle(backbuffer, cast(int, xy.x), cast(int, xy.y), cast(int, size.x), color);
@@ -204,7 +204,7 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
                 drawline := cast(*CommandDrawLine, command);
                 xy0 := v2_from_ui(drawline.from, screen_size);
                 xy1 := v2_from_ui(drawline.to, screen_size);
-                color := v4_to_color(drawline.color);
+                color := drawline.color;
                 draw.draw_line(backbuffer,
                     cast(int, xy0.x), cast(int, xy0.y),
                     cast(int, xy1.x), cast(int, xy1.y),
@@ -227,9 +227,74 @@ handle_ui_events :: fn(UI: *GuiState, font: *Font) {
     UI.command_idx = 0;
 }
 
+@profile=draw.profile_fn
+swap_buffers :: fn(window: ?*a.NativeWindow) {
+    if window {
+        a.NativeWindow_unlockAndPost(?window);
+    }
+}
+
+@profile=draw.profile_fn
+lock_window :: fn(window: ?*a.NativeWindow, out: *a.NativeWindow_Buffer) -> bool {
+    if window == null return false;
+    if a.NativeWindow_lock(?window, out, null) != 0 {
+        return false;
+    }
+    return true;
+}
+
+struct WriteJobData {
+    width: int,
+    at: *v4,
+    dst_at: *u32,
+}
+
+@profile=draw.profile_fn
+write_texture_to_screen :: fn(pixels: *u32, stride: int, texture: *draw.Texture) {
+
+    #assert texture.height < 8192;
+    job_data: [8192]WriteJobData;
+    at := texture.pixels;
+    for y in texture.height {
+        job_data[y] = WriteJobData {
+            width = texture.width,
+            at = at,
+            dst_at = pixels,
+        };
+
+        job := draw.Job {
+            fn(data: ?*) {
+                #assert data;
+                job_data := cast(*WriteJobData, ?data);
+                using job_data;
+
+                for x in width {
+                    if opt_window == null return;
+
+                    pixel := v4_to_color(at[x]);
+                    a := (pixel >> 24) & 0xFF;
+                    r := (pixel >> 16) & 0xFF;
+                    g := (pixel >> 8)  & 0xFF;
+                    b := (pixel >> 0)  & 0xFF;
+                    dst_at[x] = a << 24 | b << 16 | g << 8 | r;
+                }
+
+            },
+            &job_data[y],
+        };
+        draw.enqueue_job(job);
+        if opt_window == null break;
+
+        at += texture.width;
+        pixels += stride;
+    }
+    draw.wait_for_jobs_and_do_work();
+}
+
 redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
     backbuffer := ?draw.renderer.backbuffer;
 
+    /*
     at := backbuffer.pixels;
     for y in backbuffer.height {
         for x in backbuffer.width {
@@ -243,38 +308,22 @@ redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
         }
         at += backbuffer.width;
     }
+    */
 
     buff := a.NativeWindow_Buffer {};
-    if opt_window == null return;
-    if a.NativeWindow_lock(?opt_window, &buff, null) != 0 {
+    if lock_window(opt_window, &buff) == false {
         log.warn("Failed to lock window buffer");
         return;
     }
 
+    write_texture_to_screen(?buff.bits, buff.stride, backbuffer);
+
     if buff.bits == null || draw.renderer.backbuffer == null {
-        if opt_window {
-            a.NativeWindow_unlockAndPost(?opt_window);
-        }
+        swap_buffers(opt_window);
 		return;
 	}
 
-    at = backbuffer.pixels;
-    dst_at := cast(*u32, ?buff.bits);
-    for y in backbuffer.height {
-        for x in backbuffer.width {
-            if opt_window == null break;
-
-            dst_at[x] = at[x];
-        }
-        if opt_window == null break;
-
-        at += backbuffer.width;
-        dst_at += buff.stride;
-    }
-    if opt_window {
-        a.NativeWindow_unlockAndPost(?opt_window);
-    }
-
+    swap_buffers(opt_window);
 }
 
 setup_shader_threads :: fn() {
@@ -461,7 +510,7 @@ main :: fn(state_: *) -> ?* {
 
 		passed = end_ms - start_ms;
 		fps = 1.0/(cast(f32, passed)/1000.0);
-        //log.info("fps: %", fps);
+        log.info("fps: %", fps);
 
         start_ms = end_ms;
         mem.reset_temp();

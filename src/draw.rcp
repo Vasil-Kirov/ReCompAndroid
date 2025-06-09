@@ -22,7 +22,7 @@ struct Renderer {
 renderer: Renderer;
 
 struct Texture {
-    pixels: *u32,
+    pixels: *v4,
     width: int,
     height: int,
 }
@@ -49,7 +49,7 @@ make_renderer :: fn(allocator: *mem.Allocator) -> Renderer {
 
 allocate_texture :: fn(width: int, height: int) -> ?*Texture {
     r := &renderer;
-    ptr := r.alloc.alloc(width * height * 4, r.alloc);
+    ptr := r.alloc.alloc(width * height * size_of v4, r.alloc);
     if ptr == null return null;
     tex_ := mem.make_type(Texture, r.alloc);
     if tex_ == null {
@@ -86,13 +86,14 @@ copy_rect_no_rescaling :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, s
     for y in dst_rect.height {
         for x in dst_rect.width {
             pixel := src_at[x];
-            if pixel & 0xFF_00_00_00 == 0 continue;
+            if pixel.w == 0 continue;
             dst_at[x] = pixel;
         }
         dst_at += dst.width;
         src_at += src.width;
     }
 }
+
 
 copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect) {
     if dst_ == null return;
@@ -143,9 +144,7 @@ copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect
             x_off += scale_x;
 
             pixel := src_row[x_int_off];
-            if pixel & 0xFF_00_00_00 == 0 {
-                continue;
-            }
+            if pixel.w == 0 continue;
 
             dst_row[x] = pixel;
         }
@@ -153,7 +152,29 @@ copy_rect :: fn(dst_: ?*Texture, src_: ?*Texture, dst_rect: Rect, src_rect: Rect
     }
 }
 
-draw_color :: fn(dst_: ?*Texture, rect: Rect, color: u32, no_fill: bool = false) {
+struct CycleTracker {
+    name: string,
+    cycles: int,
+}
+
+highest_cycles: CycleTracker;
+
+profile_fn :: fn(name: string, cycles: int) {
+    /*
+    if cycles > highest_cycles.cycles {
+        highest_cycles = .{name, cycles};
+    }
+    spaces := [256]u8{};
+    RIGHT_PAD :: 24;
+    for i in RIGHT_PAD spaces[i] = ' ';
+    for i in name.count spaces[RIGHT_PAD-i] = '\0';
+
+    log.info("%:%s% cycles", name, &spaces[0], cycles);
+    */
+}
+
+
+draw_color :: fn(dst_: ?*Texture, rect: Rect, color: v4, no_fill: bool = false) {
     if dst_ == null return;
     dst := ?dst_;
 
@@ -183,14 +204,14 @@ struct Job {
     data: ?*,
 }
 
-MAX_JOBS :: 640;
+MAX_JOBS :: 16384;
 struct ThreadQueue {
     completed_jobs: int,
     at_job: int,
     job_count: int,
     post_job_idx: int,
     semaphore: sem.sem_t,
-    jobs: [640]Job,
+    jobs: [16384]Job,
 }
 
 struct ShaderJobData {
@@ -200,7 +221,7 @@ struct ShaderJobData {
     y: int,
     u_mult: f32,
     v_mult: f32,
-    dst_at: *u32,
+    dst_at: *v4,
 }
 
 SHADER_THREAD_COUNT :: 8;
@@ -242,6 +263,13 @@ shader_draw_thread_fn :: fn(unused: ?*) -> ?* {
     return null;
 }
 
+wait_for_jobs_and_do_work :: fn() {
+    for thread_queue.job_count > atomic_load(&thread_queue.completed_jobs) {
+        try_do_work();
+    }
+}
+
+@profile=profile_fn
 draw_with_shader :: fn(dst_: ?*Texture, rect: Rect, shader: Shader) {
     if dst_ == null return;
     dst := ?dst_;
@@ -297,12 +325,10 @@ draw_with_shader :: fn(dst_: ?*Texture, rect: Rect, shader: Shader) {
         dst_at += dst.width;
     }
 
-    for thread_queue.job_count > atomic_load(&thread_queue.completed_jobs) {
-        try_do_work();
-    }
+    wait_for_jobs_and_do_work();
 }
 
-draw_circle :: fn(dst_: ?*Texture, x0: int, y0: int, r: int, color: u32) {
+draw_circle :: fn(dst_: ?*Texture, x0: int, y0: int, r: int, color: v4) {
     if dst_ == null return;
     dst := ?dst_;
 
@@ -325,7 +351,7 @@ draw_circle :: fn(dst_: ?*Texture, x0: int, y0: int, r: int, color: u32) {
     }
 }
 
-draw_line :: fn(dst_: ?*Texture, x0: int, y0: int, x1: int, y1: int, color: u32, thickness: int) {
+draw_line :: fn(dst_: ?*Texture, x0: int, y0: int, x1: int, y1: int, color: v4, thickness: int) {
     if dst_ == null return;
     dst := ?dst_;
 

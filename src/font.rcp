@@ -195,28 +195,28 @@ bmp_to_texture :: fn(name: string, manager: *A.AssetManager, color: v4) -> ?*d.T
     original_at := cast(*u8, pixels) + pitch * (header.height-1);
     new_at := tex.pixels;
 
-    col := v4_to_color(color);
     // BGR(A) to ARGB
     for y in header.height {
         for x in header.width {
+            new_pixel: u32;
             if header.bpp == 24 {
                 pixel := original_at + (x * 3);
-                new_at[x] = cast(u32, *(pixel+0)) << 0  |
+                new_pixel = cast(u32, *(pixel+0)) << 0  |
                             cast(u32, *(pixel+1)) << 8  |
                             cast(u32, *(pixel+2)) << 16;// |
                             //0xFF << 24;
-                if new_at[x] != 0 new_at[x] |= 0xFF << 24;
+                if new_pixel != 0 new_pixel |= 0xFF << 24;
 
             } else if header.bpp == 32 {
                 pixel := original_at + (x * 4);
-                new_at[x] = cast(u32, *(pixel+0)) << 0  |
+                new_pixel = cast(u32, *(pixel+0)) << 0  |
                             cast(u32, *(pixel+1)) << 8  |
                             cast(u32, *(pixel+2)) << 16 |
                             cast(u32, *(pixel+3)) << 24;
             } else {
                 #assert false;
             }
-            if new_at[x] != 0 new_at[x] = col;
+            if new_pixel != 0 new_at[x] = color;
         }
         original_at -= pitch;
         new_at += tex.width;

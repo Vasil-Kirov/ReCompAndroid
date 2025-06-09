@@ -7,7 +7,7 @@ module shader;
 
 
 struct Shader {
-    pixel: *fn(uniforms: Uniforms, user_data: ?*) -> u32,
+    pixel: *fn(uniforms: Uniforms, user_data: ?*) -> v4,
     user_data: ?*,
 }
 
@@ -15,7 +15,7 @@ struct Uniforms {
     uv: v2,
     frag_coord: v2,
     resolution: v2,
-    dst_pixel: u32,
+    dst_pixel: v4,
 }
 
 struct Gradient
@@ -31,12 +31,12 @@ gradient :: fn(from: v4, to: v4) -> Shader {
     gradient.from = from;
     gradient.to = to;
     return .{
-        fn(input: Uniforms, user_data: ?*) -> u32 {
+        fn(input: Uniforms, user_data: ?*) -> v4 {
             #assert user_data;
             uv := input.uv;
             colors := cast(*Gradient, ?user_data);
             result := lerp_v4(colors.from, colors.to, (uv.x + uv.y) * .5);
-            return v4_to_color(result);
+            return result;
         },
         gradient,
     };
@@ -82,7 +82,7 @@ button_shd :: fn(button_color: v4) -> Shader {
     data.button_color = button_color;
     return .{
 
-        fn(input: Uniforms, user_data: ?*) -> u32 {
+        fn(input: Uniforms, user_data: ?*) -> v4 {
             #assert user_data;
             data := cast(*ButtonShd, ?user_data);
 
@@ -102,7 +102,7 @@ button_shd :: fn(button_color: v4) -> Shader {
             upper_shadow := make_shadow(p + shadow_offset, hsize, corner_radius, blur_radius);
             rect := clamp(sdf_round_rect(p, hsize, corner_radius), 0, 1);
 
-            blend := color_to_v4(input.dst_pixel);
+            blend := input.dst_pixel;
 
             final_lower_shadow := lower_shadow_color;
             final_lower_shadow.w = 1.0 - lower_shadow;
@@ -123,7 +123,7 @@ button_shd :: fn(button_color: v4) -> Shader {
                 final_color.w
             };
             
-            return v4_to_color(final_color);
+            return final_color;
 
         },
         data,
