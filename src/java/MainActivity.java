@@ -131,8 +131,10 @@ public class MainActivity extends NativeActivity
 
 	public void sendRefreshRequest() {
 		if (bluetoothGatt == null) return;
+		Log.d(TAG, "Getting service...");
 		BluetoothGattService service = bluetoothGatt.getService(UUID.fromString(SERVICE_UUID));
 		if (service != null) {
+			Log.d(TAG, "Getting characteristic...");
 			BluetoothGattCharacteristic characteristic = service.getCharacteristic(UUID.fromString(CHARACTERISTIC_UUID));
 			if (characteristic != null) {
 				byte[] dataToSend = "update".getBytes(StandardCharsets.UTF_8);
@@ -140,6 +142,9 @@ public class MainActivity extends NativeActivity
 				boolean success = bluetoothGatt.writeCharacteristic(characteristic);
 				Log.d(TAG, "Writing?: " + (success ? "True" : "False"));
 			}
+		}
+		else {
+			Log.d(TAG, "Failed.");
 		}
 	}
 
@@ -162,12 +167,19 @@ public class MainActivity extends NativeActivity
 					Log.d(TAG, "Valid Service");
                     BluetoothGattCharacteristic characteristic = service.getCharacteristic(UUID.fromString(CHARACTERISTIC_UUID));
                     if (characteristic != null) {
+						gatt.setCharacteristicNotification(characteristic, true);
                         boolean valid = gatt.readCharacteristic(characteristic);
 						Log.d(TAG, "Reading?: " + (valid ? "True" : "False"));
                     }
                 }
             }
         }
+
+		@Override
+		public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
+			boolean valid = gatt.readCharacteristic(characteristic);
+			Log.d(TAG, "Got something, trying to read it: " + (valid ? "True" : "False"));
+		}
 
 
 		@Override
