@@ -9,6 +9,7 @@ struct Button {
 	text: string,
 	hovered: bool,
 	text_scale: f32,
+	animate_t: f32,
 	on_click: ?*fn(this: *Button),
 	user_data: ?*,
 }
@@ -30,8 +31,8 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
             double_size := button.size * v2{2};
             double_pos_offset := pos - button.size / v2 {2};
             
-            button_color := theme.primary;
-			if button.hovered button_color = highlight(button_color);
+            button_color := theme.primary * v4 {1-eo_cubic(button.animate_t)};
+			button_color.w = 1.0;
 
             text_pos := pos + button.size / .{2, 2};
 			//text_pos.y -= measure_label(button.text, button.text_scale).y / 4;
@@ -42,6 +43,8 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
             //push_cmd(gui, cmd_drawshader(gui, .{border, border_size}, shadow()));
             push_cmd(gui, cmd_drawshader(gui, .{double_pos_offset, double_size}, button_shd(button_color)));
             push_cmd(gui, cmd_drawtext(gui, button.text, text_pos, button.text_scale, true));
+
+			button.animate_t = clamp(button.animate_t - 0.15, 0, 1);
 		}
 		EventType.MouseMove: {
 			mouse := event.data.mouse_move.mouse;
@@ -54,6 +57,7 @@ button_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
 		}
 		EventType.MouseClicked: {
 			if button.hovered && button.on_click {
+				button.animate_t = 0.5;
 				button.on_click(button);
 			}
             button.hovered = false;
@@ -71,6 +75,7 @@ create_button :: fn(gui: *GuiState, text: string, size: v2 = .{120, 20}, text_sc
 	button.handle_event = button_event_handler;
 	button.hovered = false;
 	button.text_scale = text_scale;
+	button.animate_t = 0.0;
 	
 	return button;
 }

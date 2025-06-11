@@ -24,6 +24,7 @@ struct Graph {
     x_label: string,
     y_label: string,
     mouse_in_rect: v2,
+	time_label_fn: *fn(time: f32) -> string,
 }
 
 sort_graph :: fn(points: []GraphPoint) {
@@ -50,6 +51,7 @@ create_graph :: fn(gui: *GuiState, points: []GraphPoint, label: string, x_label:
     graph.size = size;
     graph.vertical_lines = line_count;
     graph.mouse_in_rect = .{-1, -1};
+	graph.time_label_fn = fn(time: f32) -> string { return io.sprint("%", time); };
 
     set_graph_points(graph, points);
 
@@ -67,6 +69,10 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
     graph := cast(*Graph, this);
     match event.type {
         .Draw: {
+			was_format_at := io.FLOAT_ROUND_AT;
+			io.FLOAT_ROUND_AT = 10;
+			defer io.FLOAT_ROUND_AT = was_format_at;
+
 			pos := get_absolute_position (event.data.draw.offset, graph.pos);
 
             // background
@@ -81,9 +87,11 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
             // Calculate minimal and maximum value
             //
 
+			end_x := graph.points[graph.points.count-1].time;
             steps := cast(f32, graph.vertical_lines);
             step_y := graph.y_top / (steps-1.0);
             if step_y == 0 return 0;
+			step_x := end_x / (steps-1.0);
 
 
             left := pos.x + gap * 6;
@@ -104,6 +112,7 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
             //push_cmd(gui, cmd_drawbox(gui, .{pos, this.size}, theme.error, true));
 
             line_step := (lb.y - lt.y) / steps;
+            line_step_hz := (rb.x - lb.x) / steps;
 
             top_line := lt.y + line_step;
 
@@ -119,9 +128,36 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
                 }
             }
 
+			// vertical lines
+			{
+                at := lb;
+
+                for i in cast(int, steps) {
+                    to := v2 { at.x, lt.y + line_step };
+
+                    push_cmd(gui, cmd_drawline(gui, at, to, theme.secondary));
+                    at.x += line_step_hz;
+                }
+
+			}
+
+			push_cmd(gui, cmd_drawline(gui, lb, rb, .{0, 0, 0, 1}));
+			push_cmd(gui, cmd_drawline(gui, lb, lt + .{0, line_step}, .{0, 0, 0, 1}));
+
+			// x values
+			{
+				at := lb + .{ 0, gap*.5 };
+
+                for x := 0.0; x <= end_x+0.001; x += step_x {
+                    text := graph.time_label_fn(x);
+                    push_cmd(gui, cmd_drawtext(gui, text, at, .75, true));
+                    at.x += line_step_hz;
+                }
+			}
+
             // y values
             {
-                at := v2 { pos.x + gap * 3, lb.y - 2.5 };
+                at := v2 { pos.x + gap * 3, lb.y - 1 };
 
                 for y := 0.0; y <= graph.y_top; y += step_y {
                     text := io.sprint("%", y);
@@ -168,12 +204,13 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
                             color = theme.warning;
                         }
                     }
-                    push_cmd(gui, cmd_drawcircle(gui, .{x, y}, 5.0, color));
+                    //push_cmd(gui, cmd_drawcircle(gui, .{x, y}, 5.0, color));
                 }
             }
 
             //push_cmd(gui, cmd_drawtext(gui, io.sprint("%", graph.mouse_in_rect), .{100, 100}, 1.0));
 
+			/*
             if hovered.valid {
                 box_size := v2 {100, 20};
                 // @TODO: offscreen boxes
@@ -182,6 +219,7 @@ graph_event_handler :: fn(gui: *GuiState, this: *Widget, event: Event) -> int {
                 text := io.sprint("%t", hovered.point.time);
                 push_cmd(gui, cmd_drawtext(gui, text, box_pos+box_size/.{2, 2}, 1.0, true));
             }
+			*/
         }
         .MouseMove: {
 			mouse := event.data.mouse_move.mouse;

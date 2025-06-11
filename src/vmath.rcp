@@ -128,3 +128,8 @@ distance_v2 :: fn(a: v2, b: v2) -> f32 {
     return sqrt(x * x + y * y);
 }
 
+eo_cubic :: fn(t: f32) -> f32 {
+	x := 1 - t;
+	return 1 - (x * x * x);
+}
+

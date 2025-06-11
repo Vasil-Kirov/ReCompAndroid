@@ -203,10 +203,10 @@ public class MainActivity extends NativeActivity
     };
 
 	public byte[] getData() {
-
-		return currentValue;
+		byte[] result = currentValue;
+		currentValue = null;
+		return result;
 	}
-
 }
 
 // <meta-data android:name="android.app.lib_name" android:value="main" />

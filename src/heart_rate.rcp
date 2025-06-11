@@ -1,0 +1,38 @@
+module heart_rate;
+
+#import "libc.rcp" as c
+#import bstream as *
+#import gui as *
+#import mem
+
+
+struct Tracker
+{
+	alloc: mem.Allocator,
+	points: []GraphPoint,
+};
+
+make_tracker :: fn() -> Tracker {
+	return .{
+		alloc = c.make_malloc_allocator(true),
+	};
+}
+
+parse_readings :: fn(hr: *Tracker, r: *Reader) {
+	len := cast(int, readu32(r));
+	mem.destroy_slice(&hr.points, &hr.alloc);
+	hr.points = mem.make_slice(GraphPoint, len, &hr.alloc);
+	i := 0;
+
+	for !is_reader_finished(r) {
+		hour := readu8(r);
+		minute := readu8(r);
+		reading := readu8(r);
+		hr.points[i] = GraphPoint {
+			time = cast(f32, hour) * 100.0 + cast(f32, minute),
+			value = cast(f32, reading),
+		};
+		i += 1;
+	}
+}
+

@@ -23,13 +23,14 @@ files := []string {
     "main", "android", "pthread", "backtrace", "binary_stream", "sem",
     "log", "vmath", "font", "draw", "scene", "shader",
     "ui/gui", "ui/commands", "ui/flexbox", "ui/window", "ui/button", "ui/label", "ui/graph",
-
+	"heart_rate",
 };
 
 modules :: []string {
     "main", "android", "pthread", "backtrace", "bstream", "sem",
     "log", "vmath", "font", "draw", "scene", "shader",
     "gui",
+	"heart_rate",
 };
 
 compile :: fn() -> c.CompileInfo {

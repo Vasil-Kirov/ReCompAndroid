@@ -9,6 +9,8 @@ struct Scene {
     id: int,
     connect_label: ?*Label,
     device_name_label: ?*Label,
+	graph1: ?*Graph,
+	graph2: ?*Graph,
 }
 
 should_request_refresh := 0;
@@ -54,7 +56,7 @@ scene_01 :: fn(ui: *GuiState) -> Scene {
     main_box := create_flexbox(ui, .Vertical, .Start, 10);
     add_child(&window.base, &main_box.base);
 
-    lines := [4]*Flexbox{};
+    lines := [5]*Flexbox{};
 	line_width := cast(f32, ORTHO_WIDTH);
 	line_height := cast(f32, ORTHO_HEIGHT - 20) / 4.0;
     for &line in lines {
@@ -83,15 +85,17 @@ scene_01 :: fn(ui: *GuiState) -> Scene {
 	refresh_btn.on_click = fn(this: *Button) {
 		should_request_refresh = 1;
 	};
-    graph := create_graph(ui, points, "Test Label", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 150}, 10);
+    graph1 := create_graph(ui, points, "Graph1", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 100}, 10);
+    graph2 := create_graph(ui, points, "Graph2", "X Stuff", "Y Stuff", .{ORTHO_WIDTH, 100}, 10);
     add_child(&lines[0].base, &top_name.base);
     add_child(&lines[1].base, &connected.base);
     add_child(&lines[1].base, &device_name.base);
     add_child(&lines[2].base, &sync_timer.base);
     add_child(&lines[2].base, &refresh_btn.base);
-    add_child(&lines[3].base, &graph.base);
+    add_child(&lines[3].base, &graph1.base);
+    add_child(&lines[4].base, &graph2.base);
 
     window_do_layout(ui, window);
-    return .{ widget = cast(*Widget, window), id = 1, connect_label = connected, device_name_label = device_name, };
+    return .{ widget = cast(*Widget, window), id = 1, connect_label = connected, device_name_label = device_name, graph1 = graph1, graph2 = graph2, };
 }
 

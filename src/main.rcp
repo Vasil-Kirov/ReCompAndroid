@@ -1,5 +1,7 @@
 module main
 
+#import heart_rate as hr
+#import bstream as *
 #import sem
 #import shader
 #import vmath as *
@@ -312,7 +314,7 @@ redraw_window :: fn(time_ms: int, font: *Font, UI: *GuiState) {
 
     buff := a.NativeWindow_Buffer {};
     if lock_window(opt_window, &buff) == false {
-        log.warn("Failed to lock window buffer");
+        //log.warn("Failed to lock window buffer");
         return;
     }
 
@@ -402,6 +404,9 @@ main :: fn(state_: *) -> ?* {
 	fps := 0.0;
     font: Font;
 
+	heart_rate := hr.make_tracker();
+
+
     start_ms := get_time_in_nanos() / 1_000_000;
     for {
 
@@ -485,11 +490,36 @@ main :: fn(state_: *) -> ?* {
 		if byte_arr_ {
 			byte_arr := ?byte_arr_;
 			len := (*env).GetArrayLength(env, byte_arr);
-			elems := (*env).GetByteArrayElements(env, byte_arr, null);
-			if elems != null {
-				text := io.sprint("Got: %s", cast(*u8, ?elems));
-                draw_text_centered(&font, text, backbuffer, screen_center, 1.0);
-				(*env).ReleaseByteArrayElements(env, byte_arr, ?elems, a.JNI_ABORT);
+			elems_ := (*env).GetByteArrayElements(env, byte_arr, null);
+			if elems_ != null {
+				elems := cast(*u8, ?elems_);
+
+
+				match elems[0] {
+					// test string
+					's': {
+						text := io.sprint("Got: %s", elems + 1);
+						draw_text_centered(&font, text, backbuffer, screen_center, 1.0);
+					}
+
+					// heart-rate readings
+					'h': {
+						reader := make_reader(elems, cast(uint, len));
+						signature := readu8(&reader);
+						#assert signature == 'h';
+						hr.parse_readings(&heart_rate, &reader);
+						#assert scene.graph1;
+						log.info("got: %", heart_rate.points);
+						(?scene.graph1).points = heart_rate.points;
+						(?scene.graph1).time_label_fn = fn(time: f32) -> string {
+							hour := cast(int, time / 100);
+							minute := cast(int, time % 100);
+							return io.sprint("%:%", hour, minute);
+						};
+					}
+				};
+
+				(*env).ReleaseByteArrayElements(env, byte_arr, cast(*i8, elems), a.JNI_ABORT);
 			}
 		}
 
@@ -510,7 +540,7 @@ main :: fn(state_: *) -> ?* {
 
 		passed = end_ms - start_ms;
 		fps = 1.0/(cast(f32, passed)/1000.0);
-        log.info("fps: %", fps);
+        //log.info("fps: %", fps);
 
         start_ms = end_ms;
         mem.reset_temp();
